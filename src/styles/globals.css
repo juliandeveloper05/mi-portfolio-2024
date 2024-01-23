@@ -25,16 +25,14 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-/* global.css */
 
-/* Animación de máquina de escribir para "Julian Soto" */
 @keyframes typing {
   from {
     width: 0;
   }
   to {
     width: 12ch;
-  } /* Ajusta el ancho para cubrir "Julian Soto" */
+  }
 }
 
 @keyframes blink-caret {
@@ -50,7 +48,7 @@ body {
 .typewriter-name {
   display: inline-block;
   overflow: hidden;
-  border-right: 2px solid black; /* El cursor parpadeante */
+  border-right: 2px solid black;
   white-space: nowrap;
   letter-spacing: normal;
   animation: typing 2s steps(12, end) infinite alternate,
@@ -58,10 +56,7 @@ body {
 }
 
 .profile-image:hover {
-  transform: scale(
-    1.05
-  ); /* Aumenta ligeramente el tamaño al pasar el mouse /
-transition: transform 0.3s ease-in-out; / Suaviza la transición */
+  transform: scale(1.05);
 }
 .red-text {
   color: red;
@@ -71,9 +66,8 @@ transition: transform 0.3s ease-in-out; / Suaviza la transición */
   color: grey;
 }
 
-/* global.css */
 .social-icon:hover {
-  color: #ffd700; /* Este es el código de color hexadecimal para amarillo */
+  color: #ffd700;
 }
 
 @keyframes popMotion {
@@ -92,7 +86,6 @@ transition: transform 0.3s ease-in-out; / Suaviza la transición */
   animation: popMotion 0.5s ease-in-out;
 }
 
-/* styles/globals.css */
 @keyframes glow {
   from {
     box-shadow: 0 0 8px #39ff14;
@@ -113,16 +106,13 @@ transition: transform 0.3s ease-in-out; / Suaviza la transición */
 }
 
 .card-inner:hover {
-  /* Aplicar múltiples animaciones al mismo tiempo */
   animation: glow 1s ease-in-out infinite alternate,
     wave 0.8s ease-in-out infinite alternate;
 }
 
 .card-inner {
-  /* Asegúrate de tener una transición suave para las propiedades que no están animadas */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   will-change: transform, box-shadow;
-  /* Resto de tus estilos ... */
 }
 
 html {

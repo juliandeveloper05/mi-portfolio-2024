@@ -26,6 +26,20 @@ body {
     rgb(var(--background-start-rgb));
 }
 
+ /* NAV BAR */
+
+.website-logo {
+  transform: scale(1);
+  transition: transform .5s ease;
+}
+
+.website-logo:hover {
+  transform: scale(1.05);
+  transition: transform 2s ease;
+}
+
+/* PROFILE */
+
 @keyframes typing {
   from {
     width: 0;
@@ -41,7 +55,7 @@ body {
     border-color: transparent;
   }
   50% {
-    border-color: black;
+    border-color: white;
   }
 }
 
@@ -55,9 +69,27 @@ body {
     blink-caret 0.75s step-end infinite;
 }
 
+.profile-image {
+  transform: scale(1);
+  transition: transform .5s ease;
+}
+
 .profile-image:hover {
   transform: scale(1.05);
+  transition: transform 2s ease;
 }
+
+.palenque-style {
+  text-shadow: 2px 2px 2px purple;
+  font-family: monospace;
+}
+
+.palenque-style:hover {
+  text-shadow: 2px 2px 2px teal;
+  font-family: monospace;
+}
+
+
 .red-text {
   color: red;
 }

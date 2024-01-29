@@ -1,0 +1,183 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* NAV BAR */
+
+.website-logo {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.website-logo:hover {
+  transform: scale(1.05);
+  transition: transform 2s ease;
+}
+
+/* PROFILE */
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 12ch;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: white;
+  }
+}
+
+.typewriter-name {
+  display: inline-block;
+  overflow: hidden;
+  border-right: 2px solid black;
+  white-space: nowrap;
+  letter-spacing: normal;
+  animation: typing 2s steps(12, end) infinite alternate,
+    blink-caret 0.75s step-end infinite;
+}
+
+.profile-image {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.05);
+  transition: transform 2s ease;
+}
+
+.palenque-style {
+  text-shadow: 2px 2px 2px purple;
+  font-family: monospace;
+}
+
+.palenque-style:hover {
+  text-shadow: 2px 2px 2px teal;
+  font-family: monospace;
+}
+
+.red-text {
+  color: red;
+}
+
+.grey-text {
+  color: grey;
+}
+
+.social-icon:hover {
+  color: #ffd700;
+}
+
+@keyframes popMotion {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.text-pop:hover {
+  animation: popMotion 0.5s ease-in-out;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 8px #39ff14;
+  }
+  to {
+    box-shadow: 0 0 18px #39ff14;
+  }
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    transform: scale(0.9) translateZ(0);
+  }
+}
+
+.card-inner:hover {
+  animation: glow 1s ease-in-out infinite alternate,
+    wave 0.8s ease-in-out infinite alternate;
+}
+
+.card-inner {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  will-change: transform, box-shadow;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: [height of your footer];
+}
+
+/* Para: My Services */
+.gamer-font {
+  font-family: "Press Start 2P", cursive;
+}
+
+/* footer social media icons */
+
+@layer components {
+  .social-icon-footer {
+    @apply relative inline-block text-[20px] transition-all duration-300 ease-in-out;
+  }
+
+  .social-icon-footer:hover {
+    @apply text-blue-500 scale-110;
+  }
+
+  .social-icon-footer::after {
+    content: "";
+    @apply absolute inset-0 w-full h-full bg-white opacity-0 rounded-full;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .social-icon-footer:hover::after {
+    @apply opacity-20;
+  }
+}

@@ -26,11 +26,11 @@ body {
     rgb(var(--background-start-rgb));
 }
 
- /* NAV BAR */
+/* NAV BAR */
 
 .website-logo {
   transform: scale(1);
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .website-logo:hover {
@@ -71,7 +71,7 @@ body {
 
 .profile-image {
   transform: scale(1);
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 .profile-image:hover {
@@ -88,7 +88,6 @@ body {
   text-shadow: 2px 2px 2px teal;
   font-family: monospace;
 }
-
 
 .red-text {
   color: red;
@@ -154,4 +153,31 @@ html {
 
 body {
   margin-bottom: [height of your footer];
+}
+
+/* Para: My Services */
+.gamer-font {
+  font-family: "Press Start 2P", cursive;
+}
+
+/* footer social media icons */
+
+@layer components {
+  .social-icon-footer {
+    @apply relative inline-block text-[20px] transition-all duration-300 ease-in-out;
+  }
+
+  .social-icon-footer:hover {
+    @apply text-blue-500 scale-110;
+  }
+
+  .social-icon-footer::after {
+    content: "";
+    @apply absolute inset-0 w-full h-full bg-white opacity-0 rounded-full;
+    transition: opacity 300ms ease-in-out;
+  }
+
+  .social-icon-footer:hover::after {
+    @apply opacity-20;
+  }
 }

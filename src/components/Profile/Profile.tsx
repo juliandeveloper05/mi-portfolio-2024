@@ -52,7 +52,8 @@ const Profile = () => {
         "
       >
         <div className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end">
-          <div className="
+          <div
+            className="
             rounded-full 
             overflow-hidden 
             w-[200px] 
@@ -78,7 +79,9 @@ const Profile = () => {
           <div className="text-center mt-4 md:mt-0 w-max sm:w-full md:w-full lg:w-2/3">
             <p className="text-xl font-semibold mb-2">Hello, I&apos;m</p>
             <div className="flex w-full justify-center text-center">
-              <h1 className="typewriter-name text-6xl font-bold palenque-style">Julian Soto</h1>
+              <h1 className="typewriter-name text-6xl font-bold palenque-style">
+                Julian Soto
+              </h1>
             </div>
             <p className="text-2xl my-4 text-pop">Frontend Developer Junior</p>
 

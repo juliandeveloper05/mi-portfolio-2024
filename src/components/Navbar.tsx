@@ -36,7 +36,13 @@ function NavBar() {
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
               <Link href="/">
-                <Image className="website-logo" src="/newlogo.png" alt="Logo" width={60} height={60} />
+                <Image
+                  className="website-logo"
+                  src="/newlogo.png"
+                  alt="Logo"
+                  width={60}
+                  height={60}
+                />
               </Link>
               <Link href="/">
                 <h2 className="text-2xl text-cyan-600 font-bold "> </h2>
@@ -60,7 +66,8 @@ function NavBar() {
               }`}
             >
               <ul className="h-screen md:h-auto items-center justify-center md:flex gap-1">
-                <li className={`
+                <li
+                  className={`
                   pb-2 
                   text-xl 
                   text-white 
@@ -72,17 +79,26 @@ function NavBar() {
                   border-purple-600  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
-                  ${selectedNavItem === 'home' ? "md:border-b-1" : "md:border-b-0"}
-                `}>
-                  <Link href="#" onClick={() => { 
-                    setNavbar(!navbar)
-                    setSelectedNavItem('home')
-                  }}>
+                  ${
+                    selectedNavItem === "home"
+                      ? "md:border-b-1"
+                      : "md:border-b-0"
+                  }
+                `}
+                >
+                  <Link
+                    href="#"
+                    onClick={() => {
+                      setNavbar(!navbar);
+                      setSelectedNavItem("home");
+                    }}
+                  >
                     Home
                   </Link>
                 </li>
 
-                <li className={`
+                <li
+                  className={`
                   pb-2 
                   text-xl 
                   text-white 
@@ -94,17 +110,26 @@ function NavBar() {
                   border-purple-600  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
-                  ${selectedNavItem === 'about' ? "md:border-b-1" : "md:border-b-0"}
-                `}>
-                  <Link href="#about" onClick={() => { 
-                    setNavbar(!navbar)
-                    setSelectedNavItem('about')
-                  }}>
+                  ${
+                    selectedNavItem === "about"
+                      ? "md:border-b-1"
+                      : "md:border-b-0"
+                  }
+                `}
+                >
+                  <Link
+                    href="#about"
+                    onClick={() => {
+                      setNavbar(!navbar);
+                      setSelectedNavItem("about");
+                    }}
+                  >
                     About
                   </Link>
                 </li>
 
-                <li className={`
+                <li
+                  className={`
                   pb-2 
                   text-xl 
                   text-white 
@@ -116,17 +141,26 @@ function NavBar() {
                   border-purple-600  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
-                  ${selectedNavItem === 'services' ? "md:border-b-1" : "md:border-b-0"}
-                `}>
-                  <Link href="#services" onClick={() => { 
-                    setNavbar(!navbar)
-                    setSelectedNavItem('services')
-                  }}>
+                  ${
+                    selectedNavItem === "services"
+                      ? "md:border-b-1"
+                      : "md:border-b-0"
+                  }
+                `}
+                >
+                  <Link
+                    href="#services"
+                    onClick={() => {
+                      setNavbar(!navbar);
+                      setSelectedNavItem("services");
+                    }}
+                  >
                     Services
                   </Link>
                 </li>
 
-                <li className={`
+                <li
+                  className={`
                   pb-2 
                   text-xl 
                   text-white 
@@ -138,12 +172,20 @@ function NavBar() {
                   border-purple-600  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
-                  ${selectedNavItem === 'contact' ? "md:border-b-1" : "md:border-b-0"}
-                `}>
-                  <Link href="#contact" onClick={() => { 
-                    setNavbar(!navbar)
-                    setSelectedNavItem('contact')
-                  }}>
+                  ${
+                    selectedNavItem === "contact"
+                      ? "md:border-b-1"
+                      : "md:border-b-0"
+                  }
+                `}
+                >
+                  <Link
+                    href="#contact"
+                    onClick={() => {
+                      setNavbar(!navbar);
+                      setSelectedNavItem("contact");
+                    }}
+                  >
                     Contact
                   </Link>
                 </li>

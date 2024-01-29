@@ -1,6 +1,9 @@
+// Importaciones necesarias
 import React from "react";
 import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
+import Atropos from "atropos/react";
+import "atropos/atropos.css";
 
 type ServiceCardProps = {
   Icon: IconType;
@@ -13,18 +16,37 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   title,
   description,
 }) => (
-  <div className="group perspective">
-    <div className="transform transition-transform duration-500 ease-in-out preserve-3d card-inner">
-      <div className="flex flex-col items-center justify-center h-full p-6 text-white bg-gray-800 rounded-lg shadow-xl group-hover:rotate-y-10 group-hover:rotate-x-10">
-        <Icon className="mb-2 text-4xl" />
+  <Atropos className="my-atropos" shadow={false}>
+    <div className="atropos-inner">
+      <div
+        className="flex flex-col items-center justify-center h-full p-6 rounded-lg shadow-xl"
+        style={{
+          backgroundColor: "white",
+          color: "black",
+          border: "1px solid orange",
+        }}
+      >
+        <div
+          style={{
+            backgroundColor: "orange",
+            borderRadius: "50%",
+            width: "80px",
+            height: "80px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon className="text-4xl text-black" />
+        </div>
         <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-        <p className="text-sm text-gray-400">{description}</p>
-        <a href="#" className="mt-4 text-sm text-gray-300 hover:underline">
+        <p className="text-sm">{description}</p>
+        <a href="#" className="mt-4 text-sm hover:underline">
           Learn more
         </a>
       </div>
     </div>
-  </div>
+  </Atropos>
 );
 
 const Services = () => {
@@ -33,8 +55,11 @@ const Services = () => {
       id="services"
       className="py-12 mt-20 flex justify-center items-center min-h-screen bg-black"
     >
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center text-white mb-12">
+      <div className="container mx-auto px-4 mt-20">
+        <h2
+          className="text-3xl text-center text-white mb-12 text-pop"
+          style={{ fontFamily: '"Press Start 2P", cursive' }}
+        >
           My Services
         </h2>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-3">

@@ -4,12 +4,30 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        {/* Añade el enlace a la fuente "GamerFont" de Google Fonts aquí */}
         <link
           href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
           rel="stylesheet"
         />
-        {/* Sustituye "Press Start 2P" con el nombre de tu fuente de estilo "gamer" */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Barlow&display=swap"
+          rel="stylesheet"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Sixtyfour&display=swap"
+          rel="stylesheet"
+        />
       </Head>
       <body>
         <Main />

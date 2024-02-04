@@ -181,3 +181,15 @@ body {
     @apply opacity-20;
   }
 }
+
+.font-barlow {
+  font-family: "Barlow", sans-serif;
+  font-style: italic;
+  text-align: left;
+}
+
+.font-sixtyfour {
+  font-family: "Sixtyfour", sans-serif;
+  font-size: 12px;
+  text-align: left;
+}

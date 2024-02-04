@@ -30,29 +30,33 @@ const About = () => {
           <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start">
             {/* Experience Box */}
             <div className="flex-1 card-inner">
-              <div className="p-4 border border-gray-400 rounded shadow-lg text-center ">
-                <FaBriefcase className="inline-block mb-2 text-xl text-center" />
-                <h3 className="text-lg font-semibold">Experience</h3>
-                <p className="text-gray-300">2+ years Frontend Development</p>
-                <p className="text-gray-300">
-                  1+ years Backend Development and Databases
-                </p>
+              <div className="border-2 border-dashed white p-4 border-solid-gray-400 rounded-lg shadow-lg text-center ">
+                <FaBriefcase className="inline-block mb-2 text-xl text-center " />
+                <h3 className="gamer-font text-lg font-semibold text-white  ">
+                  Experience
+                </h3>
+                <ul className="font-sixtyfour text-white list-disc pl-5">
+                  <li>2+ years Frontend Development</li>
+                  <li>1+ years Backend Development and Databases</li>
+                </ul>
               </div>
             </div>
 
             {/* Education Box */}
             <div className="flex-1 card-inner">
-              <div className="p-4 border border-gray-400 rounded shadow-lg text-center">
+              <div className="border-2 border-dashed white p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
                 <FaGraduationCap className="inline-block mb-2 text-xl" />
-                <h3 className="text-lg font-semibold">Education</h3>
-                <p className="text-gray-300">Universidad Nacional de Quilmes</p>
-                <p className="text-gray-300">
-                  Degree in computer science, Currently studying
-                </p>
+                <h3 className="gamer-font text-lg font-semibold text-white ">
+                  Education
+                </h3>
+                <ul className="font-sixtyfour text-white list-disc pl-5">
+                  <li>UNQUI (Argentina, Buenos Aires)</li>
+                  <li>Degree in computer science, Currently studying</li>
+                </ul>
               </div>
             </div>
           </div>
-          <p className="text-gray-300 mt-6 text-center md:text-left">
+          <p className="font-barlow text-gray-300 mt-6 text-center md:text-left">
             Hello! I&apos;m a driven Junior Frontend Developer, skilled in
             Next.js, Node.js, C#, .NET, and full-stack fundamentals. With
             expertise in databases like MySQL and PostgreSQL and a proficiency
@@ -69,7 +73,7 @@ const About = () => {
       <div className="mb-4" style={{ overflow: "hidden" }}>
         <svg
           preserveAspectRatio="none"
-          viewBox="0 0 1200 120"
+          viewBox="0 0 1200 180"
           xmlns="http://www.w3.org/2000/svg"
           style={{
             fill: "#ffffff",

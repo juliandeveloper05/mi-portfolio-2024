@@ -1,41 +1,14 @@
-import { useState, useEffect } from "react";
 import { Url } from "next/dist/shared/lib/router/router";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
-import { TailSpin } from "react-loader-spinner";
 
 const Profile = () => {
-  const [loading, setLoading] = useState(true);
-
   const router = useRouter();
 
   const navigateTo = (path: Url) => {
     router.push(path);
   };
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 500);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  if (loading) {
-    return (
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh",
-        }}
-      >
-        <TailSpin color="#4fa94d" height={80} width={80} />
-      </div>
-    );
-  }
 
   return (
     <>

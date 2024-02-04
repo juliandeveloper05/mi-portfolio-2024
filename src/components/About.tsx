@@ -56,7 +56,7 @@ const About = () => {
               </div>
             </div>
           </div>
-          <p className="font-barlow text-gray-300 mt-6 text-center md:text-left">
+          <p className="font-barlow text-gray-300 mt-6 text-center md:text-left blur-out-description-about ">
             Hello! I&apos;m a driven Junior Frontend Developer, skilled in
             Next.js, Node.js, C#, .NET, and full-stack fundamentals. With
             expertise in databases like MySQL and PostgreSQL and a proficiency

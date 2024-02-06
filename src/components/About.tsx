@@ -1,11 +1,20 @@
-import React from "react";
-import Image from "next/image";
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import React from "react"
+import Image from "next/image"
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa"
 
 const About = () => {
   return (
-    <section id="about" className="bg-black py-20 text-white mb-20">
-      <div className="container mx-auto flex flex-col items-center px-4 md:flex-row relative top-12">
+    <section 
+      id="about" 
+      className="
+        min-h-screen
+        flex 
+        flex-col 
+        justify-center
+        bg-black 
+        text-white
+      ">
+      <div className="container min-h-[50em] mx-auto flex flex-col items-center px-4 md:flex-row ">
         <div className="mb-10 md:mb-0 md:w-1/3 flex justify-center md:justify-start">
           <Image
             className="rounded-full profile-image"
@@ -23,40 +32,45 @@ const About = () => {
         >
           <h2
             className="text-3xl  text-center text-white mb-4  text-pop"
-            style={{ fontFamily: '"Press Start 2P", cursive' }}
+            // style={{ fontFamily: '"Press Start 2P", cursive' }}
           >
             About Me
           </h2>
-          <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start text-lg">
             {/* Experience Box */}
             <div className="flex-1 card-inner">
-              <div className="border-2 border-dashed white p-4 border-solid-gray-400 rounded-lg shadow-lg text-center ">
-                <FaBriefcase className="inline-block mb-2 text-xl text-center " />
-                <h3 className="gamer-font text-lg font-semibold text-white  ">
-                  Experience
-                </h3>
-                <ul className="font-sixtyfour text-white list-disc pl-5">
-                  <li>2+ years Frontend Development</li>
-                  <li>1+ years Backend Development and Databases</li>
-                </ul>
+              <div className="border-2 border-dashed p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
+                <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%]">
+                  <FaBriefcase className="inline-block mb-2 text-xl text-center " />
+                  <h3 className="gamer-font text-lg font-semibold">
+                    Experience
+                  </h3>
+                  <ul className="font-sixtyfour list-disc pl-5">
+                    <li>2+ years Frontend Development</li>
+                    <li>1+ years Backend Development and Databases</li>
+                  </ul>
+                </div>
               </div>
             </div>
 
             {/* Education Box */}
             <div className="flex-1 card-inner">
-              <div className="border-2 border-dashed white p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
-                <FaGraduationCap className="inline-block mb-2 text-xl" />
-                <h3 className="gamer-font text-lg font-semibold text-white ">
-                  Education
-                </h3>
-                <ul className="font-sixtyfour text-white list-disc pl-5">
-                  <li>UNQUI (Argentina, Buenos Aires)</li>
-                  <li>Degree in computer science, Currently studying</li>
-                </ul>
+              <div className="border-2 border-dashed p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
+                <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%]">
+                  <FaGraduationCap className="inline-block mb-2 text-xl" />
+                  <h3 className="gamer-font text-lg font-semibold">
+                    Education
+                  </h3>
+                  <ul className="font-sixtyfour list-disc pl-5">
+                    <li>UNQUI (Argentina, Buenos Aires)</li>
+                    <li>Degree in computer science, Currently studying</li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>
-          <p className="font-barlow text-gray-300 mt-6 text-center md:text-left blur-out-description-about ">
+
+          <p className="text-gray-300 mt-6 text-center md:text-left text-xl">
             Hello! I&apos;m a driven Junior Frontend Developer, skilled in
             Next.js, Node.js, C#, .NET, and full-stack fundamentals. With
             expertise in databases like MySQL and PostgreSQL and a proficiency
@@ -70,7 +84,7 @@ const About = () => {
       </div>
 
       {/* Page Divider */}
-      <div className="mb-4" style={{ overflow: "hidden" }}>
+      <div className="mb-4 min-h-20" style={{ overflow: "hidden" }}>
         <svg
           preserveAspectRatio="none"
           viewBox="0 0 1200 180"

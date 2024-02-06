@@ -1,7 +1,7 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
+import { Link } from 'react-scroll'
 
 function NavBar() {
   const navStyle = {
@@ -21,33 +21,12 @@ function NavBar() {
 
   return (
     <div>
-      {/* <nav className="flex justify-between items-center py-6">
-        <div className="text-2xl font-bold"></div>
-        <ul className="flex gap-8 list-none text-lg">
-          <li
-            className="cursor-pointer"
-            onClick={() => navigateTo("#about")}
-          ></li>
-          <li
-            className="cursor-pointer"
-            onClick={() => navigateTo("#services")}
-          ></li>
-          <li
-            className="cursor-pointer"
-            onClick={() => navigateTo("#projects")}
-          ></li>
-          <li
-            className="cursor-pointer"
-            onClick={() => navigateTo("#contact")}
-          ></li>
-        </ul>
-      </nav> */}
       <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
         <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
           <div>
             <div className="flex items-center justify-between py-3 md:py-5 md:block">
               {/* LOGO */}
-              <Link href="/">
+              <Link to="#" href="/">
                 <Image
                   className="website-logo"
                   src="/newlogo.png"
@@ -55,9 +34,6 @@ function NavBar() {
                   width={60}
                   height={60}
                 />
-              </Link>
-              <Link href="/">
-                <h2 className="text-2xl text-cyan-600 font-bold "> </h2>
               </Link>
 
               {/* HAMBURGER BUTTON FOR MOBILE */}
@@ -98,8 +74,12 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link
-                    href="#"
+                  <Link 
+                    activeClass="active" 
+                    to="profile" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={800}
                     onClick={() => {
                       setNavbar(!navbar);
                       setSelectedNavItem("home");
@@ -129,8 +109,12 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link
-                    href="#about"
+                  <Link 
+                    activeClass="active" 
+                    to="about" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={800}
                     onClick={() => {
                       setNavbar(!navbar);
                       setSelectedNavItem("about");
@@ -160,8 +144,12 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link
-                    href="#services"
+                  <Link 
+                    activeClass="active" 
+                    to="services" 
+                    spy={true} 
+                    smooth={true}
+                    duration={800}
                     onClick={() => {
                       setNavbar(!navbar);
                       setSelectedNavItem("services");
@@ -191,8 +179,12 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link
-                    href="#contact"
+                  <Link 
+                    activeClass="active" 
+                    to="contact" 
+                    spy={true} 
+                    smooth={true} 
+                    duration={800}
                     onClick={() => {
                       setNavbar(!navbar);
                       setSelectedNavItem("contact");

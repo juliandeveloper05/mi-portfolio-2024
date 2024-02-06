@@ -15,13 +15,12 @@ const Profile = () => {
       <section
         id="profile"
         className="
+          min-h-screen
           flex 
           flex-col 
           md:flex-row 
           justify-center 
-          items-center 
-          py-20
-          my-28
+          items-center
         "
       >
         <div className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end">

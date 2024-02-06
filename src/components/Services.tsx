@@ -58,7 +58,7 @@ const Services = () => {
       <div className="container mx-auto px-4 mt-20">
         <h2
           className="text-3xl text-center text-white mb-12 text-pop"
-          style={{ fontFamily: '"Press Start 2P", cursive' }}
+          // style={{ fontFamily: '"Press Start 2P", cursive' }}
         >
           My Services
         </h2>

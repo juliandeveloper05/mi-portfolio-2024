@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from 'react-scroll'
+import { Link } from "react-scroll";
 
 function NavBar() {
   const navStyle = {
@@ -74,11 +74,11 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link 
-                    activeClass="active" 
-                    to="profile" 
-                    spy={true} 
-                    smooth={true} 
+                  <Link
+                    activeClass="active"
+                    to="profile"
+                    spy={true}
+                    smooth={true}
                     duration={800}
                     onClick={() => {
                       setNavbar(!navbar);
@@ -109,11 +109,11 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link 
-                    activeClass="active" 
-                    to="about" 
-                    spy={true} 
-                    smooth={true} 
+                  <Link
+                    activeClass="active"
+                    to="about"
+                    spy={true}
+                    smooth={true}
                     duration={800}
                     onClick={() => {
                       setNavbar(!navbar);
@@ -144,10 +144,10 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link 
-                    activeClass="active" 
-                    to="services" 
-                    spy={true} 
+                  <Link
+                    activeClass="active"
+                    to="services"
+                    spy={true}
                     smooth={true}
                     duration={800}
                     onClick={() => {
@@ -179,11 +179,11 @@ function NavBar() {
                   }
                 `}
                 >
-                  <Link 
-                    activeClass="active" 
-                    to="contact" 
-                    spy={true} 
-                    smooth={true} 
+                  <Link
+                    activeClass="active"
+                    to="contact"
+                    spy={true}
+                    smooth={true}
                     duration={800}
                     onClick={() => {
                       setNavbar(!navbar);

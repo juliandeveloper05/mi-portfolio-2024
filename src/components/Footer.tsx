@@ -1,21 +1,84 @@
-import Socials from "./Socials";
+import React from "react";
+import { BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
+import { FaWhatsapp } from "react-icons/fa";
+import {
+  Container,
+  Logo,
+  SocialIconLink,
+  SocialIcons,
+  WebsiteRights,
+  Wrapper,
+} from "./FooterElements";
 
-const Footer = () => {
+/* 
+A TENER EN CUENTA: CADA VEZ QUE ARREGLO O SUMO ALGO DEL CODIGO 
+EL FOOTER COMIENZA A ROMPERSE. 
+PARA SOLUCIONARLO HAY QUE PONER DE NUEVO NPM RUN DEV.
+Keep in mind: Every time I fix or add something in the code,
+ the footer starts to break. To solve it, you have to run npm run dev again.
+*/
+
+type Props = {};
+
+const Footer = (props: Props) => {
+  const numeroDeTelefono = "+5491130666369";
+
+  const enlaceDeWhatsapp = `https://wa.me/${numeroDeTelefono}`;
+
   return (
-    <footer className="bg-secondary py-12">
-      <div className="container mx-auto">
-        <div className="flex flex-col items-center justify-between">
-          <Socials
-            containerStyles="flex gap-x-6 mx-auto xl:mx-0 mb-4"
-            iconsStyles=" social-icon-footer"
-          />
+    <Container
+      style={{
+        backgroundColor: "black",
+        height: "5px",
+        boxShadow: "0px 0px 10px 5px rgba(255, 255, 255, 0.3)",
+      }}
+    >
+      <Wrapper>
+        <Logo className="text-pop" href="/">
+          Julian Soto
+        </Logo>
 
-          <div className="text-muted-foreground">
-            Copyright &copy; Julian Javier Soto. All rights reserved.
-          </div>
-        </div>
-      </div>
-    </footer>
+        <WebsiteRights>
+          Copyright &copy; Julian Javier Soto {""}
+          {new Date().getFullYear()}
+        </WebsiteRights>
+
+        <SocialIcons>
+          <SocialIconLink
+            href="//https://www.linkedin.com/in/full-stack-julian-soto/"
+            target="_blank"
+            aria-label="Linkedin"
+            className="text-pop"
+          >
+            <BsLinkedin />
+          </SocialIconLink>
+          <SocialIconLink
+            href="//https://www.instagram.com/pale_codepunk0101/"
+            target="_blank"
+            aria-label="Instagram"
+            className="text-pop"
+          >
+            <BsInstagram />
+          </SocialIconLink>
+          <SocialIconLink
+            href={enlaceDeWhatsapp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-pop"
+          >
+            <FaWhatsapp />
+          </SocialIconLink>
+          <SocialIconLink
+            href="//www.yotube.com"
+            target="_blank"
+            aria-label="Youtube"
+            className="text-pop"
+          >
+            <BsYoutube />
+          </SocialIconLink>
+        </SocialIcons>
+      </Wrapper>
+    </Container>
   );
 };
 

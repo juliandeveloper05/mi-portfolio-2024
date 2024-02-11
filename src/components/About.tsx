@@ -1,11 +1,11 @@
-import React from "react"
-import Image from "next/image"
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa"
+import React from "react";
+import Image from "next/image";
+import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 
 const About = () => {
   return (
-    <section 
-      id="about" 
+    <section
+      id="about"
       className="
         min-h-screen
         flex 
@@ -13,11 +13,12 @@ const About = () => {
         justify-center
         bg-black 
         text-white
-      ">
+      "
+    >
       <div className="container min-h-[50em] mx-auto flex flex-col items-center px-4 md:flex-row ">
-        <div className="mb-10 md:mb-0 md:w-1/3 flex justify-center md:justify-start">
+        <div className="mb-10 md:mb-0 md:w-1/3 flex justify-center md:justify-start ">
           <Image
-            className="rounded-full profile-image"
+            className="rounded-full extra"
             src="/foto4.jpeg"
             alt="Profile"
             width={300}

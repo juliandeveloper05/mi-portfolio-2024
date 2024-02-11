@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, PropsWithChildren } from "react";
 import Transition from "../components/Transition"; // Asegúrate de que la ruta es correcta
 import Navbar from "@/components/Navbar";
 import Profile from "../components/Profile";
@@ -6,13 +6,21 @@ import About from "../components/About";
 import Services from "../components/Services";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
-import localFont from 'next/font/local'
- 
+import localFont from "next/font/local";
+import { useRouter } from "next/router";
+
 // Font files can be colocated inside of `pages`
-const myFont = localFont({ src: './font/ClashDisplay-Variable.ttf' })
+const myFont = localFont({ src: "./font/ClashDisplay-Variable.ttf" });
 // const myFont = localFont({ src: './font/Livemono-Regular.ttf' })
 
-const Home = () => {
+const Home = ({ children }: PropsWithChildren) => {
+  const router = useRouter();
+  let showFooter = true;
+
+  if (router.pathname === "/login") {
+    showFooter = false;
+  }
+
   const [showTransition, setShowTransition] = useState(true);
 
   useEffect(() => {
@@ -29,13 +37,14 @@ const Home = () => {
     <div>
       {showTransition && <Transition />}
       <main className={myFont.className}>
+        {children}
         <Navbar />
         <Profile />
         <About />
         <Services />
         <Contact />
       </main>
-      <Footer />
+      <div className={myFont.className}> {showFooter && <Footer />}</div>
     </div>
   );
 };

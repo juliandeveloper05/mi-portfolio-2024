@@ -16,7 +16,7 @@ const About = () => {
       "
     >
       <div className="container min-h-[50em] mx-auto flex flex-col items-center px-4 md:flex-row ">
-        <div className="mb-10 md:mb-0 md:w-1/3 flex justify-center md:justify-start ">
+        <div className=" md:mb-0 md:w-1/3 flex justify-center md:justify-start ">
           <Image
             className="rounded-full extra"
             src="/foto4.jpeg"

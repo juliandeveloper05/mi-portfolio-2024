@@ -4,7 +4,7 @@ import Navbar from "@/components/Navbar";
 import Profile from "../components/Profile";
 import About from "../components/About";
 import Services from "../components/Services";
-import Contact from "../components/Contact";
+import ContactPage from "../components/ContactPage";
 import Footer from "../components/Footer";
 import localFont from "next/font/local";
 import { useRouter } from "next/router";
@@ -42,8 +42,10 @@ const Home = ({ children }: PropsWithChildren) => {
         <Profile />
         <About />
         <Services />
-        <Contact />
+        <ContactPage />
+        <div className="mb-16"></div>
       </main>
+
       <div className={myFont.className}> {showFooter && <Footer />}</div>
     </div>
   );

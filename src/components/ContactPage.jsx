@@ -101,7 +101,7 @@ const ContactPage = () => {
             <span className="text-black">Regards</span>
             <button
               type="submit"
-              className="bg-purple-200 rounded font-semibold text-gray-600 p-4"
+              className="bg-purple-200 rounded font-semibold text-gray-600 p-4 palebutton"
             >
               Send
             </button>

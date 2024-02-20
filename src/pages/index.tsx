@@ -10,17 +10,16 @@ import localFont from "next/font/local";
 import { useRouter } from "next/router";
 
 // Font files can be colocated inside of `pages`
-const myFont = localFont({ src: "./font/ClashDisplay-Variable.ttf" });
+// const myFont = localFont({ src: "./font/ClashDisplay-Variable.ttf" });
 // const myFont = localFont({ src: './font/Livemono-Regular.ttf' })
+import { Poppins } from 'next/font/google'
+
+const myFont = Poppins({ 
+  weight: '400',
+  subsets: ['latin'] 
+})
 
 const Home = ({ children }: PropsWithChildren) => {
-  const router = useRouter();
-  let showFooter = true;
-
-  if (router.pathname === "/login") {
-    showFooter = false;
-  }
-
   const [showTransition, setShowTransition] = useState(true);
 
   useEffect(() => {
@@ -44,9 +43,8 @@ const Home = ({ children }: PropsWithChildren) => {
         <Services />
         <ContactPage />
         <div className="mb-16"></div>
+        <Footer />
       </main>
-
-      <div className={myFont.className}> {showFooter && <Footer />}</div>
     </div>
   );
 };

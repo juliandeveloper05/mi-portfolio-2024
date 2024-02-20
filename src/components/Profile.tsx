@@ -2,6 +2,22 @@ import { Url } from "next/dist/shared/lib/router/router";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import styled from "styled-components";
+
+const HelloText = styled.p`
+  font-family: "Montserrat", Sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 12px;
+`
+
+const ProfessionalText = styled.p`
+  font-size: 22px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+`
 
 const Profile = () => {
   const router = useRouter();
@@ -16,31 +32,33 @@ const Profile = () => {
         id="profile"
         className="
           min-h-screen
-          flex 
-          flex-col 
-          md:flex-row 
-          justify-center 
+          flex
+          flex-col
+          md:flex-row
+          justify-center
           items-center
         "
       >
         <div className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end">
           <div
             className="
-            rounded-full 
-            overflow-hidden 
-            w-[200px] 
-            h-[200px] 
-            md:w-[300px] 
-            md:h-[300px] 
-            lg:w-[400px] 
-            lg:h-[400px] 
-            relative 
-            shadow-lg 
+            rounded-full
+            overflow-hidden
+            w-[200px]
+            h-[200px]
+            md:w-[400px]
+            md:h-[400px]
+            lg:w-[500px]
+            lg:h-[500px]
+            xl:w-[600px]
+            xl:h-[600px]
+            relative
+            shadow-lg
             profile-image
           "
           >
             <Image
-              src="/hero-image.jpg"
+              src="/profile-2.jpg"
               alt="Imagen de perfil"
               layout="fill"
               className="object-cover"
@@ -48,32 +66,32 @@ const Profile = () => {
           </div>
         </div>
         <div className="flex sm:w-2/4 justify-center sm:justify-center md:justify-start sm:ml-6">
-          <div className="text-center mt-4 md:mt-0 w-max sm:w-full md:w-full lg:w-2/3">
-            <p className="text-xl font-semibold mb-2">Hello, I&apos;m</p>
+          <div className="text-center mt-4 md:mt-8 w-max sm:w-full md:w-full lg:w-2/3 flex flex-col gap-3">
+            <HelloText className="mb-2">Hello, I&apos;m</HelloText>
             <div className="flex w-full justify-center text-center">
-              <h1 className="typewriter-name text-6xl font-bold palenque-style">
+              <h1 className="typewriter-name text-4xl md:text-6xl font-bold palenque-style">
                 Julian Soto
               </h1>
             </div>
-            <p className="text-2xl my-4 text-pop">Frontend Developer Junior</p>
+            <ProfessionalText className="my-2 text-pop">Frontend Developer Jr.</ProfessionalText>
 
             <div className="flex flex-col w-full justify-center gap-4">
               <div className="flex justify-center gap-2">
                 <button
                   className="
-                    px-1 
-                    py-1 
-                    sm:w-fit 
-                    rounded-full 
-                    bg-gradient-to-br 
-                    from-green-500 
-                    via-teal-500 
-                    to-blue-500 
-                    hover:bg-slate-700 
-                    text-white 
-                    transition-transform 
-                    duration-300 
-                    transform 
+                    px-1
+                    py-1
+                    sm:w-fit
+                    rounded-full
+                    bg-gradient-to-br
+                    from-green-500
+                    via-teal-500
+                    to-blue-500
+                    hover:bg-slate-700
+                    text-white
+                    transition-transform
+                    duration-300
+                    transform
                     hover:scale-105
                   "
                   onClick={() => window.open("/cv.pdf")}
@@ -83,7 +101,7 @@ const Profile = () => {
                   </span>
                 </button>
                 <button
-                  className="px-6 
+                  className="px-6
                     py-3
                     sm:w-fit
                     rounded-full

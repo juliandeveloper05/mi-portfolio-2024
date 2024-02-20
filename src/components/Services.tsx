@@ -33,13 +33,13 @@ const Services = () => {
   return (
     <section
       id="services"
-      className="py-12 mt-20 flex justify-center items-center min-h-screen bg-black"
+      className="flex flex-col justify-center min-h-[60em] bg-black"
     >
       <div className="container mx-auto px-4 mt-20">
         <h2 className="text-3xl text-center text-white mb-12 text-pop">
           My Services
         </h2>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
           <ServiceCard
             Icon={FaCode}
             title="Web Design"

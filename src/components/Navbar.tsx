@@ -63,8 +63,8 @@ function NavBar() {
                   md:px-6 
                   text-center 
                   border-b-2 
-                  hover:bg-purple-600  
-                  border-purple-600  
+                  hover:bg-purple-800
+                  border-purple-800  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
                   ${
@@ -98,8 +98,8 @@ function NavBar() {
                   md:px-6 
                   text-center 
                   border-b-2 
-                  hover:bg-purple-600  
-                  border-purple-600  
+                  hover:bg-purple-800
+                  border-purple-800  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
                   ${
@@ -133,8 +133,8 @@ function NavBar() {
                   md:px-6 
                   text-center 
                   border-b-2 
-                  hover:bg-purple-600  
-                  border-purple-600  
+                  hover:bg-purple-800  
+                  border-purple-800  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
                   ${
@@ -168,8 +168,8 @@ function NavBar() {
                   md:px-6 
                   text-center 
                   border-b-2 
-                  hover:bg-purple-600  
-                  border-purple-600  
+                  hover:bg-purple-800  
+                  border-purple-800  
                   md:hover:text-purple-400 
                   md:hover:bg-transparent
                   ${

@@ -20,7 +20,7 @@ Keep in mind: Every time I fix or add something in the code,
 
 type Props = {};
 
-const Footer = (props: Props) => {
+const Footer = ({}) => {
   const numeroDeTelefono = "+5491130666369";
 
   const enlaceDeWhatsapp = `https://wa.me/${numeroDeTelefono}`;

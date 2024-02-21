@@ -10,14 +10,14 @@ const HelloText = styled.p`
   font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 12px;
-`
+`;
 
 const ProfessionalText = styled.p`
   font-size: 22px;
   font-weight: 900;
   text-transform: uppercase;
   letter-spacing: 3px;
-`
+`;
 
 const Profile = () => {
   const router = useRouter();
@@ -61,7 +61,7 @@ const Profile = () => {
               src="/profile-2.jpg"
               alt="Imagen de perfil"
               layout="fill"
-              className="object-cover"
+              className="object-cover "
             />
           </div>
         </div>
@@ -73,7 +73,9 @@ const Profile = () => {
                 Julian Soto
               </h1>
             </div>
-            <ProfessionalText className="my-2 text-pop">Frontend Developer Jr.</ProfessionalText>
+            <ProfessionalText className="my-2 text-pop">
+              Frontend Developer Jr.
+            </ProfessionalText>
 
             <div className="flex flex-col w-full justify-center gap-4">
               <div className="flex justify-center gap-2">

@@ -22,7 +22,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <div className="content">
           <h2>{title}</h2>
           <p>{description}</p>
-          <a href="#">Learn more</a>
+          {/*<a href="#">Learn more</a>*/}
         </div>
       </div>
     </div>

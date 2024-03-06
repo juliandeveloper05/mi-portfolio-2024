@@ -1,9 +1,14 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
   compiler: {
     styledComponents: true,
-  }
-}
+  },
+  i18n: {
+    // Estas son todas las configuraciones de locales que deseas admitir en tu aplicación
+    locales: ["en", "es"], // Añade aquí los locales que necesites
+    // Este es el locale predeterminado que deseas que se use cuando se visite una ruta sin prefijo de locale, como `/hello`
+    defaultLocale: "en",
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

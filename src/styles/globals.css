@@ -527,9 +527,3 @@ body {
   opacity: 1;
   animation: animate 8s linear infinite;
 }
-
-@media (max-width: 740px) {
-  .my-atropos {
-    display: none;
-  }
-}

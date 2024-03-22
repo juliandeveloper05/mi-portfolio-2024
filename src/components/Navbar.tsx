@@ -5,35 +5,10 @@ import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
 
-// Define las traducciones en un objeto
-const translations = {
-  en: {
-    welcome: "Welcome",
-    about: "About",
-    services: "Services",
-    contact: "Contact",
-    // Otras traducciones en inglés...
-  },
-  es: {
-    welcome: "Bienvenido",
-    about: "Acerca de",
-    services: "Servicios",
-    contact: "Contacto",
-    // Otras traducciones en español...
-  },
-  // Puedes agregar más idiomas aquí si es necesario
-};
-
-// Configura i18next con las traducciones
-i18next.init({
-  lng: "en", // Idioma predeterminado
-  resources: translations,
-});
-
 const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
   const [selectedNavItem, setSelectedNavItem] = useState("home");
-  const { t } = useTranslation("navbar");
+  const { t, i18n } = useTranslation("navbar");
 
   const handleNavLinkClick = (navItem: string) => {
     setNavbar(false);
@@ -42,7 +17,8 @@ const NavBar: React.FC = () => {
 
   const changeLanguage = (lang: string) => {
     console.log("Changing language to:", lang);
-    i18next.changeLanguage(lang);
+    i18n.changeLanguage(lang);
+    console.log(t('profile'))
   };
 
   return (
@@ -78,7 +54,7 @@ const NavBar: React.FC = () => {
             <ul className="h-screen md:h-auto items-center justify-center md:flex gap-1">
               <NavItem
                 selectedNavItem={selectedNavItem}
-                navItem="home"
+                navItem="profile"
                 handleNavLinkClick={handleNavLinkClick}
                 t={t}
               />
@@ -142,7 +118,7 @@ const NavItem: React.FC<NavItemProps> = ({
         md:hover:text-purple-400 
         md:hover:bg-transparent
         ${
-          activeClass === "active" || (activeClass === "" && navItem === "home")
+          activeClass === "active"
             ? "md:border-b-1"
             : "md:border-b-0"
         }

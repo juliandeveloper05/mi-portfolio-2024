@@ -6,8 +6,8 @@ import About from "../components/About";
 import Services from "../components/Services";
 import ContactPage from "../components/ContactPage";
 import Footer from "../components/Footer";
-import localFont from "next/font/local";
-import { useRouter } from "next/router";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import i18next from "i18next";
 
 // Font files can be colocated inside of `pages`
 // const myFont = localFont({ src: "./font/ClashDisplay-Variable.ttf" });
@@ -17,6 +17,23 @@ import { Poppins } from 'next/font/google'
 const myFont = Poppins({ 
   weight: '400',
   subsets: ['latin'] 
+})
+
+export async function getStaticProps({ locale } : { locale: any }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, [
+        'navbar',
+        'profile',
+      ])),
+      // Will be passed to the page component as props
+    },
+  }
+}
+
+// Configura i18next con las traducciones
+i18next.init({
+  lng: "es", // Idioma predeterminado
 })
 
 const Home = ({ children }: PropsWithChildren) => {

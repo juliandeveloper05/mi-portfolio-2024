@@ -527,3 +527,26 @@ body {
   opacity: 1;
   animation: animate 8s linear infinite;
 }
+
+/**/
+
+#button-lang,
+#button-lang-2 {
+  background-color: #4a90e2; /* Color de fondo azul */
+  color: #ffffff; /* Color de texto blanco */
+  font-weight: bold; /* Texto en negrita */
+  padding: 8px 16px; /* Relleno */
+  border: none; /* Sin borde */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+}
+
+#button-lang:hover,
+#button-lang-2:hover {
+  background-color: #357ebd; /* Color de fondo azul más oscuro al pasar el ratón */
+}
+
+#button-lang + #button-lang,
+#button-lang-2 + #button-lang-2 {
+  margin-left: 8px; /* Añade un espacio entre los botones */
+}

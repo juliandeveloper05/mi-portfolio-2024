@@ -1,3 +1,6 @@
 {
-  "salute": "Hello, I'm"
+  "hello_text": "Hello, I'm",
+  "professional_text": "Frontend Developer Jr.",
+  "button1": "Download CV",
+  "button2": "Hi, Hire Me !"
 }

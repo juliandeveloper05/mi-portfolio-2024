@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import i18next from "i18next";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
+import { motion } from "framer-motion";
 
 const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
@@ -18,14 +18,43 @@ const NavBar: React.FC = () => {
   const changeLanguage = (lang: string) => {
     console.log("Changing language to:", lang);
     i18n.changeLanguage(lang);
-    console.log(t('profile'))
   };
+
+  interface ButtonProps {
+    onClick: () => void;
+    isActive?: boolean; // La propiedad isActive es opcional
+    children: React.ReactNode;
+  }
+
+  const Button = ({ onClick, children }: ButtonProps) => (
+    <motion.button
+      onClick={onClick}
+      className={`
+      pb-2
+      text-xl
+    text-white
+      py-2
+      md:px-0
+      text-center 
+      px-1 
+      rounded-full 
+      bg-gradient-to-br  
+     
+      items-center
+      justify-center
+      ""
+      }`}
+      whileHover={{ scale: 1.05 }}
+    >
+      {children}
+    </motion.button>
+  );
 
   return (
     <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
-      <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-        <div>
-          <div className="flex items-center justify-between py-3 md:py-5 md:block">
+      <div className="justify-between  mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="  md:w-32 md:h-25 ">
+          <div className="flex items-center justify-between py-3 md:py-5  mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
             <Link to="#" href="/">
               <Image
                 className="website-logo"
@@ -35,7 +64,7 @@ const NavBar: React.FC = () => {
                 height={60}
               />
             </Link>
-            <div className="md:hidden">
+            <div className="md:hidden ">
               <button
                 className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
                 onClick={() => setNavbar(!navbar)}
@@ -51,37 +80,41 @@ const NavBar: React.FC = () => {
               navbar ? "p-12 md:p-0 block" : "hidden"
             }`}
           >
-            <ul className="h-screen md:h-auto items-center justify-center md:flex gap-1">
-              <NavItem
-                selectedNavItem={selectedNavItem}
-                navItem="profile"
-                handleNavLinkClick={handleNavLinkClick}
-                t={t}
-              />
-              <NavItem
-                selectedNavItem={selectedNavItem}
-                navItem="about"
-                handleNavLinkClick={handleNavLinkClick}
-                t={t}
-              />
-              <NavItem
-                selectedNavItem={selectedNavItem}
-                navItem="services"
-                handleNavLinkClick={handleNavLinkClick}
-                t={t}
-              />
-              <NavItem
-                selectedNavItem={selectedNavItem}
-                navItem="contact"
-                handleNavLinkClick={handleNavLinkClick}
-                t={t}
-              />
-            </ul>
+            <div className="flex flex-grow justify-between">
+              <ul className="flex gap-6">
+                <NavItem
+                  selectedNavItem={selectedNavItem}
+                  navItem="profile"
+                  handleNavLinkClick={handleNavLinkClick}
+                  t={t}
+                />
+                <NavItem
+                  selectedNavItem={selectedNavItem}
+                  navItem="about"
+                  handleNavLinkClick={handleNavLinkClick}
+                  t={t}
+                />
+                <NavItem
+                  selectedNavItem={selectedNavItem}
+                  navItem="services"
+                  handleNavLinkClick={handleNavLinkClick}
+                  t={t}
+                />
+                <NavItem
+                  selectedNavItem={selectedNavItem}
+                  navItem="contact"
+                  handleNavLinkClick={handleNavLinkClick}
+                  t={t}
+                />
+              </ul>
+            </div>
           </div>
         </div>
-        <div>
-          <button onClick={() => changeLanguage("en")}>English</button>
-          <button onClick={() => changeLanguage("es")}>Español</button>
+        <div className="">
+          <div className=" pb-2 flex items-center justify-center ">
+            <Button onClick={() => changeLanguage("en")}>English</Button>/
+            <Button onClick={() => changeLanguage("es")}>Español</Button>
+          </div>
         </div>
       </div>
     </nav>
@@ -117,11 +150,7 @@ const NavItem: React.FC<NavItemProps> = ({
         border-purple-800  
         md:hover:text-purple-400 
         md:hover:bg-transparent
-        ${
-          activeClass === "active"
-            ? "md:border-b-1"
-            : "md:border-b-0"
-        }
+        ${activeClass === "active" ? "md:border-b-1" : "md:border-b-0"}
       `}
     >
       <Link

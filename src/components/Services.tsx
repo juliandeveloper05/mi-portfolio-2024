@@ -3,6 +3,7 @@ import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
 import Atropos from "atropos/react";
 import "atropos/atropos.css";
+import { useTranslation } from "next-i18next";
 
 type ServiceCardProps = {
   Icon: IconType;
@@ -30,6 +31,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 );
 
 const Services = () => {
+  const { t } = useTranslation("services");
   return (
     <section
       id="services"
@@ -37,23 +39,23 @@ const Services = () => {
     >
       <div className="container mx-auto px-4 mt-20">
         <h2 className="text-3xl text-center text-white mb-12 text-pop">
-          My Services
+          {t("services1")}
         </h2>
         <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
           <ServiceCard
             Icon={FaCode}
-            title="Web Design"
-            description="Crafting visually appealing and user-centric web designs using the latest technologies. My frontend expertise ensures responsive and dynamic user experiences."
+            title={t("web_design.title")}
+            description={t("web_design.description")}
           />
           <ServiceCard
             Icon={FaPaintBrush}
-            title="UI/UX Design"
-            description="Designing intuitive and impactful user interfaces by focusing on user experience principles. I aim to create seamless and engaging digital journeys."
+            title={t("ui_ux_design.title")}
+            description={t("ui_ux_design.description")}
           />
           <ServiceCard
             Icon={FaMobileAlt}
-            title="App Design"
-            description="Developing innovative app designs that combine functionality with aesthetics. My approach integrates modern design trends with user-friendly layouts."
+            title={t("app_design.title")}
+            description={t("app_design.description")}
           />
         </div>
       </div>

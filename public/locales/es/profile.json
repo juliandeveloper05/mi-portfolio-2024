@@ -1,3 +1,6 @@
 {
-  "salute": "Hola, soy"
+  "hello_text": "Hola, soy",
+  "professional_text": "Programador Frontend",
+  "button1": "Descargar CV",
+  "button2": "Contratame"
 }

@@ -2,12 +2,15 @@ import React from "react";
 import Image from "next/image";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import styled from "styled-components";
+import { useTranslation } from "next-i18next";
 
 const SectionTitle = styled.div`
   font-size: 2rem;
-`
+`;
 
 const About = () => {
+  const { t } = useTranslation("about");
+
   return (
     <section
       id="about"
@@ -31,15 +34,9 @@ const About = () => {
             quality={100}
           />
         </div>
-        <div
-          className={
-            "md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"
-          }
-        >
-          <SectionTitle
-            className="text-3xl text-center text-white text-pop min-h-20"
-          >
-            About Me
+        <div className={"md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"}>
+          <SectionTitle className="text-3xl text-center text-white text-pop min-h-20">
+            {t("about1")}
           </SectionTitle>
 
           <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start text-lg">
@@ -49,11 +46,11 @@ const About = () => {
                 <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%]">
                   <FaBriefcase className="inline-block mb-2 text-2xl text-center " />
                   <h3 className="gamer-font text-xl font-semibold">
-                    Experience
+                    {t("experience1")}
                   </h3>
                   <ul className="font-sixtyfour list-disc pl-5">
-                    <div>2+ years Frontend Development</div>
-                    <div>1+ years Backend Development and Databases</div>
+                    <div>{t("experience2")}</div>
+                    <div>{t("experience3")}</div>
                   </ul>
                 </div>
               </div>
@@ -65,12 +62,12 @@ const About = () => {
                 <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%] w-full">
                   <FaGraduationCap className="inline-block mb-2 text-2xl" />
                   <h3 className="gamer-font text-xl font-semibold">
-                    Education
+                    {t("education1")}
                   </h3>
                   <ul className="font-sixtyfour list-disc pl-5">
-                    <div>UNQUI (Argentina, Buenos Aires)</div>
-                    <div>Degree in computer science</div>
-                    <div>[In progress]</div>
+                    <div>{t("education2")}</div>
+                    <div>{t("education3")}</div>
+                    <div>{t("education4")}</div>
                   </ul>
                 </div>
               </div>
@@ -78,14 +75,7 @@ const About = () => {
           </div>
 
           <p className="text-gray-300 mt-6 text-center md:text-left text-xl">
-            Hello! I&apos;m a driven Junior Frontend Developer, skilled in
-            Next.js, Node.js, C#, .NET, and full-stack fundamentals. With
-            expertise in databases like MySQL and PostgreSQL and a proficiency
-            in CSS, HTML5, and JavaScript, I craft responsive interfaces that
-            prioritize user experience. I am committed to continuous skill
-            enhancement and apply a learner&apos;s mindset to every project. My
-            goal is to deliver efficient, maintainable code, while staying
-            abreast of cutting-edge web technologies.
+            {t("about_description")}
           </p>
         </div>
       </div>

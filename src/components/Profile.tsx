@@ -42,7 +42,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           md:flex-row
           justify-center
           items-center
-          mt-20
+          my-4
           md:mt-1
         "
       >

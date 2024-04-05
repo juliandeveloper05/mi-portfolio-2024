@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
+import DigitalClock from "./DigitalClock";
 
 const HelloText = styled.p`
   font-family: "Montserrat", Sans-serif;
@@ -39,6 +40,8 @@ const Profile = () => {
           md:flex-row
           justify-center
           items-center
+          mt-32
+          md:mt-1
         "
       >
         <div className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end">
@@ -147,6 +150,9 @@ const Profile = () => {
                   <FaGithub size={30} />
                 </a>
               </div>
+            </div>
+            <div className="mt-1 flex justify-center">
+              <DigitalClock />
             </div>
             <div className="flex justify-center gap-4 mt-4"></div>
           </div>

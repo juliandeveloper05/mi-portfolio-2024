@@ -1,6 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { appWithTranslation } from 'next-i18next'
+import { appWithTranslation } from "next-i18next";
+import Head from "next/head";
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -15,9 +16,13 @@ function App({ Component, pageProps }: AppProps) {
             auto !important;
         }
       `}</style> */}
+      <Head>
+        <link rel="icon" href="/newlogo.png" />{" "}
+        {/* Agrega el enlace al ícono de tu logo */}
+      </Head>
       <Component {...pageProps} />
     </>
   );
 }
 
-export default appWithTranslation(App)
+export default appWithTranslation(App);

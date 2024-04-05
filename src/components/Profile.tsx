@@ -44,6 +44,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           items-center
           mt-32
           md:mt-1
+          background-black text-white
         "
       >
         <div className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end">

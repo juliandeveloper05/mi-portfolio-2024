@@ -8,13 +8,11 @@ import { motion } from "framer-motion";
 const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
   const [selectedNavItem, setSelectedNavItem] = useState("home");
-  const [showLanguageButtons, setShowLanguageButtons] = useState(true);
   const { t, i18n } = useTranslation("navbar");
 
   const handleNavLinkClick = (navItem: string) => {
     setNavbar(false);
     setSelectedNavItem(navItem);
-    setShowLanguageButtons(true);
   };
 
   const changeLanguage = (lang: string) => {
@@ -69,10 +67,7 @@ const NavBar: React.FC = () => {
             <div className="md:hidden">
               <button
                 className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => {
-                  setNavbar(!navbar);
-                  setShowLanguageButtons(!navbar);
-                }}
+                onClick={() => setNavbar(!navbar)}
               >
                 {navbar ? <FiX size={30} /> : <FiMenu size={30} />}
               </button>
@@ -108,12 +103,11 @@ const NavBar: React.FC = () => {
           </ul>
         </div>
         <div className="md:flex hidden">
-          {showLanguageButtons && !navbar && (
-            <div className="pb-2 flex items-center justify-center">
-              <Button onClick={() => changeLanguage("en")}>English</Button>/
-              <Button onClick={() => changeLanguage("es")}>Español</Button>
-            </div>
-          )}
+          {/* Botones de cambio de idioma en vista de escritorio */}
+          <div className="pb-2 flex items-center justify-center ">
+            <Button onClick={() => changeLanguage("en")}>English</Button>/
+            <Button onClick={() => changeLanguage("es")}>Español</Button>
+          </div>
         </div>
         <div className="md:hidden">
           <div
@@ -125,10 +119,7 @@ const NavBar: React.FC = () => {
               <div className="flex justify-end w-full mb-6">
                 <button
                   className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
-                  onClick={() => {
-                    setNavbar(false);
-                    setShowLanguageButtons(true);
-                  }}
+                  onClick={() => setNavbar(false)}
                 >
                   <FiX size={30} />
                 </button>
@@ -161,6 +152,13 @@ const NavBar: React.FC = () => {
                   />
                 </ul>
               </div>
+              {/* Botones de cambio de idioma en vista móvil */}
+              {navbar && (
+                <div className="pb-2 flex items-center justify-center">
+                  <Button onClick={() => changeLanguage("en")}>English</Button>/
+                  <Button onClick={() => changeLanguage("es")}>Español</Button>
+                </div>
+              )}
             </div>
           </div>
         </div>

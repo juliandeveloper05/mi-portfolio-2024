@@ -50,7 +50,7 @@ const Home = ({ children }: PropsWithChildren) => {
       <main className={myFont.className}>
         {children}
         <Navbar />
-        <Profile />
+        <Profile initialTime={new Date()} />
         <About />
         <Services />
         <ContactPage />

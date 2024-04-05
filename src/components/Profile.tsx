@@ -20,8 +20,10 @@ const ProfessionalText = styled.p`
   text-transform: uppercase;
   letter-spacing: 3px;
 `;
-
-const Profile = () => {
+interface ProfileProps {
+  initialTime: Date;
+}
+const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
   const { t } = useTranslation("profile");
   const router = useRouter();
 
@@ -152,7 +154,7 @@ const Profile = () => {
               </div>
             </div>
             <div className="mt-1 flex justify-center">
-              <DigitalClock />
+              <DigitalClock initialTime={initialTime} />
             </div>
             <div className="flex justify-center gap-4 mt-4"></div>
           </div>

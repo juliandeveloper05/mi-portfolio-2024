@@ -1,42 +1,42 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const DigitalClock = ({ initialTime }: { initialTime: Date }) => {
-  const [time, setTime] = useState(new Date(initialTime));
+  const [currentTime, setCurrentTime] = useState(new Date(initialTime));
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTime(new Date());
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(intervalId);
   }, []);
 
   const formatTime = (time: number) => {
     return time.toString().padStart(2, "0");
   };
 
-  const hours = time ? formatTime(time.getHours()) : "00";
-  const minutes = time ? formatTime(time.getMinutes()) : "00";
-  const seconds = time ? formatTime(time.getSeconds()) : "00";
+  const hours = currentTime ? formatTime(currentTime.getHours()) : "00";
+  const minutes = currentTime ? formatTime(currentTime.getMinutes()) : "00";
+  const seconds = currentTime ? formatTime(currentTime.getSeconds()) : "00";
 
   return (
     <div className="clock-container">
       <div className="clock">
         <div className="time">
-          <span>{hours}</span>
+          <span>{isClient ? hours : "00"}</span>
           <span className="separator">:</span>
-          <span>{minutes}</span>
+          <span>{isClient ? minutes : "00"}</span>
           <span className="separator">:</span>
-          <span>{seconds}</span>
+          <span>{isClient ? seconds : "00"}</span>
         </div>
       </div>
     </div>
   );
-};
-
-DigitalClock.getInitialProps = () => {
-  const initialTime = Date.now();
-  return { initialTime };
 };
 
 export default DigitalClock;

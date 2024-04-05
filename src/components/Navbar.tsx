@@ -8,11 +8,13 @@ import { motion } from "framer-motion";
 const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
   const [selectedNavItem, setSelectedNavItem] = useState("home");
+  const [showLanguageButtons, setShowLanguageButtons] = useState(true);
   const { t, i18n } = useTranslation("navbar");
 
   const handleNavLinkClick = (navItem: string) => {
     setNavbar(false);
     setSelectedNavItem(navItem);
+    setShowLanguageButtons(true);
   };
 
   const changeLanguage = (lang: string) => {
@@ -22,7 +24,7 @@ const NavBar: React.FC = () => {
 
   interface ButtonProps {
     onClick: () => void;
-    isActive?: boolean; // La propiedad isActive es opcional
+    isActive?: boolean;
     children: React.ReactNode;
   }
 
@@ -42,8 +44,8 @@ const NavBar: React.FC = () => {
      
       items-center
       justify-center
-      ""
-      }`}
+      "
+      `}
       whileHover={{ scale: 1.05 }}
     >
       {children}
@@ -52,9 +54,9 @@ const NavBar: React.FC = () => {
 
   return (
     <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
-      <div className="justify-between  mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
-        <div className="  md:w-32 md:h-25 ">
-          <div className="flex items-center justify-between py-3 md:py-5  mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+        <div className="md:w-32 md:h-25">
+          <div className="flex items-center justify-between py-3 md:py-5 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
             <Link to="#" href="/">
               <Image
                 className="website-logo"
@@ -64,56 +66,102 @@ const NavBar: React.FC = () => {
                 height={60}
               />
             </Link>
-            <div className="md:hidden ">
+            <div className="md:hidden">
               <button
                 className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
-                onClick={() => setNavbar(!navbar)}
+                onClick={() => {
+                  setNavbar(!navbar);
+                  setShowLanguageButtons(!navbar);
+                }}
               >
                 {navbar ? <FiX size={30} /> : <FiMenu size={30} />}
               </button>
             </div>
           </div>
         </div>
-        <div>
+        <div className="hidden md:flex">
+          <ul className="flex gap-6">
+            <NavItem
+              selectedNavItem={selectedNavItem}
+              navItem="profile"
+              handleNavLinkClick={handleNavLinkClick}
+              t={t}
+            />
+            <NavItem
+              selectedNavItem={selectedNavItem}
+              navItem="about"
+              handleNavLinkClick={handleNavLinkClick}
+              t={t}
+            />
+            <NavItem
+              selectedNavItem={selectedNavItem}
+              navItem="services"
+              handleNavLinkClick={handleNavLinkClick}
+              t={t}
+            />
+            <NavItem
+              selectedNavItem={selectedNavItem}
+              navItem="contact"
+              handleNavLinkClick={handleNavLinkClick}
+              t={t}
+            />
+          </ul>
+        </div>
+        <div className="md:flex hidden">
+          {showLanguageButtons && !navbar && (
+            <div className="pb-2 flex items-center justify-center">
+              <Button onClick={() => changeLanguage("en")}>English</Button>/
+              <Button onClick={() => changeLanguage("es")}>Español</Button>
+            </div>
+          )}
+        </div>
+        <div className="md:hidden">
           <div
-            className={`flex-1 justify-self-center pb-3 mt-8 md:block md:pb-0 md:mt-0 ${
+            className={`fixed bg-black inset-0 z-10 overflow-y-auto flex flex-col items-center justify-center ${
               navbar ? "p-12 md:p-0 block" : "hidden"
             }`}
           >
-            <div className="flex flex-grow justify-between">
-              <ul className="flex gap-6">
-                <NavItem
-                  selectedNavItem={selectedNavItem}
-                  navItem="profile"
-                  handleNavLinkClick={handleNavLinkClick}
-                  t={t}
-                />
-                <NavItem
-                  selectedNavItem={selectedNavItem}
-                  navItem="about"
-                  handleNavLinkClick={handleNavLinkClick}
-                  t={t}
-                />
-                <NavItem
-                  selectedNavItem={selectedNavItem}
-                  navItem="services"
-                  handleNavLinkClick={handleNavLinkClick}
-                  t={t}
-                />
-                <NavItem
-                  selectedNavItem={selectedNavItem}
-                  navItem="contact"
-                  handleNavLinkClick={handleNavLinkClick}
-                  t={t}
-                />
-              </ul>
+            <div className="flex flex-col items-center justify-center w-full">
+              <div className="flex justify-end w-full mb-6">
+                <button
+                  className="p-2 text-white rounded-md outline-none focus:border-gray-400 focus:border"
+                  onClick={() => {
+                    setNavbar(false);
+                    setShowLanguageButtons(true);
+                  }}
+                >
+                  <FiX size={30} />
+                </button>
+              </div>
+              <div className="flex flex-grow justify-between">
+                <ul className={`flex ${navbar ? "flex-col gap-6" : "gap-6"}`}>
+                  <NavItem
+                    selectedNavItem={selectedNavItem}
+                    navItem="profile"
+                    handleNavLinkClick={handleNavLinkClick}
+                    t={t}
+                  />
+                  <NavItem
+                    selectedNavItem={selectedNavItem}
+                    navItem="about"
+                    handleNavLinkClick={handleNavLinkClick}
+                    t={t}
+                  />
+                  <NavItem
+                    selectedNavItem={selectedNavItem}
+                    navItem="services"
+                    handleNavLinkClick={handleNavLinkClick}
+                    t={t}
+                  />
+                  <NavItem
+                    selectedNavItem={selectedNavItem}
+                    navItem="contact"
+                    handleNavLinkClick={handleNavLinkClick}
+                    t={t}
+                  />
+                </ul>
+              </div>
             </div>
-          </div>
-        </div>
-        <div className="">
-          <div className=" pb-2 flex items-center justify-center ">
-            <Button onClick={() => changeLanguage("en")}>English</Button>/
-            <Button onClick={() => changeLanguage("es")}>Español</Button>
           </div>
         </div>
       </div>

@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
 import Atropos from "atropos/react";
-import "atropos/atropos.css";
 import { useTranslation } from "next-i18next";
+
+function loadCSS(href: string, condition: boolean) {
+  if (condition) {
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = href;
+    document.head.appendChild(link);
+  }
+}
 
 type ServiceCardProps = {
   Icon: IconType;
@@ -15,23 +23,46 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   Icon,
   title,
   description,
-}) => (
-  <Atropos className="my-atropos" shadow={false}>
-    <div className="atropos-inner">
-      <div className="box">
-        <span></span>
-        <div className="content">
-          <h2>{title}</h2>
-          <p>{description}</p>
-          {/*<a href="#">Learn more</a>*/}
+}) => {
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Establecer el ancho de la pantalla inicial
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  return (
+    <Atropos
+      className={`my-atropos ${
+        windowWidth <= 768 ? "atropos-no-animation" : ""
+      }`}
+      shadow={windowWidth > 768}
+    >
+      <div className="atropos-inner">
+        <div className="box">
+          <span></span>
+          <div className="content">
+            <Icon size={48} />
+            <h2>{title}</h2>
+            <p>{description}</p>
+          </div>
         </div>
       </div>
-    </div>
-  </Atropos>
-);
+    </Atropos>
+  );
+};
 
 const Services = () => {
   const { t } = useTranslation("services");
+
   return (
     <section
       id="services"

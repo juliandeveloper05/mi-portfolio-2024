@@ -30,6 +30,7 @@ const NavBar: React.FC = () => {
     <motion.button
       onClick={onClick}
       className={`
+  
       pb-2
       text-xl
     text-white

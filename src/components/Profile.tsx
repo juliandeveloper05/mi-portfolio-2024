@@ -58,7 +58,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             lg:w-[500px]
             lg:h-[500px]
             xl:w-[450px]
-            xl:h-[450px]
+            xl:h-[470px]
             relative
             shadow-lg
             profile-image

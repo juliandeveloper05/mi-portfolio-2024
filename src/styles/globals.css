@@ -30,6 +30,9 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  .before-content-none::before {
+    content: "";
+  }
 }
 
 /* NAV BAR */

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-children-prop */
 import React, { useEffect, useState, PropsWithChildren } from "react";
 import Transition from "../components/Transition"; // Asegúrate de que la ruta es correcta
 import Navbar from "@/components/Navbar";
@@ -8,7 +9,7 @@ import ContactPage from "../components/ContactPage";
 import Footer from "../components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import i18next from "i18next";
-
+import GrainEffect from "../components/grain-effect";
 // Font files can be colocated inside of `pages`
 // const myFont = localFont({ src: "./font/ClashDisplay-Variable.ttf" });
 // const myFont = localFont({ src: './font/Livemono-Regular.ttf' })
@@ -47,15 +48,26 @@ const Home = ({ children }: PropsWithChildren) => {
   return (
     <div>
       {showTransition && <Transition />}
+
       <main className={myFont.className}>
         {children}
-        <Navbar />
+        <div style={{ zIndex: 5 }}>
+          <GrainEffect children={undefined} />
+        </div>
+        <div style={{ zIndex: 5 }}>
+          {" "}
+          <Navbar />
+        </div>
+
         <Profile initialTime={new Date()} />
         <About />
         <Services />
         <ContactPage />
+
         <div className="mb-16"></div>
-        <Footer />
+        <div style={{ zIndex: -10 }}>
+          <Footer />
+        </div>
       </main>
     </div>
   );

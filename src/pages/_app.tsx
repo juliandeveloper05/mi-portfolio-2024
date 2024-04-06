@@ -2,7 +2,13 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
-
+export const metadata = {
+  title: "Julian Soto's Portfolio",
+  description: "Portfolio personal de Julian Soto",
+  icons: {
+    icon: "/newlogo.png",
+  },
+};
 function App({ Component, pageProps }: AppProps) {
   return (
     <>

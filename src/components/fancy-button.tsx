@@ -1,10 +1,10 @@
 import { FC, ReactNode } from "react";
-import { FaArrowRight } from "react-icons/fa"; // Import FaArrowRight icon
+import { FaArrowRight } from "react-icons/fa";
 
 interface ButtonProps {
   text: string;
   icon: ReactNode;
-  onClick: () => void; // Agregado el prop onClick
+  onClick: () => void;
 }
 
 const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
@@ -38,7 +38,7 @@ const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
         duration-100
         "
         >
-          <FaArrowRight /> {/* Use FaArrowRight icon */}
+          <FaArrowRight />
         </span>
       </div>
     </a>

@@ -44,7 +44,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           justify-center
           items-center
           my-4
-          md:mt-1
+          md:mt-2
         "
       >
         <div

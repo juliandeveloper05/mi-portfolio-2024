@@ -45,7 +45,7 @@ const Footer = ({}) => {
 
         <SocialIcons>
           <SocialIconLink
-            href="//https://www.linkedin.com/in/full-stack-julian-soto/"
+            href="https://www.linkedin.com/in/full-stack-julian-soto/"
             target="_blank"
             aria-label="Linkedin"
             className="text-pop"
@@ -53,7 +53,7 @@ const Footer = ({}) => {
             <BsLinkedin />
           </SocialIconLink>
           <SocialIconLink
-            href="//https://www.instagram.com/pale_codepunk0101/"
+            href="https://www.instagram.com/pale_codepunk0101/"
             target="_blank"
             aria-label="Instagram"
             className="text-pop"
@@ -69,7 +69,7 @@ const Footer = ({}) => {
             <FaWhatsapp />
           </SocialIconLink>
           <SocialIconLink
-            href="//www.yotube.com"
+            href="https://www.youtube.com/channel/UCsn-cQZBBRDcIael-klPkJA"
             target="_blank"
             aria-label="Youtube"
             className="text-pop"

@@ -5,6 +5,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import DigitalClock from "./DigitalClock";
+import FancyButton from "./fancy-button";
 
 const HelloText = styled.p`
   font-family: "Montserrat", Sans-serif;
@@ -46,7 +47,16 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           md:mt-1
         "
       >
-        <div className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end">
+        <div
+          className="
+        flex 
+        w-max 
+        sm:w-2/4 
+        justify-center 
+        sm:justify-center 
+        md:justify-end
+        "
+        >
           <div
             className="
             rounded-full
@@ -73,11 +83,48 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             />
           </div>
         </div>
-        <div className="flex sm:w-2/4 justify-center sm:justify-center md:justify-start sm:ml-6">
-          <div className="text-center mt-4 md:mt-8 w-max sm:w-full md:w-full lg:w-2/3 flex flex-col gap-3">
+        <div
+          className="
+        flex 
+        sm:w-2/4 
+        justify-center 
+        sm:justify-center 
+        md:justify-start 
+        sm:ml-6
+        "
+        >
+          <div
+            className="
+          text-center 
+          mt-4 
+          md:mt-8 
+          w-max 
+          sm:w-full 
+          md:w-full 
+          lg:w-2/3 
+          flex 
+          flex-col 
+          gap-3
+          "
+          >
             <HelloText className="mb-2">{t("hello_text")}</HelloText>
-            <div className="flex w-full justify-center text-center">
-              <h1 className="typewriter-name text-4xl md:text-6xl font-bold palenque-style">
+            <div
+              className="
+            flex 
+            w-full 
+            justify-center 
+            text-center
+            "
+            >
+              <h1
+                className="
+              typewriter-name 
+              text-4xl 
+              md:text-6xl 
+              font-bold 
+              palenque-style
+              "
+              >
                 Julian Soto
               </h1>
             </div>
@@ -85,55 +132,30 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
               {t("professional_text")}
             </ProfessionalText>
 
-            <div className="flex flex-col w-full justify-center gap-4">
+            <div
+              className="
+            flex 
+            flex-col 
+            w-full 
+            justify-center 
+            gap-4
+            "
+            >
               <div className="flex justify-center gap-2">
-                <button
-                  className="
-                    px-1
-                    py-1
-                    sm:w-fit
-                    rounded-full
-                    bg-gradient-to-br
-                    from-green-500
-                    via-teal-500
-                    to-blue-500
-                    hover:bg-slate-700
-                    text-white
-                    transition-transform
-                    duration-300
-                    transform
-                    hover:scale-105
-                  "
+                <FancyButton
+                  text={t("button1")}
                   onClick={() =>
                     window.open(
                       "/25 EN ESPAÑOL CV ACTUALIZADO 2024 CON FOTO NUEVA.pdf"
                     )
                   }
-                >
-                  <span className="block bg-[#121212] hover:bg—slate-800 rounded-full px-5 py-2">
-                    {t("button1")}
-                  </span>
-                </button>
-                <button
-                  className="px-6
-                    py-3
-                    sm:w-fit
-                    rounded-full
-                    bg-gradient-to-br
-                    from-blue-500
-                    via-purple-500
-                    to-pink-500
-                    hover:bg-slate-200
-                    text-white
-                    transition-transform
-                    duration-300
-                    transform
-                    hover:scale-105
-                  "
+                  icon={undefined}
+                />
+                <FancyButton
+                  text={t("button2")}
                   onClick={() => navigateTo("#contact")}
-                >
-                  <span> {t("button2")}</span>
-                </button>
+                  icon={undefined}
+                />
               </div>
               <div className="flex justify-center gap-4 mt-4">
                 <a

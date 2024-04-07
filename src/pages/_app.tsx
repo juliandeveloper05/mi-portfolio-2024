@@ -18,7 +18,10 @@ function App({ Component, pageProps }: AppProps) {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 740 || window.innerWidth < 760);
+      setIsMobile(
+        window.innerWidth < 740 ||
+          (window.innerWidth < 760 && /Samsung/.test(navigator.userAgent))
+      );
     };
 
     handleResize();
@@ -35,18 +38,20 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="icon" href="/newlogo.png" />
       </Head>
-      <Cursor color="#fff" />
       {isMobile ? (
         <Component {...pageProps} />
       ) : (
-        <WaterWaveWrapper
-          imageUrl=""
-          dropRadius="3"
-          perturbance="3"
-          resolution="2048"
-        >
-          {() => <Component {...pageProps} />}
-        </WaterWaveWrapper>
+        <>
+          <Cursor color="#fff" />
+          <WaterWaveWrapper
+            imageUrl=""
+            dropRadius="3"
+            perturbance="3"
+            resolution="2048"
+          >
+            {() => <Component {...pageProps} />}
+          </WaterWaveWrapper>
+        </>
       )}
     </>
   );

@@ -262,10 +262,16 @@ body {
 }
 
 .extra:hover {
-  box-shadow: 10px 10px 1px #000000, 20px 20px 1px #222222,
-    30px 30px 1px #aaaaaa, 40px 40px 1px #ffffff;
+  box-shadow: 1px 1px 1px #000000, 3px 3px 1px #222222, 5px 5px 1px #aaaaaa,
+    10px 10px 1px #ffffff;
   transform: scale(1.1);
   filter: saturate(1.5);
+}
+
+@media only screen and (max-width: 600px) {
+  .extra:hover {
+    box-shadow: none;
+  }
 }
 
 /* Services Design */

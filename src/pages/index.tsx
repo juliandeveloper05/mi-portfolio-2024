@@ -47,6 +47,8 @@ const Home = ({ children }: PropsWithChildren) => {
 
   return (
     <div>
+      {/*() => <div className="h-screen"></div>*/}
+
       {showTransition && <Transition />}
 
       <main className={myFont.className}>

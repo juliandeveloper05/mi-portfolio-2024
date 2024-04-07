@@ -26,7 +26,14 @@ const About = () => {
       <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row ">
         <div className=" md:mb-0 md:w-1/3 flex justify-center md:justify-start">
           <Image
-            className="rounded-full extra border-4"
+            className="rounded-full
+            extra 
+            border-4 
+            w-[250px]
+            h-[250px]
+             md:w-[400px]
+            md:h-[400px]
+            "
             src="/about-me.jpg"
             alt="Profile"
             width={400}

@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
@@ -13,23 +14,41 @@ const WaterWaveWrapper = dynamic(
 );
 
 function App({ Component, pageProps }: AppProps) {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 740 || window.innerWidth < 760);
+    };
+
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <WaterWaveWrapper
-      imageUrl=""
-      dropRadius="3"
-      perturbance="3"
-      resolution="2048"
-    >
-      {() => (
-        <>
-          <Head>
-            <link rel="icon" href="/newlogo.png" />
-          </Head>
-          <Cursor color="#fff" />
-          <Component {...pageProps} />
-        </>
+    <>
+      <Head>
+        <link rel="icon" href="/newlogo.png" />
+      </Head>
+      <Cursor color="#fff" />
+      {isMobile ? (
+        <Component {...pageProps} />
+      ) : (
+        <WaterWaveWrapper
+          imageUrl=""
+          dropRadius="3"
+          perturbance="3"
+          resolution="2048"
+        >
+          {() => <Component {...pageProps} />}
+        </WaterWaveWrapper>
       )}
-    </WaterWaveWrapper>
+    </>
   );
 }
 

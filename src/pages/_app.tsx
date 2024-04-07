@@ -3,7 +3,14 @@ import type { AppProps } from "next/app";
 import { appWithTranslation } from "next-i18next";
 import Head from "next/head";
 import Cursor from "../components/cursor";
-import WaterWaveWrapper from "../components/water-wave-wrapper";
+import dynamic from "next/dynamic";
+
+const WaterWaveWrapper = dynamic(
+  () => import("../components/water-wave-wrapper"),
+  {
+    ssr: false,
+  }
+);
 
 function App({ Component, pageProps }: AppProps) {
   return (

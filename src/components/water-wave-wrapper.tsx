@@ -1,8 +1,12 @@
-/**
- * @react.skipNextRefresh true
- */
-
-import { FC, ReactNode, useEffect, useState, lazy, Suspense } from "react";
+import {
+  FC,
+  ReactNode,
+  useEffect,
+  useState,
+  lazy,
+  Suspense,
+  memo,
+} from "react";
 
 const WaterWave = lazy(() => import("react-water-wave"));
 
@@ -16,35 +20,32 @@ interface WaterWaveProps {
 
 interface WaterWaveWrapperProps extends WaterWaveProps {}
 
-const WaterWaveWrapper: FC<WaterWaveWrapperProps> = ({
-  imageUrl,
-  dropRadius,
-  perturbance,
-  resolution,
-  children,
-}) => {
-  const [isClient, setIsClient] = useState(false);
+// eslint-disable-next-line react/display-name
+const WaterWaveWrapper: FC<WaterWaveWrapperProps> = memo(
+  ({ imageUrl, dropRadius, perturbance, resolution, children }) => {
+    const [isClient, setIsClient] = useState(false);
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
+    useEffect(() => {
+      setIsClient(true);
+    }, []);
 
-  if (!isClient) {
-    return null;
+    if (!isClient) {
+      return null;
+    }
+
+    return (
+      <Suspense fallback={<div>Loading...</div>}>
+        <WaterWave
+          imageUrl={imageUrl}
+          dropRadius={dropRadius}
+          perturbance={perturbance}
+          resolution={resolution}
+        >
+          {children}
+        </WaterWave>
+      </Suspense>
+    );
   }
-
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <WaterWave
-        imageUrl={imageUrl}
-        dropRadius={dropRadius}
-        perturbance={perturbance}
-        resolution={resolution}
-      >
-        {children}
-      </WaterWave>
-    </Suspense>
-  );
-};
+);
 
 export default WaterWaveWrapper;

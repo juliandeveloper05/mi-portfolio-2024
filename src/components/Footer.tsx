@@ -1,5 +1,6 @@
 import React from "react";
 import { BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
+import { Link } from "react-scroll";
 import { FaWhatsapp } from "react-icons/fa";
 import {
   Container,

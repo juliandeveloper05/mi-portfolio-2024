@@ -6,6 +6,7 @@ import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import DigitalClock from "./DigitalClock";
 import FancyButton from "./fancy-button";
+import { Link } from "react-scroll";
 
 const HelloText = styled.p`
   font-family: "Montserrat", Sans-serif;
@@ -21,9 +22,15 @@ const ProfessionalText = styled.p`
   text-transform: uppercase;
   letter-spacing: 3px;
 `;
+
+const ContactLink = styled(Link)`
+  cursor: pointer;
+`;
+
 interface ProfileProps {
   initialTime: Date;
 }
+
 const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
   const { t } = useTranslation("profile");
   const router = useRouter();
@@ -44,7 +51,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           justify-center
           items-center
           my-4
-          md:mt-2
+          md:mt-3
         "
       >
         <div
@@ -151,11 +158,16 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
                   }
                   icon={undefined}
                 />
-                <FancyButton
-                  text={t("button2")}
-                  onClick={() => navigateTo("#contact")}
-                  icon={undefined}
-                />
+                <ContactLink
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  offset={-50}
+                >
+                  <FancyButton text={""} icon={undefined}>
+                    {t("button2")}
+                  </FancyButton>
+                </ContactLink>
               </div>
               <div className="flex justify-center gap-4 mt-4">
                 <a

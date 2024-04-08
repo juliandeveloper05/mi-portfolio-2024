@@ -207,6 +207,15 @@ const NavItem: React.FC<NavItemProps> = ({
         smooth={true}
         duration={800}
         onClick={() => handleNavLinkClick(navItem)}
+        offset={
+          navItem === "profile"
+            ? -20
+            : navItem === "about"
+            ? 20
+            : navItem === "services"
+            ? 230
+            : 0
+        }
       >
         {t(navItem)}
       </Link>

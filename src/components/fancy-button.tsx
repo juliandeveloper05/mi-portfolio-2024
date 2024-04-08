@@ -4,10 +4,11 @@ import { FaArrowRight } from "react-icons/fa";
 interface ButtonProps {
   text: string;
   icon: ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
+  children?: React.ReactNode;
 }
 
-const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
+const FancyButton: FC<ButtonProps> = ({ text, icon, onClick, children }) => {
   return (
     <a className="fancy-btn" onClick={onClick}>
       <div
@@ -30,6 +31,7 @@ const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
       duration-75
       "
       >
+        {children}
         <span>{text}</span>
         <span
           className="

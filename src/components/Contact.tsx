@@ -46,7 +46,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="bg-black text-gray-100 pt-16 pb-8">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 unselectable">
         <h2 className="text-4xl font-bold text-center mb-4 text-white">
           Contact Me!
         </h2>

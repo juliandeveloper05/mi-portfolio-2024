@@ -79,7 +79,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             relative
             shadow-lg
             profile-image
-            
+            unselectable
           "
           >
             <Image
@@ -114,7 +114,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           gap-3
           "
           >
-            <HelloText className="mb-2">{t("hello_text")}</HelloText>
+            <HelloText className="mb-2 unselectable">{t("hello_text")}</HelloText>
             <div
               className="
             flex 
@@ -125,17 +125,18 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             >
               <h1
                 className="
-              typewriter-name 
-              text-4xl 
-              md:text-6xl 
-              font-bold 
-              palenque-style
-              "
+                  typewriter-name 
+                  text-4xl 
+                  md:text-6xl 
+                  font-bold 
+                  palenque-style
+                  unselectable
+                "
               >
                 Julian Soto
               </h1>
             </div>
-            <ProfessionalText className="my-2 text-pop">
+            <ProfessionalText className="my-2 text-pop unselectable">
               {t("professional_text")}
             </ProfessionalText>
 
@@ -148,7 +149,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             gap-4
             "
             >
-              <div className="flex justify-center gap-2">
+              <div className="flex justify-center gap-2 unselectable">
                 <FancyButton
                   text={t("button1")}
                   onClick={() =>

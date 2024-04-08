@@ -53,7 +53,7 @@ const NavBar: React.FC = () => {
 
   return (
     <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
-      <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+      <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 unselectable">
         <div className="md:w-32 md:h-25">
           <div className="flex items-center justify-between py-3 md:py-5 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
             <Link to="#" href="/">
@@ -211,9 +211,9 @@ const NavItem: React.FC<NavItemProps> = ({
           navItem === "profile"
             ? -20
             : navItem === "about"
-            ? 20
+            ? -80
             : navItem === "services"
-            ? 230
+            ? 0
             : 0
         }
       >

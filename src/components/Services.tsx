@@ -29,6 +29,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
+      console.log(window.innerWidth)
     };
 
     window.addEventListener("resize", handleResize);
@@ -41,7 +42,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <Atropos
-      className={`my-atropos ${
+      className={`${
         windowWidth <= 768 ? "atropos-no-animation" : ""
       }`}
       shadow={windowWidth > 768}
@@ -68,7 +69,7 @@ const Services = () => {
       id="services"
       className="flex flex-col justify-center min-h-[60em] bg-black"
     >
-      <div className="container mx-auto px-4 mt-20">
+      <div className="container mx-auto px-4 mt-20 unselectable">
         <h2 className="text-3xl text-center text-white mb-12 text-pop">
           {t("services1")}
         </h2>

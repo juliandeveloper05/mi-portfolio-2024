@@ -21,6 +21,7 @@ const About = () => {
         justify-center
         bg-black
         text-white
+        unselectable
       "
     >
       <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row ">

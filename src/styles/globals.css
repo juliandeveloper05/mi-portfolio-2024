@@ -89,6 +89,10 @@ body {
   letter-spacing: 6px;
 }
 
+.unselectable {
+  user-select: none;
+}
+
 @media (min-width: 768px) {
   .typewriter-name {
     animation: shortTyping 2s steps(15, end) infinite alternate,

@@ -25,9 +25,9 @@ const DigitalClock = ({ initialTime }: { initialTime: Date }) => {
   const seconds = currentTime ? formatTime(currentTime.getSeconds()) : "00";
 
   return (
-    <div className="clock-container">
+    <div className="clock-container ">
       <div className="clock">
-        <div className="time">
+        <div className="time unselectable">
           <span>{isClient ? hours : "00"}</span>
           <span className="separator">:</span>
           <span>{isClient ? minutes : "00"}</span>

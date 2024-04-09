@@ -3,7 +3,7 @@ import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
 import Atropos from "atropos/react";
 import { useTranslation } from "next-i18next";
-import MagneticWrapper from "./magnetic-wrapper";
+import Heading from "./heading";
 
 function loadCSS(href: string, condition: boolean) {
   if (condition) {
@@ -69,8 +69,8 @@ const Services = () => {
       className="flex flex-col justify-center min-h-[60em] bg-black"
     >
       <div className="container mx-auto px-4 mt-20 unselectable">
-        <h2 className="text-3xl text-center text-white mb-12 text-pop">
-          {t("services1")}
+        <h2 className="text-3xl text-center text-white mb-12 ">
+          <Heading title_1={t("services1")} />
         </h2>
         <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
           <ServiceCard

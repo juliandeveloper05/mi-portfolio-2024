@@ -33,7 +33,7 @@ const MagneticWrapper: FC<MagneticWrapperProps> = ({ className, children }) => {
       className={cn("relative", className)}
       ref={ref}
       animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+      transition={{ type: "spring", stiffness: 50, damping: 30, mass: 1 }}
       onMouseMove={handleMouse}
       onMouseLeave={reset}
     >

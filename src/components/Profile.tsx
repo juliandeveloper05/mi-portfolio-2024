@@ -7,6 +7,8 @@ import { useTranslation } from "next-i18next";
 import DigitalClock from "./DigitalClock";
 import FancyButton from "./fancy-button";
 import { Link } from "react-scroll";
+import MagneticWrapper from "./magnetic-wrapper";
+import ScrollDown from "./scroll-down";
 
 const HelloText = styled.p`
   font-family: "Montserrat", Sans-serif;
@@ -90,6 +92,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             />
           </div>
         </div>
+
         <div
           className="
         flex 
@@ -114,7 +117,9 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
           gap-3
           "
           >
-            <HelloText className="mb-2 unselectable">{t("hello_text")}</HelloText>
+            <HelloText className="mb-2 unselectable">
+              {t("hello_text")}
+            </HelloText>
             <div
               className="
             flex 
@@ -150,24 +155,28 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             "
             >
               <div className="flex justify-center gap-2 unselectable">
-                <FancyButton
-                  text={t("button1")}
-                  onClick={() =>
-                    window.open(
-                      "/25 EN ESPAÑOL CV ACTUALIZADO 2024 CON FOTO NUEVA.pdf"
-                    )
-                  }
-                  icon={undefined}
-                />
+                <MagneticWrapper>
+                  <FancyButton
+                    text={t("button1")}
+                    onClick={() =>
+                      window.open(
+                        "/25 EN ESPAÑOL CV ACTUALIZADO 2024 CON FOTO NUEVA.pdf"
+                      )
+                    }
+                    icon={undefined}
+                  />
+                </MagneticWrapper>
                 <ContactLink
                   to="contact"
                   smooth={true}
                   duration={500}
                   offset={-50}
                 >
-                  <FancyButton text={""} icon={undefined}>
-                    {t("button2")}
-                  </FancyButton>
+                  <MagneticWrapper>
+                    <FancyButton text={""} icon={undefined}>
+                      {t("button2")}
+                    </FancyButton>
+                  </MagneticWrapper>
                 </ContactLink>
               </div>
               <div className="flex justify-center gap-4 mt-4">
@@ -192,6 +201,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             <div className="mt-1 flex justify-center">
               <DigitalClock initialTime={initialTime} />
             </div>
+
             <div className="flex justify-center gap-4 mt-4"></div>
           </div>
         </div>

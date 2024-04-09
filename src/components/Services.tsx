@@ -3,6 +3,7 @@ import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
 import Atropos from "atropos/react";
 import { useTranslation } from "next-i18next";
+import MagneticWrapper from "./magnetic-wrapper";
 
 function loadCSS(href: string, condition: boolean) {
   if (condition) {
@@ -29,7 +30,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   useEffect(() => {
     const handleResize = () => {
       setWindowWidth(window.innerWidth);
-      console.log(window.innerWidth)
+      console.log(window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);
@@ -42,9 +43,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
   return (
     <Atropos
-      className={`${
-        windowWidth <= 768 ? "atropos-no-animation" : ""
-      }`}
+      className={`${windowWidth <= 768 ? "atropos-no-animation" : ""}`}
       shadow={windowWidth > 768}
     >
       <div className="atropos-inner">
@@ -74,21 +73,27 @@ const Services = () => {
           {t("services1")}
         </h2>
         <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
-          <ServiceCard
-            Icon={FaCode}
-            title={t("web_design.title")}
-            description={t("web_design.description")}
-          />
-          <ServiceCard
-            Icon={FaPaintBrush}
-            title={t("ui_ux_design.title")}
-            description={t("ui_ux_design.description")}
-          />
-          <ServiceCard
-            Icon={FaMobileAlt}
-            title={t("app_design.title")}
-            description={t("app_design.description")}
-          />
+          <MagneticWrapper>
+            <ServiceCard
+              Icon={FaCode}
+              title={t("web_design.title")}
+              description={t("web_design.description")}
+            />
+          </MagneticWrapper>
+          <MagneticWrapper>
+            <ServiceCard
+              Icon={FaPaintBrush}
+              title={t("ui_ux_design.title")}
+              description={t("ui_ux_design.description")}
+            />
+          </MagneticWrapper>
+          <MagneticWrapper>
+            <ServiceCard
+              Icon={FaMobileAlt}
+              title={t("app_design.title")}
+              description={t("app_design.description")}
+            />
+          </MagneticWrapper>
         </div>
       </div>
     </section>

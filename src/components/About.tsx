@@ -3,6 +3,9 @@ import Image from "next/image";
 import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
+import ScrollDown from "./scroll-down";
+import MagneticWrapper from "./magnetic-wrapper";
+import { Link } from "react-scroll";
 
 const SectionTitle = styled.div`
   font-size: 2rem;
@@ -86,6 +89,17 @@ const About = () => {
             {t("about_description")}
           </p>
         </div>
+        <div className="mb-14">
+          {/* Componente que divide un poco mas el texto con el ScrollDown 
+           para dispositivos moviles */}
+        </div>
+      </div>
+      <div className="flex justify-center sm:mt-4 lg:mt-0">
+        <Link to="services" smooth={true} duration={500}>
+          <MagneticWrapper>
+            <ScrollDown />
+          </MagneticWrapper>
+        </Link>
       </div>
 
       {/* Page Divider */}

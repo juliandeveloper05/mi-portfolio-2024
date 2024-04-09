@@ -73,27 +73,23 @@ const Services = () => {
           {t("services1")}
         </h2>
         <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
-          <MagneticWrapper>
-            <ServiceCard
-              Icon={FaCode}
-              title={t("web_design.title")}
-              description={t("web_design.description")}
-            />
-          </MagneticWrapper>
-          <MagneticWrapper>
-            <ServiceCard
-              Icon={FaPaintBrush}
-              title={t("ui_ux_design.title")}
-              description={t("ui_ux_design.description")}
-            />
-          </MagneticWrapper>
-          <MagneticWrapper>
-            <ServiceCard
-              Icon={FaMobileAlt}
-              title={t("app_design.title")}
-              description={t("app_design.description")}
-            />
-          </MagneticWrapper>
+          <ServiceCard
+            Icon={FaCode}
+            title={t("web_design.title")}
+            description={t("web_design.description")}
+          />
+
+          <ServiceCard
+            Icon={FaPaintBrush}
+            title={t("ui_ux_design.title")}
+            description={t("ui_ux_design.description")}
+          />
+
+          <ServiceCard
+            Icon={FaMobileAlt}
+            title={t("app_design.title")}
+            description={t("app_design.description")}
+          />
         </div>
       </div>
     </section>

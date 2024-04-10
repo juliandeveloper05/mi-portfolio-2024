@@ -3,7 +3,7 @@ import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
 import Atropos from "atropos/react";
 import { useTranslation } from "next-i18next";
-import Heading from "./heading";
+import SvgCurve from "./svg-curve";
 
 function loadCSS(href: string, condition: boolean) {
   if (condition) {
@@ -70,7 +70,8 @@ const Services = () => {
     >
       <div className="container mx-auto px-4 mt-20 unselectable">
         <h2 className="text-3xl text-center text-white mb-12 ">
-          <Heading title_1={t("services1")} />
+          {t("services1")}
+          <SvgCurve />
         </h2>
         <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
           <ServiceCard

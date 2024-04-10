@@ -6,7 +6,7 @@ import { useTranslation } from "next-i18next";
 import ScrollDown from "./scroll-down";
 import MagneticWrapper from "./magnetic-wrapper";
 import { Link } from "react-scroll";
-import Heading from "./heading";
+import SvgCurve from "./svg-curve";
 
 const SectionTitle = styled.div`
   font-size: 2rem;
@@ -28,13 +28,8 @@ const About = () => {
         unselectable
       "
     >
-      <div className="container mx-auto px-4 ">
-        <h2 className="text-3xl text-center text-white -mt-10 md:mt-20">
-          <Heading title_1={t("about1")} />
-        </h2>
-      </div>
-      <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row  ">
-        <div className="md:-mt-14 mt-10">
+      <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row ">
+        <div className=" md:mb-0 md:w-1/3 flex justify-center md:justify-start">
           <Image
             className="rounded-full
             extra 
@@ -52,6 +47,11 @@ const About = () => {
           />
         </div>
         <div className={"md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"}>
+          <SectionTitle className="text-3xl text-center text-white  min-h-20">
+            {t("about1")}
+            <SvgCurve />
+          </SectionTitle>
+
           <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start text-lg">
             {/* Experience Box */}
             <div className="flex-1 card-inner">
@@ -97,7 +97,7 @@ const About = () => {
         </div>
       </div>
       <div className="flex justify-center sm:mt-4 lg:mt-0">
-        <Link to="services" smooth={true} duration={500} offset={-30}>
+        <Link to="services" smooth={true} duration={500} offset={-60}>
           <MagneticWrapper>
             <ScrollDown />
           </MagneticWrapper>

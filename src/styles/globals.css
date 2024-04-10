@@ -638,3 +638,30 @@ body {
 
   z-index: 1;
 }
+
+/*Contact*/
+
+.borderBlack {
+  @apply border border-black/10;
+}
+
+#contact {
+  width: 90%;
+  max-width: 38rem;
+  margin: 0 auto 2rem;
+}
+
+@media (max-width: 640px) {
+  #contact {
+    width: 100%;
+    padding: 0 1rem;
+  }
+  input,
+  textarea {
+    font-size: 0.8rem;
+  }
+  button {
+    font-size: 0.8rem;
+    width: 6rem;
+  }
+}

@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import Profile from "../components/Profile";
 import About from "../components/About";
 import Services from "../components/Services";
-import ContactPage from "../components/ContactPage";
+import ContactMe from "@/components/ContactMe";
 import Footer from "../components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import i18next from "i18next";
@@ -64,7 +64,7 @@ const Home = ({ children }: PropsWithChildren) => {
         <Profile initialTime={new Date()} />
         <About />
         <Services />
-        <ContactPage />
+        <ContactMe />
 
         <div className="mb-16"></div>
         <div style={{ zIndex: -10 }}>

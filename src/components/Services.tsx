@@ -69,7 +69,7 @@ const Services = () => {
       className="flex flex-col justify-center min-h-[60em] bg-black"
     >
       <div className="container mx-auto px-4 mt-20 unselectable">
-        <h2 className="text-3xl text-center text-white mb-12 ">
+        <h2 className="text-3xl text-center text-white mb-12">
           {t("services1")}
           <SvgCurve />
         </h2>

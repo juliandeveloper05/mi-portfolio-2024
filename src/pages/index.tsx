@@ -28,6 +28,7 @@ export async function getStaticProps({ locale }: { locale: any }) {
         "profile",
         "about",
         "services",
+        "contact",
       ])),
     },
   };

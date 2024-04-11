@@ -1,5 +1,6 @@
 {
-  "about1": "About Me!",
+  "about1": "About Me",
+  "about_description_hello": "Hello!",
   "experience1": "Experience",
   "experience2": "2+ years Frontend Development",
   "experience3": "1+ years Backend Development and Databases",
@@ -7,5 +8,8 @@
   "education2": "UNQUI (Argentina, Buenos Aires)",
   "education3": "Degree in computer science",
   "education4": "[In progress]",
-  "about_description": "Hello! I'm a driven Junior Frontend Developer, skilled in Next.js, Node.js, C#, .NET, and full-stack fundamentals. With expertise in databases like MySQL and PostgreSQL and a proficiency in CSS, HTML5, and JavaScript, I craft responsive interfaces that prioritize user experience. I am committed to continuous skill enhancement and apply a learner's mindset to every project. My goal is to deliver efficient, maintainable code, while staying abreast of cutting-edge web technologies."
+  "about_description1": "I'm a driven Junior Frontend Developer, skilled in Next.js, Node.js, C#, .NET, and full-stack fundamentals.",
+  "about_description2": "With expertise in databases like MySQL and PostgreSQL and a proficiency in CSS, HTML5, and JavaScript, I craft responsive interfaces that prioritize user experience.",
+  "about_description3": "I am committed to continuous skill enhancement and apply a learner's mindset to every project.",
+  "about_description4": "My goal is to deliver efficient, maintainable code, while staying abreast of cutting-edge web technologies."
 }

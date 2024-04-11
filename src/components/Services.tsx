@@ -15,12 +15,14 @@ function loadCSS(href: string, condition: boolean) {
 }
 
 type ServiceCardProps = {
+  index: number;
   Icon: IconType;
   title: string;
   description: string;
 };
 
 const ServiceCard: React.FC<ServiceCardProps> = ({
+  index,
   Icon,
   title,
   description,
@@ -42,21 +44,14 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   }, []);
 
   return (
-    <Atropos
-      className={`${windowWidth <= 768 ? "atropos-no-animation" : ""}`}
-      shadow={windowWidth > 768}
-    >
-      <div className="atropos-inner">
-        <div className="box">
-          <span></span>
-          <div className="content">
-            <Icon size={48} />
-            <h2>{title}</h2>
-            <p>{description}</p>
-          </div>
-        </div>
+    <div className={`box box-color-${index}`}>
+      <span></span>
+      <div className="content">
+        <Icon size={48} />
+        <h2>{title}</h2>
+        <p>{description}</p>
       </div>
-    </Atropos>
+    </div>
   );
 };
 
@@ -71,22 +66,24 @@ const Services = () => {
       <div className="container mx-auto px-4 mt-20 unselectable">
         <h2 className="text-3xl text-center text-white mb-12">
           {t("services1")}
-          <SvgCurve />
         </h2>
         <div className="servicesContainer grid grid-cols-1 gap-8 md:grid-cols-3">
           <ServiceCard
+            index={1}
             Icon={FaCode}
             title={t("web_design.title")}
             description={t("web_design.description")}
           />
 
           <ServiceCard
+            index={2}
             Icon={FaPaintBrush}
             title={t("ui_ux_design.title")}
             description={t("ui_ux_design.description")}
           />
 
           <ServiceCard
+            index={3}
             Icon={FaMobileAlt}
             title={t("app_design.title")}
             description={t("app_design.description")}

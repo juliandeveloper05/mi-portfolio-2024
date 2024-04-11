@@ -55,7 +55,7 @@ const NavBar: React.FC = () => {
     <nav className="w-full bg-black fixed top-0 left-0 right-0 z-10">
       <div className="justify-between mx-auto lg:max-w-7xl md:items-center md:flex md:px-8 unselectable">
         <div className="md:w-32 md:h-25">
-          <div className="flex items-center justify-between py-3 md:py-5 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
+          <div className="flex items-center justify-between py-3 md:py-5 mx-auto lg:max-w-7xl md:items-center md:flex ml-12 md:ml-0 md:px-8">
             <Link to="#" href="/">
               <Image
                 className="website-logo"
@@ -155,7 +155,7 @@ const NavBar: React.FC = () => {
               </div>
               {/* Botones de cambio de idioma en vista móvil */}
               {navbar && (
-                <div className="pb-2 flex items-center justify-center">
+                <div className="mt-20 pb-2 flex items-center justify-center text-xs">
                   <Button onClick={() => changeLanguage("en")}>English</Button>/
                   <Button onClick={() => changeLanguage("es")}>Español</Button>
                 </div>
@@ -211,7 +211,7 @@ const NavItem: React.FC<NavItemProps> = ({
           navItem === "profile"
             ? -20
             : navItem === "about"
-            ? -150
+            ? -100
             : navItem === "services"
             ? -30
             : 0

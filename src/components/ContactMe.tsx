@@ -12,16 +12,15 @@ export default function ContactMe() {
     <section id="contact" className="mb-20 mx-auto sm:mb-28 unselectable">
       <SectionHeading>
         {t("contact1")}
-        <SvgCurve />
       </SectionHeading>
       <p className="text-white text-center text-lg leading-relaxed mb-8">
-        {t("contact2")}{" "}
+        {t("contact2")}
         <a
-          className="text-indigo-600 hover:text-indigo-800 transition-colors"
+          className="text-indigo-600 hover:text-indigo-800 transition-colors mx-2"
           href="mailto:juliansoto.dev@gmail.com"
         >
           juliansoto.dev@gmail.com
-        </a>{" "}
+        </a>
         {t("contact3")}
       </p>
       <form className="mt-10 flex flex-col max-w-md mx-auto">

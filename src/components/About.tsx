@@ -9,7 +9,7 @@ import { Link } from "react-scroll";
 import SvgCurve from "./svg-curve";
 
 const SectionTitle = styled.div`
-  font-size: 2rem;
+  font-size: 3rem;
 `;
 
 const About = () => {
@@ -46,14 +46,28 @@ const About = () => {
             quality={100}
           />
         </div>
+        
         <div className={"md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"}>
-          <SectionTitle className="text-3xl text-center text-white  min-h-20">
-            {t("about1")}
-            <SvgCurve />
-          </SectionTitle>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start text-lg">
-            {/* Experience Box */}
+          <div className="flex flex-col">
+            <div className="flex flex-row">
+              <SectionTitle className="text-gray-300 text-center md:text-left font-thin self-end">
+                {t("about_description_hello")}
+              </SectionTitle>
+            </div>
+            <div className="text-gray-300 text-center mt-4 md:text-left text-xl font-light self-start">
+              {t("about_description1")}
+            </div>
+            <div className="text-gray-300 text-center md:text-left text-xl font-light self-end">
+              {t("about_description2")}
+            </div>
+            <div className="text-gray-300 my-4 text-center md:text-left text-xl font-semilight self-end">
+            &quot;`{t("about_description3")}&quot;
+            </div>
+          </div>
+
+          {/* Experience Box */}
+          <div className="flex flex-col md:flex-row justify-center md:justify-start mt-8 space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start text-lg">
             <div className="flex-1 card-inner">
               <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
                 <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%]">
@@ -86,11 +100,8 @@ const About = () => {
               </div>
             </div>
           </div>
-
-          <p className="text-gray-300 mt-6 text-center md:text-left text-xl">
-            {t("about_description")}
-          </p>
         </div>
+
         <div className="mb-14">
           {/* Componente que divide un poco mas el texto con el ScrollDown 
            para dispositivos moviles */}

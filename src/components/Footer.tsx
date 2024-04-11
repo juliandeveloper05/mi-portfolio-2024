@@ -10,6 +10,7 @@ import {
   WebsiteRights,
   Wrapper,
 } from "./FooterElements";
+import { useTranslation } from "next-i18next";
 
 /* 
 A TENER EN CUENTA: CADA VEZ QUE ARREGLO O SUMO ALGO DEL CODIGO 
@@ -22,6 +23,7 @@ Keep in mind: Every time I fix or add something in the code,
 type Props = {};
 
 const Footer = ({}) => {
+  const { t } = useTranslation("footer");
   const numeroDeTelefono = "+5491130666369";
 
   const enlaceDeWhatsapp = `https://wa.me/${numeroDeTelefono}`;
@@ -40,7 +42,7 @@ const Footer = ({}) => {
         </Logo>
 
         <WebsiteRights>
-          Copyright &copy; Julian Javier Soto {""}
+          {t("footer1")} &copy; {t("footer2")} {""}
           {new Date().getFullYear()}
         </WebsiteRights>
 

@@ -57,7 +57,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
         perturbance="3"
         resolution="2048"
       >
-        {() => 
+        {() => (
           <section
             id="profile"
             className="
@@ -185,7 +185,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
                       to="contact"
                       smooth={true}
                       duration={500}
-                      offset={-50}
+                      offset={-130}
                     >
                       <MagneticWrapper>
                         <FancyButton text={""} icon={undefined}>
@@ -218,7 +218,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
               </div>
             </div>
           </section>
-        }
+        )}
       </WaterWaveWrapper>
     </>
   );

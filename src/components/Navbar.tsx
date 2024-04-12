@@ -211,9 +211,11 @@ const NavItem: React.FC<NavItemProps> = ({
           navItem === "profile"
             ? -20
             : navItem === "about"
-            ? -100
+            ? -90
             : navItem === "services"
-            ? -30
+            ? 50
+            : navItem === "contact"
+            ? -130
             : 0
         }
       >

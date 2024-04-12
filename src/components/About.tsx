@@ -6,7 +6,6 @@ import { useTranslation } from "next-i18next";
 import ScrollDown from "./scroll-down";
 import MagneticWrapper from "./magnetic-wrapper";
 import { Link } from "react-scroll";
-import SvgCurve from "./svg-curve";
 
 const SectionTitle = styled.div`
   font-size: 3rem;
@@ -46,12 +45,11 @@ const About = () => {
             quality={100}
           />
         </div>
-        
-        <div className={"md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"}>
 
+        <div className={"md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"}>
           <div className="flex flex-col">
-            <div className="flex flex-row">
-              <SectionTitle className="text-gray-300 text-center md:text-left font-thin self-end">
+            <div className="flex flex-row ">
+              <SectionTitle className="text-gray-300 text-center  md:text-left font-thin self-end">
                 {t("about_description_hello")}
               </SectionTitle>
             </div>
@@ -62,7 +60,7 @@ const About = () => {
               {t("about_description2")}
             </div>
             <div className="text-gray-300 my-4 text-center md:text-left text-xl font-semilight self-end">
-            &quot;`{t("about_description3")}&quot;
+              &quot;`{t("about_description3")}&quot;
             </div>
           </div>
 
@@ -106,8 +104,9 @@ const About = () => {
           {/* Componente que divide un poco mas el texto con el ScrollDown 
            para dispositivos moviles */}
         </div>
+        <div className="mb-2"></div>
       </div>
-      <div className="flex justify-center sm:mt-4 lg:mt-0">
+      <div className="flex justify-center sm:mt-8 lg:mt-4">
         <Link to="services" smooth={true} duration={500} offset={-60}>
           <MagneticWrapper>
             <ScrollDown />

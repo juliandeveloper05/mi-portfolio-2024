@@ -7,6 +7,7 @@ import {
   Suspense,
   memo,
 } from "react";
+import styled from "styled-components";
 
 const WaterWave = lazy(() => import("react-water-wave"));
 
@@ -19,6 +20,12 @@ interface WaterWaveProps {
 }
 
 interface WaterWaveWrapperProps extends WaterWaveProps {}
+
+const ResponsiveContainer = styled.div`
+  @media (max-width: 740px) {
+    display: none;
+  }
+`;
 
 // eslint-disable-next-line react/display-name
 const WaterWaveWrapper: FC<WaterWaveWrapperProps> = memo(
@@ -34,16 +41,18 @@ const WaterWaveWrapper: FC<WaterWaveWrapperProps> = memo(
     }
 
     return (
-      <Suspense fallback={<div>Loading...</div>}>
-        <WaterWave
-          imageUrl={imageUrl}
-          dropRadius={dropRadius}
-          perturbance={perturbance}
-          resolution={resolution}
-        >
-          {children}
-        </WaterWave>
-      </Suspense>
+      <ResponsiveContainer>
+        <Suspense fallback={<div>Loading...</div>}>
+          <WaterWave
+            imageUrl={imageUrl}
+            dropRadius={dropRadius}
+            perturbance={perturbance}
+            resolution={resolution}
+          >
+            {children}
+          </WaterWave>
+        </Suspense>
+      </ResponsiveContainer>
     );
   }
 );

@@ -7,12 +7,8 @@ import FancyButton from "./fancy-button";
 import { Link } from "react-scroll";
 import MagneticWrapper from "./magnetic-wrapper";
 import dynamic from "next/dynamic";
-
-const ResponsiveWaterWaveWrapper = styled.div`
-  @media (max-width: 740px) {
-    display: none;
-  }
-`;
+import MobileProfile from "./mobileProfile";
+import { useEffect, useState } from "react";
 
 const HelloText = styled.p`
   font-family: "Montserrat", Sans-serif;
@@ -47,6 +43,19 @@ interface ProfileProps {
 const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
   const { t } = useTranslation("profile");
   const router = useRouter();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 740);
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const navigateTo = (path: string) => {
     router.push(path);
@@ -54,7 +63,9 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
 
   return (
     <>
-      <ResponsiveWaterWaveWrapper>
+      {isMobile ? (
+        <MobileProfile />
+      ) : (
         <WaterWaveWrapper
           imageUrl=""
           dropRadius="3"
@@ -220,7 +231,7 @@ const Profile: React.FC<ProfileProps> = ({ initialTime }) => {
             </section>
           )}
         </WaterWaveWrapper>
-      </ResponsiveWaterWaveWrapper>
+      )}
     </>
   );
 };

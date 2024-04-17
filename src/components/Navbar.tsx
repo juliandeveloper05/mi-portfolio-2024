@@ -9,13 +9,12 @@ const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
   const [selectedNavItem, setSelectedNavItem] = useState("home");
   const { t, i18n } = useTranslation("navbar");
-  const [windowWidth, setWindowWidth] = useState(0); // Initialize with 0
+  const [windowWidth, setWindowWidth] = useState(0);
 
   const getWindowWidth = () => {
     if (typeof window !== "undefined") {
       return window.innerWidth;
     }
-
     return 1024;
   };
 
@@ -25,13 +24,13 @@ const NavBar: React.FC = () => {
     };
 
     setWindowWidth(getWindowWidth());
-
     window.addEventListener("resize", handleResize);
 
     return () => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
   const handleNavLinkClick = (navItem: string) => {
     setNavbar(false);
     setSelectedNavItem(navItem);
@@ -40,7 +39,6 @@ const NavBar: React.FC = () => {
   const changeLanguage = (lang: string) => {
     console.log("Changing language to:", lang);
     i18n.changeLanguage(lang);
-    // Close the hamburger menu
     setNavbar(false);
   };
 
@@ -54,20 +52,17 @@ const NavBar: React.FC = () => {
     <motion.button
       onClick={onClick}
       className={`
-  
-      pb-2
-      text-xl
-    text-white
-      py-2
-      md:px-0
-      text-center 
-      px-1 
-      rounded-full 
-      bg-gradient-to-br  
-     
-      items-center
-      justify-center
-      "
+        pb-2
+        text-xl
+        text-white
+        py-2
+        md:px-0
+        text-center
+        px-1
+        rounded-full
+        bg-gradient-to-br
+        items-center
+        justify-center
       `}
       whileHover={{ scale: 1.05 }}
     >
@@ -132,12 +127,7 @@ const NavBar: React.FC = () => {
           </ul>
         </div>
         <div className="md:flex hidden">
-          {/* Botones de cambio de idioma en vista de escritorio */}
-          <div
-            className={`md:hidden mt-4 pb-2 flex items-center justify-center text-xs ${
-              navbar ? "block" : "hidden"
-            }`}
-          >
+          <div className="pb-2 flex items-center justify-center ">
             <Button onClick={() => changeLanguage("en")}>English</Button>/
             <Button onClick={() => changeLanguage("es")}>Español</Button>
           </div>
@@ -189,13 +179,10 @@ const NavBar: React.FC = () => {
                   />
                 </ul>
               </div>
-              {/* Botones de cambio de idioma en vista móvil */}
-              {navbar && (
-                <div className="mt-20 pb-2 flex items-center justify-center text-xs">
-                  <Button onClick={() => changeLanguage("en")}>English</Button>/
-                  <Button onClick={() => changeLanguage("es")}>Español</Button>
-                </div>
-              )}
+              <div className="mt-20 pb-2 flex items-center justify-center text-xs">
+                <Button onClick={() => changeLanguage("en")}>English</Button>/
+                <Button onClick={() => changeLanguage("es")}>Español</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -217,7 +204,7 @@ const NavItem: React.FC<NavItemProps> = ({
   navItem,
   handleNavLinkClick,
   t,
-  windowWidth, // Add this parameter
+  windowWidth,
 }) => {
   const activeClass = selectedNavItem === navItem ? "active" : "";
   const isMobile = windowWidth <= 740;
@@ -251,19 +238,20 @@ const NavItem: React.FC<NavItemProps> = ({
       }
     }
   };
+
   return (
     <li
       className={`
-        pb-2 
-        text-xl 
-        text-white 
-        py-2 
-        md:px-6 
-        text-center 
-        border-b-2 
+        pb-2
+        text-xl
+        text-white
+        py-2
+        md:px-6
+        text-center
+        border-b-2
         hover:bg-purple-800
-        border-purple-800  
-        md:hover:text-purple-400 
+        border-purple-800
+        md:hover:text-purple-400
         md:hover:bg-transparent
         ${activeClass === "active" ? "md:border-b-1" : "md:border-b-0"}
       `}

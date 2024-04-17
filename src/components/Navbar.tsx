@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "next-i18next";
 import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
@@ -9,7 +9,33 @@ const NavBar: React.FC = () => {
   const [navbar, setNavbar] = useState(false);
   const [selectedNavItem, setSelectedNavItem] = useState("home");
   const { t, i18n } = useTranslation("navbar");
+  const [windowWidth, setWindowWidth] = useState(0); // Initialize with 0
 
+  const getWindowWidth = () => {
+    // Check if window is available before accessing it
+    if (typeof window !== "undefined") {
+      return window.innerWidth;
+    }
+    // If window is not available, return a default value (e.g., 1024 for desktop)
+    return 1024;
+  };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(getWindowWidth());
+    };
+
+    // Set the initial windowWidth on component mount
+    setWindowWidth(getWindowWidth());
+
+    // Add event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
   const handleNavLinkClick = (navItem: string) => {
     setNavbar(false);
     setSelectedNavItem(navItem);
@@ -82,24 +108,28 @@ const NavBar: React.FC = () => {
               navItem="profile"
               handleNavLinkClick={handleNavLinkClick}
               t={t}
+              windowWidth={windowWidth}
             />
             <NavItem
               selectedNavItem={selectedNavItem}
               navItem="about"
               handleNavLinkClick={handleNavLinkClick}
               t={t}
+              windowWidth={windowWidth}
             />
             <NavItem
               selectedNavItem={selectedNavItem}
               navItem="services"
               handleNavLinkClick={handleNavLinkClick}
               t={t}
+              windowWidth={windowWidth}
             />
             <NavItem
               selectedNavItem={selectedNavItem}
               navItem="contact"
               handleNavLinkClick={handleNavLinkClick}
               t={t}
+              windowWidth={windowWidth}
             />
           </ul>
         </div>
@@ -132,24 +162,28 @@ const NavBar: React.FC = () => {
                     navItem="profile"
                     handleNavLinkClick={handleNavLinkClick}
                     t={t}
+                    windowWidth={windowWidth}
                   />
                   <NavItem
                     selectedNavItem={selectedNavItem}
                     navItem="about"
                     handleNavLinkClick={handleNavLinkClick}
                     t={t}
+                    windowWidth={windowWidth}
                   />
                   <NavItem
                     selectedNavItem={selectedNavItem}
                     navItem="services"
                     handleNavLinkClick={handleNavLinkClick}
                     t={t}
+                    windowWidth={windowWidth}
                   />
                   <NavItem
                     selectedNavItem={selectedNavItem}
                     navItem="contact"
                     handleNavLinkClick={handleNavLinkClick}
                     t={t}
+                    windowWidth={windowWidth}
                   />
                 </ul>
               </div>
@@ -173,6 +207,7 @@ interface NavItemProps {
   navItem: string;
   handleNavLinkClick: (navItem: string) => void;
   t: (key: string) => string;
+  windowWidth: number;
 }
 
 const NavItem: React.FC<NavItemProps> = ({
@@ -180,9 +215,40 @@ const NavItem: React.FC<NavItemProps> = ({
   navItem,
   handleNavLinkClick,
   t,
+  windowWidth, // Add this parameter
 }) => {
   const activeClass = selectedNavItem === navItem ? "active" : "";
+  const isMobile = windowWidth <= 740;
 
+  const getOffset = () => {
+    if (isMobile) {
+      switch (navItem) {
+        case "profile":
+          return -50;
+        case "about":
+          return -120;
+        case "services":
+          return -20;
+        case "contact":
+          return -110;
+        default:
+          return 0;
+      }
+    } else {
+      switch (navItem) {
+        case "profile":
+          return -20;
+        case "about":
+          return -100;
+        case "services":
+          return 40;
+        case "contact":
+          return -150;
+        default:
+          return 0;
+      }
+    }
+  };
   return (
     <li
       className={`
@@ -207,17 +273,7 @@ const NavItem: React.FC<NavItemProps> = ({
         smooth={true}
         duration={800}
         onClick={() => handleNavLinkClick(navItem)}
-        offset={
-          navItem === "profile"
-            ? -20
-            : navItem === "about"
-            ? -90
-            : navItem === "services"
-            ? 50
-            : navItem === "contact"
-            ? -130
-            : 0
-        }
+        offset={getOffset()}
       >
         {t(navItem)}
       </Link>

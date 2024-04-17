@@ -12,11 +12,10 @@ const NavBar: React.FC = () => {
   const [windowWidth, setWindowWidth] = useState(0); // Initialize with 0
 
   const getWindowWidth = () => {
-    // Check if window is available before accessing it
     if (typeof window !== "undefined") {
       return window.innerWidth;
     }
-    // If window is not available, return a default value (e.g., 1024 for desktop)
+
     return 1024;
   };
 
@@ -25,13 +24,10 @@ const NavBar: React.FC = () => {
       setWindowWidth(getWindowWidth());
     };
 
-    // Set the initial windowWidth on component mount
     setWindowWidth(getWindowWidth());
 
-    // Add event listener for window resize
     window.addEventListener("resize", handleResize);
 
-    // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
@@ -44,6 +40,8 @@ const NavBar: React.FC = () => {
   const changeLanguage = (lang: string) => {
     console.log("Changing language to:", lang);
     i18n.changeLanguage(lang);
+    // Close the hamburger menu
+    setNavbar(false);
   };
 
   interface ButtonProps {
@@ -135,7 +133,11 @@ const NavBar: React.FC = () => {
         </div>
         <div className="md:flex hidden">
           {/* Botones de cambio de idioma en vista de escritorio */}
-          <div className="pb-2 flex items-center justify-center ">
+          <div
+            className={`md:hidden mt-4 pb-2 flex items-center justify-center text-xs ${
+              navbar ? "block" : "hidden"
+            }`}
+          >
             <Button onClick={() => changeLanguage("en")}>English</Button>/
             <Button onClick={() => changeLanguage("es")}>Español</Button>
           </div>

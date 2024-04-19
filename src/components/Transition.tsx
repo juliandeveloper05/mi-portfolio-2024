@@ -54,7 +54,7 @@ const Transition = () => {
         exit="exit"
         transition={{ delay: 0.8, duration: 0.6, ease: "easeInOut" }}
       />
-      
+
       <motion.div
         /* Ultimo contenedor de la transicion */
         className="fixed right-0 h-screen w-screen bottom-full z-[11] bg-[#000000]"
@@ -68,4 +68,4 @@ const Transition = () => {
   );
 };
 
-export default Transition;
+export default React.memo(Transition);

@@ -1,15 +1,9 @@
-import {
-  FC,
-  ReactNode,
-  useEffect,
-  useState,
-  lazy,
-  Suspense,
-  memo,
-} from "react";
+import { FC, ReactNode, memo } from "react";
 import styled from "styled-components";
+import withClientOnly from "./withClientOnly";
+import React from "react";
 
-const WaterWave = lazy(() => import("react-water-wave"));
+const WaterWave = React.lazy(() => import("react-water-wave"));
 
 interface WaterWaveProps {
   imageUrl: string;
@@ -30,19 +24,9 @@ const ResponsiveContainer = styled.div`
 // eslint-disable-next-line react/display-name
 const WaterWaveWrapper: FC<WaterWaveWrapperProps> = memo(
   ({ imageUrl, dropRadius, perturbance, resolution, children }) => {
-    const [isClient, setIsClient] = useState(false);
-
-    useEffect(() => {
-      setIsClient(true);
-    }, []);
-
-    if (!isClient) {
-      return null;
-    }
-
     return (
       <ResponsiveContainer>
-        <Suspense fallback={<div>Loading...</div>}>
+        <React.Suspense fallback={<div>Loading...</div>}>
           <WaterWave
             imageUrl={imageUrl}
             dropRadius={dropRadius}
@@ -51,10 +35,12 @@ const WaterWaveWrapper: FC<WaterWaveWrapperProps> = memo(
           >
             {children}
           </WaterWave>
-        </Suspense>
+        </React.Suspense>
       </ResponsiveContainer>
     );
   }
 );
 
-export default WaterWaveWrapper;
+const WaterWaveWrapperWithClientOnly = withClientOnly(WaterWaveWrapper);
+
+export default WaterWaveWrapperWithClientOnly;

@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FaCode, FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import { IconType } from "react-icons";
-import Atropos from "atropos/react";
 import { useTranslation } from "next-i18next";
-import SvgCurve from "./svg-curve";
 
 function loadCSS(href: string, condition: boolean) {
   if (condition) {
@@ -36,7 +34,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     };
 
     window.addEventListener("resize", handleResize);
-    handleResize(); // Establecer el ancho de la pantalla inicial
+    handleResize();
 
     return () => {
       window.removeEventListener("resize", handleResize);

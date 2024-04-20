@@ -1,6 +1,5 @@
 import React from "react";
 import { BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
-import { Link } from "react-scroll";
 import { FaWhatsapp } from "react-icons/fa";
 import {
   Container,
@@ -12,17 +11,7 @@ import {
 } from "./FooterElements";
 import { useTranslation } from "next-i18next";
 
-/* 
-A TENER EN CUENTA: CADA VEZ QUE ARREGLO O SUMO ALGO DEL CODIGO 
-EL FOOTER COMIENZA A ROMPERSE. 
-PARA SOLUCIONARLO HAY QUE PONER DE NUEVO NPM RUN DEV.
-Keep in mind: Every time I fix or add something in the code,
- the footer starts to break. To solve it, you have to run npm run dev again.
-*/
-
-type Props = {};
-
-const Footer = ({}) => {
+const Footer = () => {
   const { t } = useTranslation("footer");
   const numeroDeTelefono = "+5491130666369";
 
@@ -37,11 +26,11 @@ const Footer = ({}) => {
       }}
     >
       <Wrapper>
-        <Logo className="text-pop" href="/">
+        <Logo className="text-pop unselectable" href="/">
           Julian Soto
         </Logo>
 
-        <WebsiteRights>
+        <WebsiteRights className="unselectable">
           {t("footer1")} &copy; {t("footer2")} {""}
           {new Date().getFullYear()}
         </WebsiteRights>

@@ -4,8 +4,10 @@ import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const NavBar: React.FC = () => {
+  const router = useRouter();
   const [navbar, setNavbar] = useState(false);
   const [selectedNavItem, setSelectedNavItem] = useState("home");
   const { t, i18n } = useTranslation("navbar");
@@ -39,6 +41,7 @@ const NavBar: React.FC = () => {
   const changeLanguage = (lang: string) => {
     console.log("Changing language to:", lang);
     i18n.changeLanguage(lang);
+    router.push(router.pathname, router.asPath, { locale: lang });
     setNavbar(false);
   };
 

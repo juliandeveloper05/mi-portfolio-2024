@@ -70,7 +70,6 @@ const Profile = () => {
             relative
             shadow-lg
             profile-image
-            
           "
           >
             <Image
@@ -145,7 +144,9 @@ const Profile = () => {
                   text={t("button1")}
                   onClick={() =>
                     window.open(
-                      "/25 EN ESPAÑOL CV ACTUALIZADO 2024 CON FOTO NUEVA.pdf"
+                      router.locale === "es"
+                        ? "/cv-español.pdf"
+                        : "/cv-ingles.pdf"
                     )
                   }
                   icon={undefined}

@@ -93,11 +93,11 @@ export default function ContactMe() {
         />
 
         {messageSent ? (
-          <div className="text-green-500 text-center font-bold mb-4">
+          <div className="text-green-500 text-center font-bold mb-10 mt-5">
             {t("contact7")}
           </div>
         ) : error ? (
-          <div className="text-red-500 text-center font-bold mb-4">
+          <div className="text-red-500 text-center font-bold mb-10 mt-5">
             {t("contact8")}
           </div>
         ) : (

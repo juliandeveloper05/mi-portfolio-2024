@@ -25,10 +25,10 @@ export default function ContactMe() {
 
       emailjs
         .send(
-          "service_tad13cb",
-          "template_rh43gsm",
+          process.env.SENDGRID_SERVICE_NAME || "",
+          process.env.SENDGRID_TEMPLATE_NAME || "",
           templateParams,
-          "Yg5GEBfor_PC2rxqk"
+          process.env.SENDGRID_USER_KEY
         )
         .then((res) => {
           console.log(res.text);

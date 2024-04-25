@@ -41,7 +41,20 @@ const NavBar: React.FC = () => {
   const changeLanguage = (lang: string) => {
     console.log("Changing language to:", lang);
     i18n.changeLanguage(lang);
-    router.push(router.pathname, router.asPath, { locale: lang });
+
+    // Obtener la posición actual del scroll
+    const currentScrollPosition =
+      window.pageYOffset || document.documentElement.scrollTop;
+
+    // Actualizar la URL sin cambiar la posición del scroll
+    router.replace(router.asPath, undefined, {
+      locale: lang,
+      scroll: false,
+    });
+
+    // Restaurar la posición del scroll después de cambiar el idioma
+    window.scrollTo(0, currentScrollPosition);
+
     setNavbar(false);
   };
 

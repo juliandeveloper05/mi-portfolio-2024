@@ -157,6 +157,3 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#next.config.js
-
-next.config.js

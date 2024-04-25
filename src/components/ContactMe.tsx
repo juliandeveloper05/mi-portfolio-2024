@@ -1,6 +1,7 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { FormEvent, useState } from "react";
 import SectionHeading from "./section-heading";
-import { FiSend, FiLoader, FiThumbsUp } from "react-icons/fi";
+import { FiSend, FiLoader, FiThumbsUp, FiThumbsDown } from "react-icons/fi";
 import { useTranslation } from "next-i18next";
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
@@ -11,16 +12,29 @@ export default function ContactMe() {
   const emailRef = useRef<HTMLInputElement>(null!);
   const [messageSent, setMessageSent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   const sendEmail = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     setIsLoading(true);
+    setError(false);
 
     if (formRef.current && emailRef.current) {
       const senderEmail = emailRef.current.value;
+      const message = formRef.current.message.value;
+
+      if (senderEmail.trim() === "" || message.trim() === "") {
+        setError(true);
+        setIsLoading(false);
+        setTimeout(() => {
+          setError(false);
+        }, 1000);
+        return;
+      }
+
       const templateParams = {
         email: senderEmail,
-        message: formRef.current.message.value,
+        message,
       };
 
       emailjs
@@ -78,24 +92,36 @@ export default function ContactMe() {
           className="h-52 my-3 rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all p-4 text-black"
         />
 
-        <button
-          type="submit"
-          disabled={isLoading}
-          className={`flex items-center justify-center gap-2 h-12 bg-indigo-600 hover:bg-indigo-700 transition-colors text-white rounded-full outline-none px-6 mx-auto sm:mb-10 mb-10 ${
-            isLoading ? "opacity-75 cursor-not-allowed" : ""
-          }`}
-        >
-          {isLoading ? (
-            <FiLoader className="animate-spin" />
-          ) : messageSent ? (
-            <FiThumbsUp className="text-lg" />
-          ) : (
-            <>
-              {t("contact6")}
-              <FiSend className="text-lg" />
-            </>
-          )}
-        </button>
+        {messageSent ? (
+          <div className="text-green-500 text-center font-bold mb-4">
+            {t("contact7")}
+          </div>
+        ) : error ? (
+          <div className="text-red-500 text-center font-bold mb-4">
+            {t("contact8")}
+          </div>
+        ) : (
+          <button
+            type="submit"
+            disabled={isLoading}
+            className={`flex items-center justify-center gap-2 h-12 bg-indigo-600 hover:bg-indigo-700 transition-colors text-white rounded-full outline-none px-6 mx-auto sm:mb-10 mb-10 ${
+              isLoading ? "opacity-75 cursor-not-allowed" : ""
+            }`}
+          >
+            {isLoading ? (
+              <FiLoader className="animate-spin" />
+            ) : messageSent ? (
+              <FiThumbsUp className="text-lg" />
+            ) : error ? (
+              <FiThumbsDown className="text-lg" />
+            ) : (
+              <>
+                {t("contact6")}
+                <FiSend className="text-lg" />
+              </>
+            )}
+          </button>
+        )}
       </form>
     </section>
   );

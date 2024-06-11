@@ -18,13 +18,13 @@ const Approach = () => {
 
   return (
     <>
-      <section id="approach" className="w-full py-14">
+      <section id="approach" className="w-full py-14 unselectable">
         <h1 className="heading">
           <h2 className="text-3xl text-center text-white mb-12">
             {t("approach1")}
           </h2>
         </h1>
-        <div className="py-6 flex flex-col lg:flex-row items-center justify-center bg-white dark:bg-black w-full gap-4 mx-auto px-8">
+        <div className="py-6 flex flex-col lg:flex-row items-center justify-center bg-black dark:bg-black w-full gap-4 mx-auto px-8">
           <Card
             title={t("showme_title1")}
             icon={<AceternityIcon order="showme1" />}
@@ -97,7 +97,7 @@ const Card = ({
         )}
       </AnimatePresence>
 
-      <div className="relative z-5 ">
+      <div className="relative z-5 unselectable">
         <div className=" text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200">
           {icon}
         </div>

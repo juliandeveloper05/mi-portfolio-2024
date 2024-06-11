@@ -12,7 +12,10 @@ const config: Config = {
       backgroundImage: {
         grain: "url(/assets/images/background/noisy-background.png)",
       },
-      animation: { "noisy-bg": "noise 1s steps(2) infinite" },
+      animation: {
+        "noisy-bg": "noise 1s steps(2) infinite",
+        shimmer: "shimmer 2s linear infinite", // Agregada la animación shimmer
+      },
       keyframes: {
         noise: {
           "0%": {
@@ -47,6 +50,15 @@ const config: Config = {
           },
           to: {
             transform: "translate3d(-7rem, 0, 0)",
+          },
+        },
+        shimmer: {
+          // Agregada la definición de la animación shimmer
+          from: {
+            backgroundPosition: "0 0",
+          },
+          to: {
+            backgroundPosition: "-200% 0",
           },
         },
       },

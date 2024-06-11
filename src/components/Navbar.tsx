@@ -111,7 +111,7 @@ const NavBar: React.FC = () => {
           </div>
         </div>
         <div className="hidden md:flex">
-          <ul className="flex gap-6">
+          <ul className="flex gap-0">
             <NavItem
               selectedNavItem={selectedNavItem}
               navItem="profile"
@@ -129,6 +129,13 @@ const NavBar: React.FC = () => {
             <NavItem
               selectedNavItem={selectedNavItem}
               navItem="services"
+              handleNavLinkClick={handleNavLinkClick}
+              t={t}
+              windowWidth={windowWidth}
+            />
+            <NavItem
+              selectedNavItem={selectedNavItem}
+              navItem="approach"
               handleNavLinkClick={handleNavLinkClick}
               t={t}
               windowWidth={windowWidth}
@@ -188,6 +195,13 @@ const NavBar: React.FC = () => {
                   />
                   <NavItem
                     selectedNavItem={selectedNavItem}
+                    navItem="approach"
+                    handleNavLinkClick={handleNavLinkClick}
+                    t={t}
+                    windowWidth={windowWidth}
+                  />
+                  <NavItem
+                    selectedNavItem={selectedNavItem}
                     navItem="contact"
                     handleNavLinkClick={handleNavLinkClick}
                     t={t}
@@ -234,6 +248,8 @@ const NavItem: React.FC<NavItemProps> = ({
           return -120;
         case "services":
           return -20;
+        case "approach":
+          return -120;
         case "contact":
           return -110;
         default:
@@ -247,6 +263,8 @@ const NavItem: React.FC<NavItemProps> = ({
           return -100;
         case "services":
           return 40;
+        case "approach":
+          return -120;
         case "contact":
           return -150;
         default:

@@ -63,7 +63,7 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="contact" className="mb-20 mx-auto sm:mb-28 unselectable">
+    <section id="contact" className="mb-20 mx-auto sm:mb-28 unselectable py-14">
       <SectionHeading>{t("contact1")}</SectionHeading>
       <p className="text-white text-center text-lg leading-relaxed mb-8">
         {t("contact2")}

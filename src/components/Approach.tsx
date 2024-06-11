@@ -83,7 +83,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className=" border border-black/[0.2] group/canvas-card flex flex-col items-center justify-center dark:border-white/[0.2] max-w-sm w-full mx-auto p-6 relative h-[30rem] "
+      className=" border border-white/[0.8] group/canvas-card flex flex-col items-center justify-center dark:border-white/[0.6] max-w-sm w-full mx-auto p-6 relative h-[30rem] "
     >
       <AnimatePresence>
         {hovered && (

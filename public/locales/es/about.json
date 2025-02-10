@@ -1,15 +1,11 @@
 {
-  "about1": "Acerca de mi",
-  "about_description_hello": "Hola!",
-  "experience1": "Experiencia",
-  "experience2": "2+ años de Desarrollo Frontend",
-  "experience3": "1+ años de Desarrollo Backend y Bases de Datos",
-  "education1": "Educacion",
-  "education2": "UNQUI (Argentina, Buenos Aires)",
-  "education3": "Licenciatura en Informatica",
-  "education4": "[En progreso]",
-  "about_description1": "Soy un Desarrollador Frontend Junior motivado, con habilidades en Next.js, Node.js, C#, .NET y fundamentos de desarrollo full-stack.",
-  "about_description2": "Con experiencia en bases de datos como MySQL y PostgreSQL y competencia en CSS, HTML5 y JavaScript, diseño interfaces receptivas que priorizan la experiencia del usuario.",
-  "about_description3": "Estoy comprometido con el continuo desarrollo de habilidades y aplico una mentalidad de aprendizaje a cada proyecto.",
-  "about_description4": "Mi objetivo es entregar código eficiente y mantenible, mientras me mantengo al día con las tecnologías web de vanguardia."
+  "about_description_hello": "Hola, soy Julian",
+  "about_description1": "Desarrollador Full Stack especializado en tecnologías web modernas",
+  "about_description2": "Apasionado por crear experiencias de usuario fluidas con tecnología de vanguardia",
+  "experience1": "Experiencia Laboral",
+  "experience2": "Desarrollador Full Stack en Soul Solutions",
+  "experience3": "Desarrollador E-commerce (MP Pantuflones)",
+  "projects1": "Proyectos Recientes",
+  "projects2": "Plataforma E-commerce personalizada con Next.js y MongoDB",
+  "projects3": "Portfolio Multilingüe con React y Framer Motion"
 }

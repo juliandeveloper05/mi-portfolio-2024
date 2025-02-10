@@ -1,15 +1,11 @@
 {
-  "about1": "About Me",
-  "about_description_hello": "Hello!",
-  "experience1": "Experience",
-  "experience2": "2+ years Frontend Development",
-  "experience3": "1+ years Backend Development and Databases",
-  "education1": "Education",
-  "education2": "UNQUI (Argentina, Buenos Aires)",
-  "education3": "Degree in computer science",
-  "education4": "[In progress]",
-  "about_description1": "I'm a driven Junior Frontend Developer, skilled in Next.js, Node.js, C#, .NET, and full-stack fundamentals.",
-  "about_description2": "With expertise in databases like MySQL and PostgreSQL and a proficiency in CSS, HTML5, and JavaScript, I craft responsive interfaces that prioritize user experience.",
-  "about_description3": "I am committed to continuous skill enhancement and apply a learner's mindset to every project.",
-  "about_description4": "My goal is to deliver efficient, maintainable code, while staying abreast of cutting-edge web technologies."
+  "about_description_hello": "Hello, I'm Julian",
+  "about_description1": "Full Stack Developer specializing in modern web technologies",
+  "about_description2": "Passionate about creating seamless user experiences with cutting-edge tech",
+  "experience1": "Work Experience",
+  "experience2": "Full Stack Developer at Soul Solutions",
+  "experience3": "E-commerce Developer (MP Pantuflones)",
+  "projects1": "Recent Projects",
+  "projects2": "Custom E-commerce Platform with Next.js & MongoDB",
+  "projects3": "Multilingual Portfolio with React & Framer Motion"
 }

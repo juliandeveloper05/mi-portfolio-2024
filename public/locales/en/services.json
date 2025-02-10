@@ -1,9 +1,11 @@
 {
   "services1": "My Services",
-  "web_design.title": "Web Design",
-  "web_design.description": "Crafting visually appealing and user-centric web designs using the latest technologies. My frontend expertise ensures responsive and dynamic user experiences.",
-  "ui_ux_design.title": "UI/UX Design",
-  "ui_ux_design.description": "Designing intuitive and impactful user interfaces by focusing on user experience principles. I aim to create seamless and engaging digital journeys.",
-  "app_design.title": "App Design",
-  "app_design.description": "Developing innovative app designs that combine functionality with aesthetics. My approach integrates modern design trends with user-friendly layouts."
+  "frontend_dev.title": "Frontend Development",
+  "frontend_dev.description": "Building modern and responsive user interfaces using cutting-edge technologies. Specialized in creating dynamic and interactive web applications with React and Next.js.",
+  "backend_dev.title": "Backend Development",
+  "backend_dev.description": "Developing robust and scalable server-side solutions with Node.js and Next.js. Creating efficient APIs and implementing secure authentication systems.",
+  "database_dev.title": "Database Management",
+  "database_dev.description": "Designing and implementing efficient database structures using MongoDB. Optimizing queries and ensuring data integrity for high-performance applications.",
+  "fullstack_dev.title": "Full Stack Solutions",
+  "fullstack_dev.description": "Delivering end-to-end web applications with modern tech stack. Integrating frontend and backend seamlessly for optimal user experience and performance."
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { FaBriefcase, FaGraduationCap, FaCode } from "react-icons/fa";
 import styled from "styled-components";
 import { useTranslation } from "next-i18next";
 import ScrollDown from "./scroll-down";
@@ -11,33 +11,49 @@ const SectionTitle = styled.div`
   font-size: 3rem;
 `;
 
+const TechStack = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+`;
+
+const TechBadge = styled.span`
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.25rem 0.75rem;
+  border-radius: 1rem;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+  }
+`;
+
 const About = () => {
   const { t } = useTranslation("about");
+
+  const techStack = [
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Node.js",
+    "MongoDB",
+    "Tailwind CSS",
+    "Auth0",
+    "MercadoPago",
+  ];
 
   return (
     <section
       id="about"
-      className="
-        min-h-screen
-        flex
-        flex-col
-        justify-center
-        bg-black
-        text-white
-        unselectable
-      "
+      className="min-h-screen flex flex-col justify-center bg-black text-white unselectable"
     >
-      <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row ">
-        <div className=" md:mb-0 md:w-1/3 flex justify-center md:justify-start">
+      <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row">
+        <div className="md:mb-0 md:w-1/3 flex justify-center md:justify-start">
           <Image
-            className="rounded-full
-            extra 
-            border-4 
-            w-[250px]
-            h-[250px]
-             md:w-[400px]
-            md:h-[400px]
-            "
+            className="rounded-full extra border-4 w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
             src="/about-me.jpg"
             alt="Profile"
             width={400}
@@ -46,33 +62,34 @@ const About = () => {
           />
         </div>
 
-        <div className={"md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col"}>
+        <div className="md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col">
           <div className="flex flex-col">
-            <div className="flex flex-row ">
-              <SectionTitle className="text-gray-300 text-center  md:text-left font-thin self-end">
-                {t("about_description_hello")}
-              </SectionTitle>
-            </div>
-            <div className="text-gray-300 text-center mt-4 md:text-left text-xl font-light self-start">
+            <SectionTitle className="text-gray-300 text-center md:text-left font-thin">
+              {t("about_description_hello")}
+            </SectionTitle>
+
+            <div className="text-gray-300 text-center mt-4 md:text-left text-xl font-light">
               {t("about_description1")}
             </div>
-            <div className="text-gray-300 text-center md:text-left text-xl font-light self-end">
+
+            <div className="text-gray-300 text-center md:text-left text-xl font-light">
               {t("about_description2")}
             </div>
-            <div className="text-gray-300 my-4 text-center md:text-left text-xl font-semilight self-end">
-              &quot;`{t("about_description3")}&quot;
-            </div>
+
+            <TechStack>
+              {techStack.map((tech, index) => (
+                <TechBadge key={index}>{tech}</TechBadge>
+              ))}
+            </TechStack>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start mt-8 space-y-4 md:space-y-0 md:space-x-4 items-center md:items-start text-lg">
+          <div className="flex flex-col md:flex-row justify-center md:justify-start mt-8 space-y-4 md:space-y-0 md:space-x-4">
             <div className="flex-1 card-inner">
-              <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
-                <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%]">
-                  <FaBriefcase className="inline-block mb-2 text-2xl text-center " />
-                  <h3 className="gamer-font text-xl font-semibold">
-                    {t("experience1")}
-                  </h3>
-                  <ul className="font-sixtyfour list-disc pl-5">
+              <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg">
+                <div className="rounded-lg p-4 bg-white text-black flex flex-col items-center">
+                  <FaBriefcase className="text-2xl mb-2" />
+                  <h3 className="text-xl font-semibold">{t("experience1")}</h3>
+                  <ul className="list-disc pl-5">
                     <div>{t("experience2")}</div>
                     <div>{t("experience3")}</div>
                   </ul>
@@ -81,77 +98,19 @@ const About = () => {
             </div>
 
             <div className="flex-1 card-inner">
-              <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg shadow-lg text-center">
-                <div className="rounded-lg p-4 bg-white text-black flex flex-col text-center justify-center items-center min-h-[100%] w-full">
-                  <FaGraduationCap className="inline-block mb-2 text-2xl" />
-                  <h3 className="gamer-font text-xl font-semibold">
-                    {t("education1")}
-                  </h3>
-                  <ul className="font-sixtyfour list-disc pl-5">
-                    <div>{t("education2")}</div>
-                    <div>{t("education3")}</div>
-                    <div>{t("education4")}</div>
+              <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg">
+                <div className="rounded-lg p-4 bg-white text-black flex flex-col items-center">
+                  <FaCode className="text-2xl mb-2" />
+                  <h3 className="text-xl font-semibold">{t("projects1")}</h3>
+                  <ul className="list-disc pl-5">
+                    <div>{t("projects2")}</div>
+                    <div>{t("projects3")}</div>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-        <div className="mb-14"></div>
-        <div className="mb-2"></div>
-      </div>
-      <div className="flex justify-center sm:mt-8 lg:mt-4">
-        <Link to="services" smooth={true} duration={500} offset={-60}>
-          <MagneticWrapper>
-            <ScrollDown />
-          </MagneticWrapper>
-        </Link>
-      </div>
-
-      <div className="mb-4" style={{ overflow: "hidden" }}>
-        <svg
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 180"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{
-            fill: "#ffffff",
-            width: "225%",
-            height: 100,
-            transform: "rotate(180deg)",
-          }}
-        >
-          <path
-            d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
-            opacity=".10"
-          />
-          <path
-            d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
-            opacity=".3"
-          />
-          <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
-        </svg>
-        <svg
-          preserveAspectRatio="none"
-          viewBox="0 0 1200 180"
-          xmlns="http://www.w3.org/2000/svg"
-          style={{
-            fill: "#ffffff",
-            width: "225%",
-            height: 100,
-            transform: "rotate(360deg)",
-          }}
-        >
-          <path
-            d="M0 0v46.29c47.79 22.2 103.59 32.17 158 28 70.36-5.37 136.33-33.31 206.8-37.5 73.84-4.36 147.54 16.88 218.2 35.26 69.27 18 138.3 24.88 209.4 13.08 36.15-6 69.85-17.84 104.45-29.34C989.49 25 1113-14.29 1200 52.47V0z"
-            opacity=".10"
-          />
-          <path
-            d="M0 0v15.81c13 21.11 27.64 41.05 47.69 56.24C99.41 111.27 165 111 224.58 91.58c31.15-10.15 60.09-26.07 89.67-39.8 40.92-19 84.73-46 130.83-49.67 36.26-2.85 70.9 9.42 98.6 31.56 31.77 25.39 62.32 62 103.63 73 40.44 10.79 81.35-6.69 119.13-24.28s75.16-39 116.92-43.05c59.73-5.85 113.28 22.88 168.9 38.84 30.2 8.66 59 6.17 87.09-7.5 22.43-10.89 48-26.93 60.65-49.24V0z"
-            opacity=".3"
-          />
-          <path d="M0 0v5.63C149.93 59 314.09 71.32 475.83 42.57c43-7.64 84.23-20.12 127.61-26.46 59-8.63 112.48 12.24 165.56 35.4C827.93 77.22 886 95.24 951.2 90c86.53-7 172.46-45.71 248.8-84.81V0z" />
-        </svg>
       </div>
     </section>
   );

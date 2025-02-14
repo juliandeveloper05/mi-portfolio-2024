@@ -1,0 +1,19 @@
+{
+  "projects_title": "Proyectos Destacados",
+  "mp_pantuflones": {
+    "description": "Una plataforma de comercio electrónico para pantuflas personalizadas con pagos seguros y gestión de pedidos.",
+    "date": "8 de Febrero de 2025"
+  },
+  "portfolio_2024": {
+    "description": "Portfolio personal construido con tecnologías web modernas, diseño responsivo y animaciones fluidas.",
+    "date": "6 de Junio de 2024"
+  },
+  "quadratic_solver": {
+    "title": "Calculadora de Fórmulas Cuadráticas",
+    "description": "Una herramienta de cálculo para resolver ecuaciones cuadráticas de manera rápida y eficiente. Simplemente ingrese los coeficientes y obtenga las soluciones, incluyendo resultados reales y complejos."
+  },
+  "buttons": {
+    "code": "Código",
+    "live_demo": "Demo en vivo"
+  }
+}

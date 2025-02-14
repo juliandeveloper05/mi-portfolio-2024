@@ -9,6 +9,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import GrainEffect from "../components/grain-effect";
 import { Poppins } from "next/font/google";
 import Approach from "@/components/Approach";
+import Projects from "../components/Projects";
 
 const myFont = Poppins({
   weight: "400",
@@ -23,6 +24,7 @@ export async function getStaticProps({ locale }: { locale: any }) {
         "profile",
         "about",
         "services",
+        "projects",
         "approach",
         "contact",
         "footer",
@@ -46,6 +48,7 @@ const Home = ({ children }: PropsWithChildren) => {
         <Profile />
         <About />
         <Services />
+        <Projects />
         <Approach />
         <ContactMe />
 

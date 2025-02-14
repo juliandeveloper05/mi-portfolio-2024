@@ -1,0 +1,16 @@
+{
+  "projects_title": "Featured Projects",
+  "mp_pantuflones": {
+    "description": "An e-commerce platform for customized slippers featuring secure payments and order management.",
+    "date": " Feb 8, 2025"
+  },
+  "portfolio_2024": {
+    "description": "Personal portfolio built with modern web technologies, responsive design, and smooth animations.",
+    "date": " Jun 6, 2024"
+  },
+
+  "buttons": {
+    "code": "Code",
+    "live_demo": "Live Demo"
+  }
+}

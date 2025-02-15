@@ -58,7 +58,10 @@ export default function ContactMe() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <section id="contact" className="flex-grow flex flex-col mb-32">
+      <section
+        id="contact"
+        className="flex-grow flex flex-col mb-32 unselectable"
+      >
         <div className="flex-1">
           <SectionHeading>{t("contact1")}</SectionHeading>
           <p className="text-white text-center text-lg leading-relaxed mb-8">

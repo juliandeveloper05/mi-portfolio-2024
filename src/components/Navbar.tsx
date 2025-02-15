@@ -1,4 +1,3 @@
-// src/components/Navbar.tsx
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
@@ -22,31 +21,47 @@ const FloatingNavbar = () => {
     "contact",
   ];
 
-  // Función para detectar qué sección está en vista
   useEffect(() => {
     const handleScroll = () => {
-      const sections = navItems.map((item) => ({
-        id: item,
-        element: document.getElementById(item),
-      }));
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const offset = windowHeight * 0.3; // 30% of viewport height for better detection
 
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
-
-      for (const section of sections) {
-        if (section.element) {
-          const offsetTop = section.element.offsetTop;
-          const offsetBottom = offsetTop + section.element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section.id);
-            break;
+      const sections = navItems
+        .map((item) => {
+          const element = document.getElementById(item);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            return {
+              id: item,
+              top: rect.top + scrollPosition,
+              bottom: rect.bottom + scrollPosition,
+            };
           }
+          return null;
+        })
+        .filter(Boolean);
+
+      // Find the current section
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const section = sections[i];
+        if (section && scrollPosition >= section.top - offset) {
+          setActiveSection(section.id);
+          break;
         }
+      }
+
+      // Special case for when we're at the bottom of the page
+      const bottomOfPage =
+        window.scrollY + window.innerHeight >=
+        document.documentElement.scrollHeight - 100;
+      if (bottomOfPage) {
+        setActiveSection("contact");
       }
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Llamada inicial para establecer la sección activa
+    // Initial check
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -77,9 +92,14 @@ const FloatingNavbar = () => {
         transition={{ duration: 0.2 }}
         className="fixed top-4 inset-x-0 mx-auto z-50"
       >
-        <div className="flex justify-between items-center max-w-4xl mx-auto px-4 py-2 rounded-full bg-black/80 backdrop-blur-sm border border-white/[0.25] shadow-lg">
-          {/* Logo */}
-          <Link to="profile" className="cursor-pointer">
+        <div className="unselectable flex justify-between items-center max-w-4xl mx-auto px-4 py-2 rounded-full bg-black/80 backdrop-blur-sm border border-white/[0.25] shadow-lg">
+          <Link
+            to="profile"
+            spy={true}
+            smooth={true}
+            duration={800}
+            className="cursor-pointer"
+          >
             <Image
               src="/newlogo.png"
               alt="Logo"
@@ -89,7 +109,6 @@ const FloatingNavbar = () => {
             />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <Link
@@ -98,6 +117,7 @@ const FloatingNavbar = () => {
                 spy={true}
                 smooth={true}
                 duration={800}
+                offset={-100} // Add offset to account for fixed navbar
                 onClick={() => handleNavLinkClick(item)}
                 className={`text-white font-light tracking-wide cursor-pointer transition-colors 
                   ${
@@ -112,7 +132,6 @@ const FloatingNavbar = () => {
             ))}
           </div>
 
-          {/* Language Toggle */}
           <div className="hidden md:flex items-center space-x-2">
             <button
               onClick={() => changeLanguage("en")}
@@ -139,7 +158,6 @@ const FloatingNavbar = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Button */}
           <button
             className="md:hidden text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
@@ -148,7 +166,6 @@ const FloatingNavbar = () => {
           </button>
         </div>
 
-        {/* Mobile Menu */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -165,6 +182,7 @@ const FloatingNavbar = () => {
                     spy={true}
                     smooth={true}
                     duration={800}
+                    offset={-100}
                     onClick={() => handleNavLinkClick(item)}
                     className={`text-white hover:text-white/70 text-center font-light tracking-wide capitalize
                       ${

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion, useAnimation, useInView } from "framer-motion";
 
 interface ScrollRevealProps {
@@ -23,11 +23,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   once = true,
 }) => {
   const ref = useRef<HTMLDivElement>(null);
-  const isInView = useInView(ref, {
-    once,
-    amount: threshold,
-  });
+  const isInView = useInView(ref, { once, amount: threshold });
   const controls = useAnimation();
+  const [isMobile, setIsMobile] = useState(true);
 
   const getInitialPosition = () => {
     const distance = 75;
@@ -45,24 +43,40 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
     }
   };
 
-  const getFinalPosition = () => {
-    switch (from) {
-      case "top":
-      case "bottom":
-        return { y: 0, opacity: 1 };
-      case "left":
-      case "right":
-        return { x: 0, opacity: 1 };
-      default:
-        return { y: 0, opacity: 1 };
-    }
-  };
+  const getFinalPosition = () => ({
+    x: 0,
+    y: 0,
+    opacity: 1,
+  });
 
   useEffect(() => {
-    if (isInView) {
+    const checkDevice = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    // Initial check
+    checkDevice();
+
+    // Add resize listener
+    window.addEventListener("resize", checkDevice);
+
+    // Cleanup
+    return () => window.removeEventListener("resize", checkDevice);
+  }, []);
+
+  useEffect(() => {
+    if (isInView && !isMobile) {
       controls.start(getFinalPosition());
     }
-  }, [isInView, controls]);
+  }, [isInView, isMobile, controls]);
+
+  if (isMobile) {
+    return (
+      <div ref={ref} style={{ width }} className={className}>
+        {children}
+      </div>
+    );
+  }
 
   return (
     <div ref={ref} style={{ width }} className={className}>
@@ -72,7 +86,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         transition={{
           duration,
           delay,
-          ease: [0.25, 0.1, 0.25, 1], // Custom easing function
+          ease: [0.25, 0.1, 0.25, 1],
         }}
       >
         {children}

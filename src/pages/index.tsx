@@ -1,5 +1,4 @@
-// src/pages/index.tsx
-import React, { PropsWithChildren, useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import About from "@/components/About";
@@ -35,35 +34,48 @@ export async function getStaticProps({ locale }: { locale: string }) {
   };
 }
 
-const Home = ({ children }: PropsWithChildren) => {
+const Home = () => {
+  const initialLoadRef = useRef(true);
+
   useEffect(() => {
-    // Al cargar o refrescar la página
-    if (typeof window !== "undefined") {
-      // Reemplazar el estado actual del historial con la URL base
-      window.history.replaceState({}, "", "/");
-      // Hacer scroll al inicio de la página
+    if (initialLoadRef.current) {
+      // Prevent scroll restoration
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "manual";
+      }
+
+      // Clear any existing hash
+      if (window.location.hash) {
+        window.history.replaceState(null, "", window.location.pathname);
+      }
+
+      // Force scroll to top
       window.scrollTo(0, 0);
+
+      // Prevent future executions
+      initialLoadRef.current = false;
     }
-  }, []); // Se ejecuta solo al montar el componente
+
+    return () => {
+      // Reset scroll restoration on unmount
+      if ("scrollRestoration" in history) {
+        history.scrollRestoration = "auto";
+      }
+    };
+  }, []);
 
   return (
     <>
-      {/* Fondo base negro fijo */}
       <div className="fixed inset-0 bg-black -z-30" />
-
-      {/* Efecto de grano fijo */}
       <div className="fixed inset-0 -z-20 w-full h-full">
         <GrainEffect />
       </div>
 
-      {/* Contenedor principal */}
       <div className="relative min-h-screen flex flex-col">
-        {/* Navbar */}
         <div className="sticky top-0 z-50">
           <Navbar />
         </div>
 
-        {/* Contenido principal */}
         <main className={`${poppins.className} flex-grow relative z-10`}>
           <div className="relative">
             <ScrollReveal from="top" delay={0.2}>
@@ -104,7 +116,6 @@ const Home = ({ children }: PropsWithChildren) => {
           </div>
         </main>
 
-        {/* Footer */}
         <footer className="relative z-10">
           <Footer />
         </footer>

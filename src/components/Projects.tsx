@@ -67,7 +67,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-transparent py-12 md:py-20"
+      className="min-h-screen bg-transparent py-12 md:py-20 unselectable"
     >
       <div className="container mx-auto px-4 md:px-8">
         <motion.h2

@@ -1,20 +1,19 @@
-// tailwind.config.ts
 import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/pages/**/_app.{js,ts,jsx,tsx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
       backgroundImage: {
-        grain: "url(/assets/images/background/noisy-background.png)",
+        grain: "url('/assets/images/background/noisy-background.png')",
       },
       animation: {
         "noisy-bg": "noise 1s steps(2) infinite",
-        shimmer: "shimmer 2s linear infinite", // Agregada la animación shimmer
+        shimmer: "shimmer 2s linear infinite",
       },
       keyframes: {
         noise: {
@@ -53,7 +52,6 @@ const config: Config = {
           },
         },
         shimmer: {
-          // Agregada la definición de la animación shimmer
           from: {
             backgroundPosition: "0 0",
           },
@@ -62,7 +60,6 @@ const config: Config = {
           },
         },
       },
-
       spacing: {
         "20": "5rem",
       },

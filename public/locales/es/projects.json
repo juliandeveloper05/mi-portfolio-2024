@@ -8,10 +8,6 @@
     "description": "Portfolio personal construido con tecnologías web modernas, diseño responsivo y animaciones fluidas.",
     "date": "6 de Junio de 2024"
   },
-  "quadratic_solver": {
-    "title": "Calculadora de Fórmulas Cuadráticas",
-    "description": "Una herramienta de cálculo para resolver ecuaciones cuadráticas de manera rápida y eficiente. Simplemente ingrese los coeficientes y obtenga las soluciones, incluyendo resultados reales y complejos."
-  },
   "buttons": {
     "code": "Código",
     "live_demo": "Demo en vivo"

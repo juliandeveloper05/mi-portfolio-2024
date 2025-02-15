@@ -48,7 +48,7 @@ const About = () => {
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center bg-black text-white unselectable"
+      className="min-h-screen flex flex-col justify-center bg-transparent text-white unselectable"
     >
       <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row">
         <div className="md:mb-0 md:w-1/3 flex justify-center md:justify-start">

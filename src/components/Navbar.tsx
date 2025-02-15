@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+// src/components/Navbar.tsx
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "react-scroll";
 import Image from "next/image";
@@ -9,7 +10,7 @@ import { useRouter } from "next/router";
 const FloatingNavbar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedNavItem, setSelectedNavItem] = useState("profile");
+  const [activeSection, setActiveSection] = useState("profile");
   const { t, i18n } = useTranslation("navbar");
 
   const navItems = [
@@ -21,9 +22,39 @@ const FloatingNavbar = () => {
     "contact",
   ];
 
+  // Función para detectar qué sección está en vista
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => ({
+        id: item,
+        element: document.getElementById(item),
+      }));
+
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
+
+      for (const section of sections) {
+        if (section.element) {
+          const offsetTop = section.element.offsetTop;
+          const offsetBottom = offsetTop + section.element.offsetHeight;
+
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section.id);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Llamada inicial para establecer la sección activa
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [navItems]);
+
   const handleNavLinkClick = (navItem: string) => {
     setIsOpen(false);
-    setSelectedNavItem(navItem);
+    setActiveSection(navItem);
   };
 
   const changeLanguage = (lang: string) => {
@@ -68,9 +99,13 @@ const FloatingNavbar = () => {
                 smooth={true}
                 duration={800}
                 onClick={() => handleNavLinkClick(item)}
-                className={`text-white hover:text-purple-400 cursor-pointer transition-colors ${
-                  selectedNavItem === item ? "border-b-2 border-purple-800" : ""
-                }`}
+                className={`text-white font-light tracking-wide cursor-pointer transition-colors 
+                  ${
+                    activeSection === item
+                      ? "border-b border-white/50"
+                      : "hover:text-white/70"
+                  }
+                  text-base capitalize`}
               >
                 {t(item)}
               </Link>
@@ -81,14 +116,24 @@ const FloatingNavbar = () => {
           <div className="hidden md:flex items-center space-x-2">
             <button
               onClick={() => changeLanguage("en")}
-              className="text-white hover:text-purple-400 transition-colors"
+              className={`text-white font-light tracking-wide transition-colors px-2
+                ${
+                  router.locale === "en"
+                    ? "border-b border-white/50"
+                    : "hover:text-white/70"
+                }`}
             >
               EN
             </button>
-            <span className="text-white">/</span>
+            <span className="text-white/50">/</span>
             <button
               onClick={() => changeLanguage("es")}
-              className="text-white hover:text-purple-400 transition-colors"
+              className={`text-white font-light tracking-wide transition-colors px-2
+                ${
+                  router.locale === "es"
+                    ? "border-b border-white/50"
+                    : "hover:text-white/70"
+                }`}
             >
               ES
             </button>
@@ -121,7 +166,10 @@ const FloatingNavbar = () => {
                     smooth={true}
                     duration={800}
                     onClick={() => handleNavLinkClick(item)}
-                    className="text-white hover:text-purple-400 text-center"
+                    className={`text-white hover:text-white/70 text-center font-light tracking-wide capitalize
+                      ${
+                        activeSection === item ? "border-b border-white/50" : ""
+                      }`}
                   >
                     {t(item)}
                   </Link>
@@ -129,14 +177,14 @@ const FloatingNavbar = () => {
                 <div className="flex justify-center space-x-4 pt-4 border-t border-white/20">
                   <button
                     onClick={() => changeLanguage("en")}
-                    className="text-white hover:text-purple-400"
+                    className="text-white hover:text-white/70 font-light tracking-wide"
                   >
                     English
                   </button>
-                  <span className="text-white">/</span>
+                  <span className="text-white/50">/</span>
                   <button
                     onClick={() => changeLanguage("es")}
-                    className="text-white hover:text-purple-400"
+                    className="text-white hover:text-white/70 font-light tracking-wide"
                   >
                     Español
                   </button>

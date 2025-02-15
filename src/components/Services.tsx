@@ -124,7 +124,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="bg-black">
+    <section id="services" className="bg-transparent">
       <div className="container mx-auto px-4 py-20">
         <motion.h2
           className="text-3xl font-bold text-center text-white mb-12"

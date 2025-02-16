@@ -8,7 +8,10 @@ import dynamic from "next/dynamic";
 
 const DynamicCursor = dynamic(() => import("../components/cursor"), {
   ssr: false,
-  loading: () => <div>Cargando...</div>,
+});
+
+const DynamicChat = dynamic(() => import("../components/Chat"), {
+  ssr: false,
 });
 
 function App({ Component, pageProps }: AppProps) {
@@ -23,12 +26,8 @@ function App({ Component, pageProps }: AppProps) {
     };
 
     handleResize();
-
     window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
 
   return (
@@ -36,20 +35,14 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>Julian Soto | Portfolio</title>
         <link rel="icon" href="/newlogo.png" />
-        <link
-          rel="preload"
-          href="/fonts/roboto-regular.woff2"
-          as="font"
-          type="font/woff2"
-          crossOrigin="anonymous"
-        />
-        <link rel="preload" href="/styles/main.css" as="style" />
       </Head>
       {isMobile ? (
         <Component {...pageProps} />
       ) : (
         <>
-          <DynamicCursor color="#fff" /> <Component {...pageProps} />
+          <DynamicCursor color="#fff" />
+          <Component {...pageProps} />
+          <DynamicChat />
         </>
       )}
     </>

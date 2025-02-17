@@ -596,6 +596,14 @@ body {
   display: inline-block;
 }
 
+.fancy-btn div {
+  transition: all 0.3s ease;
+}
+
+.fancy-btn:hover div {
+  background: transparent;
+}
+
 /*---Svg curve---*/
 
 .line {

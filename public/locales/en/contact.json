@@ -1,13 +1,11 @@
 {
-  "contact1": "Contact Me",
-  "contact2": "Please contact me directly at",
-  "contact3": "or through this form",
-  "contact4": "Your email address",
+  "contact1": "Contact me",
+  "contact2": "For any inquiries, write to",
+  "contact3": "or fill out the form:",
+  "contact4": "Your email",
   "contact5": "Your message",
-  "contact6": "Submit",
-  "contact7": "Your Message Successfully Sent!",
-  "contact8": "Fields Can't Be Empty!",
-  "availability1": "I'm",
-  "availability2": " available ",
-  "availability3": "for freelance work."
+  "contact6": "Send",
+  "contact7": "Message sent successfully!",
+  "contact8": "Fields cannot be empty",
+  "contact9": "There was an error sending. Please try again."
 }

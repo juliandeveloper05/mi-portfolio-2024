@@ -1,13 +1,11 @@
 {
-  "contact1": "Contactame",
-  "contact2": "Por favor contáctame directamente a",
-  "contact3": "o a través de este formulario",
-  "contact4": "Su dirección de correo electrónico",
+  "contact1": "Contáctame",
+  "contact2": "Para cualquier duda, escribe a",
+  "contact3": "o rellena el formulario:",
+  "contact4": "Tu correo",
   "contact5": "Tu mensaje",
   "contact6": "Enviar",
-  "contact7": "Tu Mensaje Se envio Correctamente",
-  "contact8": "Los Campos No Pueden Estar Vacíos",
-  "availability1": "Estoy",
-  "availability2": " disponible ",
-  "availability3": "para trabajo freelance."
+  "contact7": "¡Mensaje enviado exitosamente!",
+  "contact8": "Los campos no pueden estar vacíos",
+  "contact9": "Hubo un error al enviar. Intenta de nuevo."
 }

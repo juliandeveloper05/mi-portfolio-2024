@@ -8,6 +8,43 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
+        },
+        secondary: {
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
+        },
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
+        accent: {
+          DEFAULT: "hsl(var(--accent))",
+          foreground: "hsl(var(--accent-foreground))",
+        },
+        popover: {
+          DEFAULT: "hsl(var(--popover))",
+          foreground: "hsl(var(--popover-foreground))",
+        },
+        card: {
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
+        },
+        "white-transparent-70": "rgba(255, 255, 255, 0.7)",
+        "white-transparent-475": "rgba(255, 255, 255, 0.475)",
+      },
       backgroundImage: {
         grain: "url('/assets/images/background/noisy-background.png')",
       },
@@ -17,48 +54,28 @@ const config: Config = {
       },
       keyframes: {
         noise: {
-          "0%": {
-            transform: "translate3d(0, 9rem, 0)",
-          },
-          "10%": {
-            transform: "translate3d(-1rem, -4rem, 0)",
-          },
-          "20%": {
-            transform: "translate3d(-8rem, 2rem, 0)",
-          },
-          "30%": {
-            transform: "translate3d(9rem, -9rem, 0)",
-          },
-          "40%": {
-            transform: "translate3d(-2rem, 7rem, 0)",
-          },
-          "50%": {
-            transform: "translate3d(-9rem, -4rem, 0)",
-          },
-          "60%": {
-            transform: "translate3d(2rem, 6rem, 0)",
-          },
-          "70%": {
-            transform: "translate3d(7rem, -8rem, 0)",
-          },
-          "80%": {
-            transform: "translate3d(-9rem, 1rem, 0)",
-          },
-          "90%": {
-            transform: "translate3d(6rem, -5rem, 0)",
-          },
-          to: {
-            transform: "translate3d(-7rem, 0, 0)",
-          },
+          "0%": { transform: "translate3d(0, 9rem, 0)" },
+          "10%": { transform: "translate3d(-1rem, -4rem, 0)" },
+          "20%": { transform: "translate3d(-8rem, 2rem, 0)" },
+          "30%": { transform: "translate3d(9rem, -9rem, 0)" },
+          "40%": { transform: "translate3d(-2rem, 7rem, 0)" },
+          "50%": { transform: "translate3d(-9rem, -4rem, 0)" },
+          "60%": { transform: "translate3d(2rem, 6rem, 0)" },
+          "70%": { transform: "translate3d(7rem, -8rem, 0)" },
+          "80%": { transform: "translate3d(-9rem, 1rem, 0)" },
+          "90%": { transform: "translate3d(6rem, -5rem, 0)" },
+          to: { transform: "translate3d(-7rem, 0, 0)" },
         },
         shimmer: {
-          from: {
-            backgroundPosition: "0 0",
-          },
-          to: {
-            backgroundPosition: "-200% 0",
-          },
+          from: { backgroundPosition: "0 0" },
+          to: { backgroundPosition: "-200% 0" },
         },
+      },
+      borderRadius: {
+        lg: "var(--radius)",
+        md: "calc(var(--radius) - 2px)",
+        sm: "calc(var(--radius) - 4px)",
+        "1rem": "1rem",
       },
       spacing: {
         "20": "5rem",
@@ -76,9 +93,6 @@ const config: Config = {
         "5": "5",
         "-10": "-10",
       },
-      borderRadius: {
-        "1rem": "1rem",
-      },
       rotate: {
         "15deg": "15deg",
       },
@@ -88,10 +102,6 @@ const config: Config = {
       backdropFilter: {
         none: "none",
         "5": "blur(5px)",
-      },
-      colors: {
-        "white-transparent-70": "rgba(255, 255, 255, 0.7)",
-        "white-transparent-475": "rgba(255, 255, 255, 0.475)",
       },
     },
   },

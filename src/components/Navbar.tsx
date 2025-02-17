@@ -17,6 +17,7 @@ const FloatingNavbar = () => {
     "about",
     "services",
     "projects",
+    "timeline",
     "approach",
     "contact",
   ];
@@ -25,7 +26,7 @@ const FloatingNavbar = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      const offset = windowHeight * 0.3; // 30% of viewport height for better detection
+      const offset = windowHeight * 0.3;
 
       const sections = navItems
         .map((item) => {
@@ -42,7 +43,6 @@ const FloatingNavbar = () => {
         })
         .filter(Boolean);
 
-      // Find the current section
       for (let i = sections.length - 1; i >= 0; i--) {
         const section = sections[i];
         if (section && scrollPosition >= section.top - offset) {
@@ -51,7 +51,6 @@ const FloatingNavbar = () => {
         }
       }
 
-      // Special case for when we're at the bottom of the page
       const bottomOfPage =
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight - 100;
@@ -61,7 +60,6 @@ const FloatingNavbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    // Initial check
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
@@ -117,7 +115,7 @@ const FloatingNavbar = () => {
                 spy={true}
                 smooth={true}
                 duration={800}
-                offset={-100} // Add offset to account for fixed navbar
+                offset={-100}
                 onClick={() => handleNavLinkClick(item)}
                 className={`text-white font-light tracking-wide cursor-pointer transition-colors 
                   ${

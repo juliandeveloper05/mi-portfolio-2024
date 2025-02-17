@@ -1,0 +1,26 @@
+{
+  "title": "Education & Experience",
+  "subtitle": "My journey in technology and education",
+  "events": {
+    "apx": {
+      "title": "APX School - Software Developer",
+      "description": "Currently studying software development",
+      "details": "Advancing my skills in modern web development technologies and best practices"
+    },
+    "unq": {
+      "title": "Universidad Nacional de Quilmes",
+      "description": "Computer Science Degree",
+      "details": "Currently pursuing a degree in Computer Science, focusing on theoretical and practical aspects of computing"
+    },
+    "soul": {
+      "title": "Soul Solutions - Full Stack Developer",
+      "description": "Professional experience in web development",
+      "details": "Working with Next.js, Node, TypeScript, Tailwind, MongoDB, and other modern technologies. Developing frontend and backend solutions, collaborating with teams, and implementing RESTful APIs"
+    },
+    "school": {
+      "title": "Colegio Cimdip and Miguel Cane",
+      "description": "Economics Orientation",
+      "details": "Completed secondary education with a focus on economics and business fundamentals"
+    }
+  }
+}

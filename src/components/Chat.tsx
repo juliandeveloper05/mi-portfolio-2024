@@ -1,71 +1,59 @@
-import React, { useEffect, useState, useCallback } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 
-interface IntellitickSettings {
-  appearance?: {
-    theme?: {
-      primaryColor?: string;
-      secondaryColor?: string;
+// Definimos los tipos correctos para el objeto Intelliticks en window
+declare global {
+  interface Window {
+    iticks?: {
+      host: string;
+      settings: any;
+      clientId: string;
+      cdn: string;
+      queue: any[];
+      call: (action: string, params: any) => void;
     };
-    position?: {
-      bottom?: string;
-      right?: string;
-    };
-  };
-  messages?: {
-    welcome?: string;
-    offline?: string;
-    header?: string;
-  };
-  triggers?: {
-    timeOnPage?: number;
-    exitIntent?: boolean;
-  };
+  }
 }
-
-interface IntellitickWindow extends Window {
-  iticks?: {
-    host: string;
-    settings: IntellitickSettings;
-    clientId: string;
-    cdn: string;
-    queue: Array<[string, any]>;
-    call: (a: string, b: any) => void;
-  };
-}
-
-declare const window: IntellitickWindow;
 
 const Chat: React.FC = () => {
-  const [isVisible, setIsVisible] = useState(true);
   const [initialized, setInitialized] = useState(false);
   const router = useRouter();
-  const { locale } = router;
   const { t } = useTranslation("chat");
 
-  const handleScroll = useCallback(() => {
-    const currentScrollY = window.scrollY;
-    const footerHeight = 70;
-    const windowHeight = window.innerHeight;
-    const documentHeight = document.documentElement.scrollHeight;
-    const buffer = 100;
-
-    if (
-      currentScrollY + windowHeight >
-      documentHeight - footerHeight - buffer
-    ) {
-      setIsVisible(false);
-    } else {
-      setIsVisible(true);
-    }
-  }, []);
-
   useEffect(() => {
+    // Solo inicializamos una vez
     if (initialized) return;
 
-    const initializeIntelliticks = () => {
+    const initChat = () => {
+      // Eliminamos cualquier inicialización existente de Intelliticks
+      if (window.iticks) {
+        delete window.iticks;
+      }
+
+      // Inicializamos Intelliticks con la configuración adecuada
+      const settings = {
+        appearance: {
+          theme: {
+            primaryColor: "#00ff9d", // Color principal que coincide con tu diseño
+            secondaryColor: "#ffffff",
+          },
+          position: {
+            bottom: "20px",
+            right: "20px",
+          },
+        },
+        messages: {
+          header: t("header"),
+          welcome: t("welcome"),
+          offline: t("offline"),
+        },
+        triggers: {
+          timeOnPage: 15, // Mostrar después de 15 segundos
+          exitIntent: true,
+        },
+      };
+
       (function (I, L, T, i, c, k, s) {
         if (I.iticks) return;
         I.iticks = {
@@ -78,16 +66,12 @@ const Chat: React.FC = () => {
             this.queue.push([a, b]);
           },
         };
+
         const h = T.head || T.documentElement;
         const e = T.createElement(i) as HTMLScriptElement;
         e.async = true;
         e.src = (L || c) + "/client/inject-v2.min.js";
         h.insertBefore(e, h.firstChild);
-        I.iticks.call = function (a, b) {
-          if (I.iticks) {
-            I.iticks.queue.push([a, b]);
-          }
-        };
       })(
         window,
         "https://cdn-v1.intelliticks.com/prod/common",
@@ -95,76 +79,38 @@ const Chat: React.FC = () => {
         "script",
         "https://app.intelliticks.com",
         "s2T7oTkLuabZ9qbBx_c",
-        {
-          appearance: {
-            theme: {
-              primaryColor: "#00ff9d",
-              secondaryColor: "#ffffff",
-            },
-            position: {
-              bottom: "100px",
-              right: "20px",
-            },
-          },
+        settings
+      );
+
+      setInitialized(true);
+    };
+
+    // Inicializamos el chat cuando el componente se monta
+    initChat();
+
+    // Actualizamos la configuración del chat cuando cambia el idioma
+    const updateChatLanguage = () => {
+      if (window.iticks?.call) {
+        window.iticks.call("updateSettings", {
           messages: {
             header: t("header"),
             welcome: t("welcome"),
             offline: t("offline"),
           },
-          triggers: {
-            timeOnPage: 30,
-            exitIntent: true,
-          },
-        }
-      );
+        });
+      }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    if (typeof window !== "undefined") {
-      initializeIntelliticks();
-      setInitialized(true);
-    }
+    // Escuchamos cambios de ruta para actualizar el idioma
+    router.events.on("routeChangeComplete", updateChatLanguage);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      router.events.off("routeChangeComplete", updateChatLanguage);
     };
-  }, [handleScroll, initialized, t]);
+  }, [initialized, t, router]);
 
-  // Update messages when language changes
-  useEffect(() => {
-    if (window.iticks && window.iticks.call) {
-      window.iticks.call("updateSettings", {
-        messages: {
-          header: t("header"),
-          welcome: t("welcome"),
-          offline: t("offline"),
-        },
-      });
-    }
-  }, [locale, t]);
-
-  return (
-    <AnimatePresence>
-      {isVisible && (
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 20 }}
-          transition={{
-            duration: 0.3,
-            ease: "easeInOut",
-          }}
-          className="fixed z-50 transition-all duration-300"
-          style={{
-            bottom: "100px",
-            right: "20px",
-            willChange: "transform, opacity",
-          }}
-        />
-      )}
-    </AnimatePresence>
-  );
+  // El widget del chat se inyecta directamente en el DOM, no necesitamos renderizar nada
+  return null;
 };
 
 export default Chat;

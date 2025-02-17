@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import About from "@/components/About";
 import Services from "@/components/Services";
+import Timeline from "@/components/Timeline";
 import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -26,6 +27,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "about",
         "services",
         "projects",
+        "timeline",
         "approach",
         "contact",
         "footer",
@@ -39,25 +41,19 @@ const Home = () => {
 
   useEffect(() => {
     if (initialLoadRef.current) {
-      // Prevent scroll restoration
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "manual";
       }
 
-      // Clear any existing hash
       if (window.location.hash) {
         window.history.replaceState(null, "", window.location.pathname);
       }
 
-      // Force scroll to top
       window.scrollTo(0, 0);
-
-      // Prevent future executions
       initialLoadRef.current = false;
     }
 
     return () => {
-      // Reset scroll restoration on unmount
       if ("scrollRestoration" in history) {
         history.scrollRestoration = "auto";
       }
@@ -99,6 +95,12 @@ const Home = () => {
             <ScrollReveal from="right" delay={0.3}>
               <section id="projects" className="min-h-screen bg-transparent">
                 <Projects />
+              </section>
+            </ScrollReveal>
+
+            <ScrollReveal from="right" delay={0.3}>
+              <section id="timeline" className="min-h-screen bg-transparent">
+                <Timeline />
               </section>
             </ScrollReveal>
 

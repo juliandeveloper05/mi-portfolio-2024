@@ -10,10 +10,6 @@ const DynamicCursor = dynamic(() => import("../components/cursor"), {
   ssr: false,
 });
 
-const DynamicChat = dynamic(() => import("../components/Chat"), {
-  ssr: false,
-});
-
 function App({ Component, pageProps }: AppProps) {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -42,7 +38,6 @@ function App({ Component, pageProps }: AppProps) {
         <>
           <DynamicCursor color="#fff" />
           <Component {...pageProps} />
-          <DynamicChat />
         </>
       )}
     </>

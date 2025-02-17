@@ -1,0 +1,26 @@
+{
+  "title": "Educación y Experiencia",
+  "subtitle": "Mi trayectoria en tecnología y educación",
+  "events": {
+    "apx": {
+      "title": "APX School - Desarrollador de Software",
+      "description": "Actualmente estudiando desarrollo de software",
+      "details": "Perfeccionando mis habilidades en tecnologías de desarrollo web moderno y mejores prácticas"
+    },
+    "unq": {
+      "title": "Universidad Nacional de Quilmes",
+      "description": "Licenciatura en Informática",
+      "details": "Actualmente cursando la carrera de Informática, enfocándome en aspectos teóricos y prácticos de la computación"
+    },
+    "soul": {
+      "title": "Soul Solutions - Desarrollador Full Stack",
+      "description": "Experiencia profesional en desarrollo web",
+      "details": "Trabajando con Next.js, Node, TypeScript, Tailwind, MongoDB y otras tecnologías modernas. Desarrollo de soluciones frontend y backend, colaboración en equipos e implementación de APIs RESTful"
+    },
+    "school": {
+      "title": "Colegio Cimdip y Miguel Cane",
+      "description": "Orientación en Economía",
+      "details": "Completé la educación secundaria con enfoque en fundamentos de economía y negocios"
+    }
+  }
+}

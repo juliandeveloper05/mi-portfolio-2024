@@ -80,11 +80,9 @@ const Home = () => {
         >
           <main className={`${poppins.className} flex-grow relative z-10`}>
             <div className="relative">
-              <ScrollReveal from="top" delay={0.2}>
-                <section id="profile" className="min-h-screen bg-transparent">
-                  <Profile />
-                </section>
-              </ScrollReveal>
+              <section id="profile" className="min-h-screen bg-transparent">
+                <Profile />
+              </section>
 
               <ScrollReveal from="right" delay={0.3}>
                 <section id="about" className="min-h-screen bg-transparent">

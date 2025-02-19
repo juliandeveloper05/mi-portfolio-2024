@@ -12,6 +12,7 @@ import { Poppins } from "next/font/google";
 import Approach from "@/components/Approach";
 import Projects from "@/components/Projects";
 import ScrollReveal from "@/components/scroll-reveal";
+import WaterWaveWrapper from "@/components/WaterWaveWrapper";
 
 const poppins = Poppins({
   weight: "400",
@@ -71,52 +72,58 @@ const Home = () => {
         <div className="sticky top-0 z-50">
           <Navbar />
         </div>
+        <WaterWaveWrapper
+          imageUrl="/assets/ocean-background.jpg"
+          dropRadius={30}
+          perturbance={0.04}
+          resolution={512}
+        >
+          <main className={`${poppins.className} flex-grow relative z-10`}>
+            <div className="relative">
+              <ScrollReveal from="top" delay={0.2}>
+                <section id="profile" className="min-h-screen bg-transparent">
+                  <Profile />
+                </section>
+              </ScrollReveal>
 
-        <main className={`${poppins.className} flex-grow relative z-10`}>
-          <div className="relative">
-            <ScrollReveal from="top" delay={0.2}>
-              <section id="profile" className="min-h-screen bg-transparent">
-                <Profile />
-              </section>
-            </ScrollReveal>
+              <ScrollReveal from="right" delay={0.3}>
+                <section id="about" className="min-h-screen bg-transparent">
+                  <About />
+                </section>
+              </ScrollReveal>
 
-            <ScrollReveal from="right" delay={0.3}>
-              <section id="about" className="min-h-screen bg-transparent">
-                <About />
-              </section>
-            </ScrollReveal>
+              <ScrollReveal from="left" delay={0.3}>
+                <section id="services" className="min-h-screen bg-transparent">
+                  <Services />
+                </section>
+              </ScrollReveal>
 
-            <ScrollReveal from="left" delay={0.3}>
-              <section id="services" className="min-h-screen bg-transparent">
-                <Services />
-              </section>
-            </ScrollReveal>
+              <ScrollReveal from="right" delay={0.3}>
+                <section id="projects" className="min-h-screen bg-transparent">
+                  <Projects />
+                </section>
+              </ScrollReveal>
 
-            <ScrollReveal from="right" delay={0.3}>
-              <section id="projects" className="min-h-screen bg-transparent">
-                <Projects />
-              </section>
-            </ScrollReveal>
+              <ScrollReveal from="right" delay={0.3}>
+                <section id="timeline" className="min-h-screen bg-transparent">
+                  <Timeline />
+                </section>
+              </ScrollReveal>
 
-            <ScrollReveal from="right" delay={0.3}>
-              <section id="timeline" className="min-h-screen bg-transparent">
-                <Timeline />
-              </section>
-            </ScrollReveal>
+              <ScrollReveal from="left" delay={0.3}>
+                <section id="approach" className="min-h-screen bg-transparent">
+                  <Approach />
+                </section>
+              </ScrollReveal>
 
-            <ScrollReveal from="left" delay={0.3}>
-              <section id="approach" className="min-h-screen bg-transparent">
-                <Approach />
-              </section>
-            </ScrollReveal>
-
-            <ScrollReveal from="bottom" delay={0.3}>
-              <section id="contact" className="min-h-screen bg-transparent">
-                <ContactMe />
-              </section>
-            </ScrollReveal>
-          </div>
-        </main>
+              <ScrollReveal from="bottom" delay={0.3}>
+                <section id="contact" className="min-h-screen bg-transparent">
+                  <ContactMe />
+                </section>
+              </ScrollReveal>
+            </div>
+          </main>
+        </WaterWaveWrapper>
 
         <footer className="relative z-10">
           <Footer />

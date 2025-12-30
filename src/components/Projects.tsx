@@ -11,6 +11,9 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiFramer,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
 } from "react-icons/si";
 
 const Projects = () => {
@@ -50,6 +53,21 @@ const Projects = () => {
       githubUrl: "https://github.com/juliandeveloper05/mi-portfolio-2024",
       liveUrl: "/",
       gradient: "from-cyan-600/20 via-cyan-800/20 to-cyan-900/20",
+    },
+    {
+      id: 3,
+      title: "Soul Solutions",
+      description: t("soul_solutions.description"),
+      date: t("soul_solutions.date"),
+      technologies: [
+        { icon: SiHtml5, label: "HTML5" },
+        { icon: SiCss3, label: "CSS3" },
+        { icon: SiJavascript, label: "JavaScript" },
+      ],
+      image: "/assets/soul-solutions-preview.jpg",
+      githubUrl: "https://github.com/juliandeveloper05/soul-solutions",
+      liveUrl: "https://soul-solutions-mauve.vercel.app/",
+      gradient: "from-blue-600/20 via-blue-800/20 to-blue-900/20",
     },
   ];
 

@@ -25,11 +25,23 @@ const ProfessionalText = styled.p`
 
 const SubtitleText = styled.p`
   font-family: "Montserrat", Sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
-  letter-spacing: 1px;
-  color: rgba(255, 255, 255, 0.7);
-  margin-top: 0.5rem;
+  letter-spacing: 0.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 0.75rem;
+  padding: 0 1rem;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+    letter-spacing: 1px;
+    padding: 0;
+    max-width: none;
+  }
 `;
 
 const Profile = () => {

@@ -1,11 +1,11 @@
 {
-  "about_description_hello": "Hola, soy Julian",
-  "about_description1": "Desarrollador Full Stack especializado en tecnologías web modernas",
-  "about_description2": "Apasionado por crear experiencias de usuario fluidas con tecnología de vanguardia",
+  "about_description_hello": "Más Allá del Código",
+  "about_description1": "Soy Ingeniero de Software Senior con un perfil único: conecto sistemas críticos legacy (COBOL/Db2) con arquitecturas modernas en la nube (Next.js/TypeScript).",
+  "about_description2": "No solo construyo sitios web; diseño soluciones escalables y tipadas que resuelven problemas de negocio complejos.",
   "experience1": "Experiencia Laboral",
-  "experience2": "Desarrollador Full Stack en Soul Solutions",
-  "experience3": "Desarrollador E-commerce (MP Pantuflones)",
+  "experience2": "Senior Software Engineer en Soul Solutions",
+  "experience3": "Arquitecto de Plataforma E-commerce (NexusShop)",
   "projects1": "Proyectos Recientes",
-  "projects2": "Plataforma E-commerce personalizada con Next.js y MongoDB",
-  "projects3": "Portfolio Multilingüe con React y Framer Motion"
+  "projects2": "E-commerce Headless con SSR e Integración de Pagos",
+  "projects3": "Bass Academy - App Interactiva de Entrenamiento Musical"
 }

@@ -23,6 +23,15 @@ const ProfessionalText = styled.p`
   letter-spacing: 3px;
 `;
 
+const SubtitleText = styled.p`
+  font-family: "Montserrat", Sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+`;
+
 const Profile = () => {
   const { t } = useTranslation("profile");
   const router = useRouter();
@@ -130,6 +139,10 @@ const Profile = () => {
           <ProfessionalText className="my-2 text-pop">
             {t("professional_text")}
           </ProfessionalText>
+
+          <SubtitleText>
+            {t("subtitle")}
+          </SubtitleText>
 
           {/* Action Buttons */}
           <motion.div

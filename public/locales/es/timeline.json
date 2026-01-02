@@ -3,9 +3,9 @@
   "subtitle": "Mi trayectoria en tecnología y educación",
   "events": {
     "apx": {
-      "title": "APX School - Desarrollador de Software",
-      "description": "Actualmente estudiando desarrollo de software",
-      "details": "Perfeccionando mis habilidades en tecnologías de desarrollo web moderno y mejores prácticas"
+      "title": "APX School - Advanced Full Stack Software Engineering Spec.",
+      "description": "Especialización intensiva en Tecnologías Web Modernas",
+      "details": "MERN Stack y Arquitectura de Sistemas. Formación avanzada en diseño de aplicaciones escalables y mejores prácticas."
     },
     "unq": {
       "title": "Universidad Nacional de Quilmes",
@@ -13,9 +13,9 @@
       "details": "Actualmente cursando la carrera de Informática, enfocándome en aspectos teóricos y prácticos de la computación"
     },
     "soul": {
-      "title": "Soul Solutions - Desarrollador Full Stack",
-      "description": "Experiencia profesional en desarrollo web",
-      "details": "Trabajando con Next.js, Node, TypeScript, Tailwind, MongoDB y otras tecnologías modernas. Desarrollo de soluciones frontend y backend, colaboración en equipos e implementación de APIs RESTful"
+      "title": "Soul Solutions - Senior Software Engineer",
+      "description": "Modernización de Mainframes & Desarrollo Full Stack",
+      "details": "Conectando sistemas legacy COBOL/Db2 con arquitecturas modernas en la nube. Trabajando con Next.js, Node, TypeScript, e implementando APIs RESTful para clientes empresariales."
     },
     "school": {
       "title": "Colegio Cimdip y Miguel Cane",

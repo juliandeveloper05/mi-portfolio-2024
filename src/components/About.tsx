@@ -36,13 +36,16 @@ const About = () => {
 
   const techStack = [
     "Next.js",
-    "React",
+    "React 19",
     "TypeScript",
     "Node.js",
     "MongoDB",
     "Tailwind CSS",
     "Auth0",
     "MercadoPago",
+    "Web Audio API",
+    "Architecture",
+    "Systems Design",
   ];
 
   return (

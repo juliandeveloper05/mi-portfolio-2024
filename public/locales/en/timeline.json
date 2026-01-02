@@ -3,9 +3,9 @@
   "subtitle": "My journey in technology and education",
   "events": {
     "apx": {
-      "title": "APX School - Software Developer",
-      "description": "Currently studying software development",
-      "details": "Advancing my skills in modern web development technologies and best practices"
+      "title": "APX School - Advanced Full Stack Software Engineering Spec.",
+      "description": "Intensive specialization in Modern Web Technologies",
+      "details": "MERN Stack and System Architecture. Advanced training in scalable application design and best practices."
     },
     "unq": {
       "title": "Universidad Nacional de Quilmes",
@@ -13,9 +13,9 @@
       "details": "Currently pursuing a degree in Computer Science, focusing on theoretical and practical aspects of computing"
     },
     "soul": {
-      "title": "Soul Solutions - Full Stack Developer",
-      "description": "Professional experience in web development",
-      "details": "Working with Next.js, Node, TypeScript, Tailwind, MongoDB, and other modern technologies. Developing frontend and backend solutions, collaborating with teams, and implementing RESTful APIs"
+      "title": "Soul Solutions - Senior Software Engineer",
+      "description": "Mainframe Modernization & Full Stack Development",
+      "details": "Bridging legacy COBOL/Db2 systems with modern cloud architectures. Working with Next.js, Node, TypeScript, and implementing RESTful APIs for enterprise clients."
     },
     "school": {
       "title": "Colegio Cimdip and Miguel Cane",

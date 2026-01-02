@@ -11,10 +11,9 @@ import {
   SiTailwindcss,
   SiTypescript,
   SiFramer,
-  SiHtml5,
-  SiCss3,
-  SiJavascript,
+  SiReact,
 } from "react-icons/si";
+import { TbApi, TbBrandCodesandbox, TbWaveSine } from "react-icons/tb";
 
 const Projects = () => {
   const { t } = useTranslation("projects");
@@ -23,7 +22,24 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "MP Pantuflones",
+      title: "Bass Academy",
+      description: t("bass_academy.description"),
+      date: t("bass_academy.date"),
+      technologies: [
+        { icon: SiReact, label: "React 19" },
+        { icon: TbWaveSine, label: "Web Audio API" },
+        { icon: SiTypescript, label: "TypeScript" },
+        { icon: TbBrandCodesandbox, label: "Architecture" },
+      ],
+      image: "/assets/bass-academy-preview.jpg",
+      githubUrl:
+        "https://github.com/juliandeveloper05/bass-trainer-app-2025",
+      liveUrl: "https://bass-trainer-app-2025.vercel.app/",
+      gradient: "from-emerald-600/20 via-emerald-800/20 to-emerald-900/20",
+    },
+    {
+      id: 2,
+      title: "NexusShop E-Commerce",
       description: t("mp_pantuflones.description"),
       date: t("mp_pantuflones.date"),
       technologies: [
@@ -39,7 +55,7 @@ const Projects = () => {
       gradient: "from-purple-600/20 via-purple-800/20 to-purple-900/20",
     },
     {
-      id: 2,
+      id: 3,
       title: "portfolio | Julian Soto",
       description: t("portfolio_2024.description"),
       date: t("portfolio_2024.date"),
@@ -55,14 +71,14 @@ const Projects = () => {
       gradient: "from-cyan-600/20 via-cyan-800/20 to-cyan-900/20",
     },
     {
-      id: 3,
+      id: 4,
       title: "Soul Solutions",
       description: t("soul_solutions.description"),
       date: t("soul_solutions.date"),
       technologies: [
-        { icon: SiHtml5, label: "HTML5" },
-        { icon: SiCss3, label: "CSS3" },
-        { icon: SiJavascript, label: "JavaScript" },
+        { icon: TbBrandCodesandbox, label: "Legacy Migration" },
+        { icon: TbApi, label: "System Design" },
+        { icon: SiTypescript, label: "API Integration" },
       ],
       image: "/assets/soul-solutions-preview.jpg",
       githubUrl: "https://github.com/juliandeveloper05/soul-solutions",

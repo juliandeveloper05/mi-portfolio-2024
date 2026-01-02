@@ -1,7 +1,11 @@
 {
   "projects_title": "Featured Projects",
+  "bass_academy": {
+    "description": "Interactive music training application built with React 19 and Web Audio API. Features real-time audio synthesis, dynamic exercise generation, and responsive tablature visualization.",
+    "date": "Dec 30, 2024"
+  },
   "mp_pantuflones": {
-    "description": "An e-commerce platform for customized slippers featuring secure payments and order management.",
+    "description": "Headless E-commerce solution with secure Stripe/MercadoPago integration, dynamic inventory management via MongoDB, and SSR performance optimizations.",
     "date": "Feb 8, 2025"
   },
   "portfolio_2024": {
@@ -9,7 +13,7 @@
     "date": "Jun 6, 2024"
   },
   "soul_solutions": {
-    "description": "Professional landing page for mainframe modernization consulting services. Premium design with glassmorphism.",
+    "description": "Professional landing page for mainframe modernization consulting. Demonstrates legacy migration expertise and system design capabilities.",
     "date": "Dec 29, 2024"
   },
   "buttons": {

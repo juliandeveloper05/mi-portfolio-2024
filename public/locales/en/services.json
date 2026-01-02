@@ -1,11 +1,11 @@
 {
   "services1": "My Services",
-  "frontend_dev.title": "Frontend Development",
-  "frontend_dev.description": "Building modern and responsive user interfaces using cutting-edge technologies. Specialized in creating dynamic and interactive web applications with React and Next.js.",
-  "backend_dev.title": "Backend Development",
+  "frontend_dev.title": "Modern Frontend Architecture",
+  "frontend_dev.description": "Building modern and responsive user interfaces using cutting-edge technologies. Specialized in creating dynamic and interactive web applications with React 19 and Next.js.",
+  "backend_dev.title": "Scalable Backend & API Design",
   "backend_dev.description": "Developing robust and scalable server-side solutions with Node.js and Next.js. Creating efficient APIs and implementing secure authentication systems.",
-  "database_dev.title": "Database Management",
-  "database_dev.description": "Designing and implementing efficient database structures using MongoDB. Optimizing queries and ensuring data integrity for high-performance applications.",
-  "fullstack_dev.title": "Full Stack Solutions",
-  "fullstack_dev.description": "Delivering end-to-end web applications with modern tech stack. Integrating frontend and backend seamlessly for optimal user experience and performance."
+  "database_dev.title": "Data Strategy & Modeling",
+  "database_dev.description": "Designing and implementing efficient database structures using MongoDB and Db2. Optimizing queries and ensuring data integrity for high-performance applications.",
+  "fullstack_dev.title": "End-to-End Product Engineering",
+  "fullstack_dev.description": "Delivering complete web applications from concept to deployment. Integrating frontend, backend, and legacy systems seamlessly for optimal user experience and performance."
 }

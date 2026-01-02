@@ -1,11 +1,11 @@
 {
   "services1": "Mis Servicios",
-  "frontend_dev.title": "Desarrollo Frontend",
-  "frontend_dev.description": "Construcción de interfaces de usuario modernas y responsivas utilizando tecnologías de última generación. Especializado en crear aplicaciones web dinámicas e interactivas con React y Next.js.",
-  "backend_dev.title": "Desarrollo Backend",
+  "frontend_dev.title": "Arquitectura Frontend Moderna",
+  "frontend_dev.description": "Construcción de interfaces de usuario modernas y responsivas utilizando tecnologías de última generación. Especializado en crear aplicaciones web dinámicas e interactivas con React 19 y Next.js.",
+  "backend_dev.title": "Backend Escalable & Diseño de APIs",
   "backend_dev.description": "Desarrollo de soluciones del lado del servidor robustas y escalables con Node.js y Next.js. Creación de APIs eficientes e implementación de sistemas de autenticación seguros.",
-  "database_dev.title": "Gestión de Bases de Datos",
-  "database_dev.description": "Diseño e implementación de estructuras de bases de datos eficientes usando MongoDB. Optimización de consultas y garantía de integridad de datos para aplicaciones de alto rendimiento.",
-  "fullstack_dev.title": "Soluciones Full Stack",
-  "fullstack_dev.description": "Entrega de aplicaciones web completas con stack tecnológico moderno. Integración perfecta de frontend y backend para una experiencia de usuario y rendimiento óptimos."
+  "database_dev.title": "Estrategia de Datos & Modelado",
+  "database_dev.description": "Diseño e implementación de estructuras de bases de datos eficientes usando MongoDB y Db2. Optimización de consultas y garantía de integridad de datos para aplicaciones de alto rendimiento.",
+  "fullstack_dev.title": "Ingeniería de Productos End-to-End",
+  "fullstack_dev.description": "Entrega de aplicaciones web completas desde el concepto hasta el despliegue. Integración perfecta de frontend, backend y sistemas legacy para una experiencia de usuario y rendimiento óptimos."
 }

@@ -33,8 +33,8 @@ const Projects = () => {
       ],
       image: "/assets/bass-academy-preview.jpg",
       githubUrl:
-        "https://github.com/juliandeveloper05/bass-trainer-app-2025",
-      liveUrl: "https://bass-trainer-app-2025.vercel.app/",
+        "https://github.com/juliandeveloper05/Bass-Academy-Interactive-Bass-Training",
+      liveUrl: "https://bass-academy-interactive-bass-train.vercel.app/",
       gradient: "from-emerald-600/20 via-emerald-800/20 to-emerald-900/20",
     },
     {

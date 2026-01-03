@@ -49,7 +49,8 @@ const Profile = () => {
   const router = useRouter();
 
   const handleDownloadCV = () => {
-    window.open("/cv.pdf");
+    const cvFile = router.locale === 'es' ? '/cv_español.pdf' : '/cv_ingles.pdf';
+    window.open(cvFile);
   };
 
   return (

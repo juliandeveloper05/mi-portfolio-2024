@@ -1,19 +1,51 @@
-# mi-portfolio-2024
+# 🚀 Portfolio - Senior Software Engineer
 
-"Crafting Pixels & Code: My Dev Odyssey" Embark on a journey through my digital realm, where Next.js meets Tailwind's elegance. Each commit weaves my story as a coder - an evolving canvas of creativity, logic, and tech wonders. Dive in!
+[![Next.js](https://img.shields.io/badge/Next.js-14-black?logo=next.js)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?logo=typescript)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+[![Vercel](https://img.shields.io/badge/Deploy-Vercel-black?logo=vercel)](https://vercel.com/)
+[![Lighthouse](https://img.shields.io/badge/Lighthouse-95+-green?logo=lighthouse)](https://developers.google.com/web/tools/lighthouse)
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Portfolio profesional de **Senior Software Engineer** especializado en TypeScript, Arquitectura Web Moderna y Modernización de Sistemas Legacy.
 
-## Getting Started
+🔗 **Live Demo**: [juliansoto-portfolio.vercel.app](https://juliansoto-portfolio.vercel.app/es)
 
-First, run the development server:
+## ✨ Features
+
+- 🎨 **Diseño Premium** - UI moderna con glassmorphism y micro-animaciones
+- 🌍 **Internacionalización** - Soporte completo ES/EN con i18next
+- 🖼️ **OG Images Dinámicas** - Imágenes Open Graph generadas automáticamente
+- ⚡ **Alto Rendimiento** - Lighthouse score 95+ en todas las métricas
+- 📱 **Responsive Design** - Optimizado para todos los dispositivos
+- 🎭 **Animaciones** - Transiciones fluidas con Framer Motion
+- 🔍 **SEO Técnico** - Meta tags, sitemap, robots.txt optimizados
+
+## 🛠️ Tech Stack
+
+| Categoría | Tecnologías |
+|-----------|-------------|
+| **Framework** | Next.js 14 (App Router) |
+| **Lenguaje** | TypeScript |
+| **Estilos** | Tailwind CSS |
+| **Animaciones** | Framer Motion |
+| **i18n** | next-i18next |
+| **Deploy** | Vercel |
+
+## 🚀 Getting Started
 
 ```bash
+# Clonar el repositorio
+git clone https://github.com/juliandeveloper05/mi-portfolio-2024.git
+
+# Instalar dependencias
+npm install
+
+# Ejecutar en desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador.
+
+## 📄 License
+
+MIT License - ver [LICENSE](LICENSE) para más detalles.

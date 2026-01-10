@@ -154,3 +154,5 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
     </motion.article>
   );
 });
+
+ProjectCard.displayName = "ProjectCard";

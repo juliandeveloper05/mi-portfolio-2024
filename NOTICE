@@ -1,0 +1,38 @@
+THIRD-PARTY SOFTWARE NOTICES
+
+This project includes software developed by third parties. The following is a list of the primary third-party software components and their respective licenses.
+
+---
+
+### Next.js
+- **License**: MIT
+- **Copyright**: (c) 2024 Vercel, Inc.
+- **Source**: https://github.com/vercel/next.js
+
+### React & React DOM
+- **License**: MIT
+- **Copyright**: (c) Meta Platforms, Inc.
+- **Source**: https://github.com/facebook/react
+
+### Tailwind CSS
+- **License**: MIT
+- **Copyright**: (c) Tailwind Labs, Inc.
+- **Source**: https://github.com/tailwindlabs/tailwindcss
+
+### Framer Motion
+- **License**: MIT
+- **Copyright**: (c) Framer B.V.
+- **Source**: https://github.com/framer/motion
+
+### react-icons
+- **License**: MIT (Icons may have their own licenses like CC BY 4.0)
+- **Source**: https://github.com/react-icons/react-icons
+
+### next-i18next
+- **License**: MIT
+- **Copyright**: (c) Isaac Hinman
+- **Source**: https://github.com/i18next/next-i18next
+
+---
+
+This list is for informational purposes. Please refer to the `package.json` file and the respective project repositories for the most up-to-date licensing information.

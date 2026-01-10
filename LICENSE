@@ -1,6 +1,15 @@
+DUAL LICENSE AGREEMENT
+
+This project is distributed under a Dual License strategy to allow for educational use while protecting personal brand assets.
+
+---
+
+### 1. OPEN SOURCE SOFTWARE LICENSE (MIT)
+**Applicable to:** Source code, component logic, styles, utility functions, and configuration files.
+
 MIT License
 
-Copyright (c) 2024 julian soto
+Copyright (c) 2024 Julian Soto
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -19,3 +28,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+---
+
+### 2. PROPRIETARY CONTENT LICENSE
+**Applicable to:** 
+- Personal biographical text and narratives.
+- Project descriptions and case study text.
+- Personal photos and brand logos (excluding tech stack icons).
+- The specific visual arrangement of portfolio items constituting the "personal brand identity".
+
+**Copyright (c) 2024 Julian Soto. All Rights Reserved.**
+
+These assets are strictly reserved and may NOT be used, copied, modified, or distributed for commercial or personal use without explicit written permission from the copyright holder. You may not use this portfolio's content to impersonate the author or misrepresent ownership of the displayed projects.

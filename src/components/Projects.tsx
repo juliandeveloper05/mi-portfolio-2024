@@ -102,25 +102,17 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen relative py-24 md:py-32 overflow-hidden"
+      className="min-h-screen bg-transparent py-12 md:py-20 unselectable"
     >
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-full bg-[#0B1121] -z-20" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-indigo-500/10 blur-[120px] rounded-full -z-10" />
-
       <div className="container mx-auto px-4 md:px-8">
-        <motion.div
-           initial={{ opacity: 0, y: -20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.6 }}
-           className="text-center mb-16 md:mb-24"
+        <motion.h2
+          className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">
-            {t("projects_title")}
-          </h2>
-          <div className="h-1 w-24 bg-gradient-to-r from-[#00ff9d] to-transparent mx-auto rounded-full" />
-        </motion.div>
+          {t("projects_title")}
+        </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project) => (

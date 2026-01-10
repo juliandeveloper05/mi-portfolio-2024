@@ -60,7 +60,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
   return (
     <motion.article
       ref={cardRef}
-      className={`relative h-[480px] w-full rounded-2xl bg-[#0B1121] border border-white/5 overflow-hidden group`}
+      className={`relative h-[480px] w-full rounded-2xl bg-black/50 backdrop-blur-sm border border-white/10 overflow-hidden group`}
       onMouseEnter={() => onHover && onHover(project.id)}
       onMouseLeave={() => onHover && onHover(null)}
       initial={{ opacity: 0, y: 20 }}

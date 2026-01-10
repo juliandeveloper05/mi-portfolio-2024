@@ -31,8 +31,8 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt, priority =
       </motion.div>
 
       {/* Overlay Gradients */}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1121] via-[#0B1121]/60 to-transparent opacity-90" />
-      <div className="absolute inset-0 bg-black/20 mix-blend-multiply" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-70" />
+      <div className="absolute inset-0 bg-black/10 mix-blend-multiply" />
     </div>
   );
 };

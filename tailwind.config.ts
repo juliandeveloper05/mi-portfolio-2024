@@ -51,6 +51,7 @@ const config: Config = {
       animation: {
         "noisy-bg": "noise 1s steps(2) infinite",
         shimmer: "shimmer 2s linear infinite",
+        "gradient-xy": "gradient-xy 5s ease infinite",
       },
       keyframes: {
         noise: {
@@ -69,6 +70,16 @@ const config: Config = {
         shimmer: {
           from: { backgroundPosition: "0 0" },
           to: { backgroundPosition: "-200% 0" },
+        },
+        "gradient-xy": {
+          "0%, 100%": {
+            "background-size": "300% 300%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
         },
       },
       borderRadius: {
@@ -98,6 +109,9 @@ const config: Config = {
       },
       transitionDuration: {
         "600": "600ms",
+      },
+      transitionTimingFunction: {
+        "premium": "cubic-bezier(0.4, 0.0, 0.2, 1)",
       },
       backdropFilter: {
         none: "none",

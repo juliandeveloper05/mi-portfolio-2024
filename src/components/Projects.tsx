@@ -43,7 +43,7 @@ const Projects = () => {
         { icon: SiTypescript, label: "TypeScript" },
         { icon: TbBrandCodesandbox, label: "Architecture" },
       ],
-      image: "/assets/bass-academy-preview.jpg",
+      image: "/assets/bass-academy-preview.png",
       githubUrl:
         "https://github.com/juliandeveloper05/Bass-Academy-Interactive-Bass-Training",
       liveUrl: "https://bass-academy-interactive-bass-train.vercel.app/",

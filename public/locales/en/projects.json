@@ -2,7 +2,7 @@
   "projects_title": "Featured Projects",
   "bass_academy": {
     "description": "Interactive music training application built with React 19 and Web Audio API. Features real-time audio synthesis, dynamic exercise generation, and responsive tablature visualization.",
-    "date": "Dec 30, 2024"
+    "date": "Dec 28, 2025"
   },
   "mp_pantuflones": {
     "description": "Headless E-commerce solution with secure Stripe/MercadoPago integration, dynamic inventory management via MongoDB, and SSR performance optimizations.",

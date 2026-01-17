@@ -1,5 +1,9 @@
 {
   "projects_title": "Featured Projects",
+  "bitrova": {
+    "description": "Feature-rich task management app with Supabase authentication & cloud sync. Includes recurring tasks, glassmorphism design, attachments, subtasks, drag & drop, undo/redo and Lottie animations. Cross-platform iOS/Android/Web.",
+    "date": "Jan 17, 2026"
+  },
   "bass_academy": {
     "description": "Interactive music training application built with React 19 and Web Audio API. Features real-time audio synthesis, dynamic exercise generation, and responsive tablature visualization.",
     "date": "Dec 28, 2025"

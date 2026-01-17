@@ -1,5 +1,9 @@
 {
   "projects_title": "Proyectos Destacados",
+  "bitrova": {
+    "description": "App de gestión de tareas con autenticación Supabase y sincronización en la nube. Incluye tareas recurrentes, diseño glassmorphism, adjuntos, subtareas, drag & drop, undo/redo y animaciones Lottie. Multiplataforma iOS/Android/Web.",
+    "date": "17 de Enero de 2026"
+  },
   "bass_academy": {
     "description": "Aplicación de entrenamiento musical interactiva construida con React 19 y Web Audio API. Incluye síntesis de audio en tiempo real, generación dinámica de ejercicios y visualización responsiva de tablaturas.",
     "date": "28 de Diciembre de 2025"

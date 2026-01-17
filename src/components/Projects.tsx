@@ -10,6 +10,8 @@ import {
   SiTypescript,
   SiFramer,
   SiReact,
+  SiExpo,
+  SiSupabase,
 } from "react-icons/si";
 import { TbApi, TbBrandCodesandbox, TbWaveSine } from "react-icons/tb";
 import { Project } from "./projects/types";
@@ -34,6 +36,22 @@ const Projects = () => {
   const projects: Project[] = React.useMemo(() => [
     {
       id: 1,
+      title: "Bitrova",
+      description: t("bitrova.description"),
+      date: t("bitrova.date"),
+      technologies: [
+        { icon: SiReact, label: "React Native 0.81" },
+        { icon: SiExpo, label: "Expo 54" },
+        { icon: SiSupabase, label: "Supabase" },
+        { icon: TbBrandCodesandbox, label: "Reanimated 4" },
+      ],
+      image: "/assets/bitrova-preview.png",
+      githubUrl: "https://github.com/juliandeveloper05/tasklist-app",
+      liveUrl: "",
+      gradient: "from-violet-600/20 via-violet-800/20 to-violet-900/20",
+    },
+    {
+      id: 2,
       title: "Bass Academy",
       description: t("bass_academy.description"),
       date: t("bass_academy.date"),
@@ -50,7 +68,7 @@ const Projects = () => {
       gradient: "from-emerald-600/20 via-emerald-800/20 to-emerald-900/20",
     },
     {
-      id: 2,
+      id: 3,
       title: "NexusShop E-Commerce",
       description: t("mp_pantuflones.description"),
       date: t("mp_pantuflones.date"),
@@ -67,7 +85,7 @@ const Projects = () => {
       gradient: "from-purple-600/20 via-purple-800/20 to-purple-900/20",
     },
     {
-      id: 3,
+      id: 4,
       title: "portfolio | Julian Soto",
       description: t("portfolio_2024.description"),
       date: t("portfolio_2024.date"),
@@ -83,7 +101,7 @@ const Projects = () => {
       gradient: "from-cyan-600/20 via-cyan-800/20 to-cyan-900/20",
     },
     {
-      id: 4,
+      id: 5,
       title: "Soul Solutions",
       description: t("soul_solutions.description"),
       date: t("soul_solutions.date"),

@@ -9,6 +9,8 @@ import {
   SiMongodb,
   SiReact,
   SiNodedotjs,
+  SiSupabase,
+  SiPostgresql,
 } from "react-icons/si";
 import { cn } from "@/utils/cn";
 
@@ -107,6 +109,8 @@ const Services = () => {
       title: t("database_dev.title"),
       description: t("database_dev.description"),
       technologies: [
+        { icon: SiSupabase, name: "Supabase" },
+        { icon: SiPostgresql, name: "PostgreSQL" },
         { icon: SiMongodb, name: "MongoDB" },
         { icon: SiNextdotjs, name: "Next.js API" },
       ],
@@ -117,6 +121,7 @@ const Services = () => {
       technologies: [
         { icon: SiReact, name: "React" },
         { icon: SiNextdotjs, name: "Next.js" },
+        { icon: SiSupabase, name: "Supabase" },
         { icon: SiMongodb, name: "MongoDB" },
         { icon: SiTailwindcss, name: "Tailwind" },
       ],

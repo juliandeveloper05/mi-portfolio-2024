@@ -12,6 +12,9 @@ import {
   SiReact,
   SiExpo,
   SiSupabase,
+  SiWordpress,
+  SiPhp,
+  SiMysql,
 } from "react-icons/si";
 import { TbApi, TbBrandCodesandbox, TbWaveSine } from "react-icons/tb";
 import { Project } from "./projects/types";
@@ -114,6 +117,22 @@ const Projects = () => {
       githubUrl: "https://github.com/juliandeveloper05/soul-solutions",
       liveUrl: "https://soul-solutions-mauve.vercel.app/",
       gradient: "from-blue-600/20 via-blue-800/20 to-blue-900/20",
+    },
+    {
+      id: 6,
+      title: "Forma Real",
+      description: t("forma_real.description"),
+      date: t("forma_real.date"),
+      technologies: [
+        { icon: SiWordpress, label: "WordPress 6.9" },
+        { icon: SiPhp, label: "PHP 8+" },
+        { icon: SiMysql, label: "MySQL" },
+        { icon: TbBrandCodesandbox, label: "OOP Architecture" },
+      ],
+      image: "/assets/forma-real-preview.png",
+      githubUrl: "https://github.com/juliandeveloper05/forma-real",
+      liveUrl: "",
+      gradient: "from-orange-600/20 via-red-700/20 to-red-900/20",
     },
   ], [t]);
 

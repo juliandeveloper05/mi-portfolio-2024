@@ -20,6 +20,10 @@
     "description": "Professional landing page for mainframe modernization consulting. Demonstrates legacy migration expertise and system design capabilities.",
     "date": "Dec 29, 2024"
   },
+  "forma_real": {
+    "description": "Fitness community forum with custom WordPress architecture. OOP plugin with custom MySQL tables, real-time notifications, moderation system, full-text search, and modern UI with micro-animations.",
+    "date": "Feb 2, 2026"
+  },
   "buttons": {
     "code": "Code",
     "live_demo": "Live Demo"

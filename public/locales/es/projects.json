@@ -20,6 +20,10 @@
     "description": "Landing page profesional para consultoría en modernización de mainframes. Demuestra experiencia en migración legacy y capacidades de diseño de sistemas.",
     "date": "29 de Diciembre de 2024"
   },
+  "forma_real": {
+    "description": "Foro de comunidad fitness con arquitectura WordPress personalizada. Plugin OOP con tablas MySQL propias, sistema de notificaciones en tiempo real, moderación avanzada, búsqueda full-text y diseño moderno con micro-animaciones.",
+    "date": "2 de Febrero de 2026"
+  },
   "buttons": {
     "code": "Código",
     "live_demo": "Demo en vivo"

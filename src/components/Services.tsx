@@ -11,6 +11,9 @@ import {
   SiNodedotjs,
   SiSupabase,
   SiPostgresql,
+  SiWordpress,
+  SiPhp,
+  SiMysql,
 } from "react-icons/si";
 import { cn } from "@/utils/cn";
 
@@ -100,8 +103,8 @@ const Services = () => {
       description: t("backend_dev.description"),
       technologies: [
         { icon: SiNodedotjs, name: "Node.js" },
+        { icon: SiPhp, name: "PHP 8" },
         { icon: SiNextdotjs, name: "Next.js" },
-        { icon: SiMongodb, name: "MongoDB" },
         { icon: SiTypescript, name: "TypeScript" },
       ],
     },
@@ -109,10 +112,10 @@ const Services = () => {
       title: t("database_dev.title"),
       description: t("database_dev.description"),
       technologies: [
-        { icon: SiSupabase, name: "Supabase" },
+        { icon: SiMysql, name: "MySQL" },
         { icon: SiPostgresql, name: "PostgreSQL" },
         { icon: SiMongodb, name: "MongoDB" },
-        { icon: SiNextdotjs, name: "Next.js API" },
+        { icon: SiSupabase, name: "Supabase" },
       ],
     },
     {
@@ -124,6 +127,16 @@ const Services = () => {
         { icon: SiSupabase, name: "Supabase" },
         { icon: SiMongodb, name: "MongoDB" },
         { icon: SiTailwindcss, name: "Tailwind" },
+      ],
+    },
+    {
+      title: t("cms_dev.title"),
+      description: t("cms_dev.description"),
+      technologies: [
+        { icon: SiWordpress, name: "WordPress" },
+        { icon: SiPhp, name: "PHP OOP" },
+        { icon: SiMysql, name: "MySQL" },
+        { icon: SiTypescript, name: "TypeScript" },
       ],
     },
   ];

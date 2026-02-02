@@ -5,7 +5,9 @@
   "backend_dev.title": "Scalable Backend & API Design",
   "backend_dev.description": "Developing robust and scalable server-side solutions with Node.js and Next.js. Creating efficient APIs and implementing secure authentication systems.",
   "database_dev.title": "Data Strategy & Modeling",
-  "database_dev.description": "Designing and implementing efficient database structures using MongoDB and Db2. Optimizing queries and ensuring data integrity for high-performance applications.",
+  "database_dev.description": "Designing and implementing efficient database structures using MySQL, MongoDB and PostgreSQL. Optimizing queries and ensuring data integrity for high-performance applications.",
   "fullstack_dev.title": "End-to-End Product Engineering",
-  "fullstack_dev.description": "Delivering complete web applications from concept to deployment. Integrating frontend, backend, and legacy systems seamlessly for optimal user experience and performance."
+  "fullstack_dev.description": "Delivering complete web applications from concept to deployment. Integrating frontend, backend, and legacy systems seamlessly for optimal user experience and performance.",
+  "cms_dev.title": "CMS & WordPress Development",
+  "cms_dev.description": "Custom plugin development with OOP architecture, tailored themes and enterprise WordPress solutions. Implementation of custom MySQL tables, moderation systems and real-time notifications."
 }

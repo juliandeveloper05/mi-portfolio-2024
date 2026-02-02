@@ -127,16 +127,18 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
               <FaGithub className="text-lg" />
               <span>Code</span>
             </a>
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-white bg-[#00ff9d]/10 hover:bg-[#00ff9d]/20 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:scale-105 transition-all ml-auto border border-[#00ff9d]/20"
-              aria-label={`Visit live demo for ${project.title}`}
-            >
-              <span className="text-[#00ff9d] font-medium">Live Demo</span>
-              <FaExternalLinkAlt className="text-xs text-[#00ff9d]" />
-            </a>
+            {project.liveUrl && (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-white bg-[#00ff9d]/10 hover:bg-[#00ff9d]/20 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:scale-105 transition-all ml-auto border border-[#00ff9d]/20"
+                aria-label={`Visit live demo for ${project.title}`}
+              >
+                <span className="text-[#00ff9d] font-medium">Live Demo</span>
+                <FaExternalLinkAlt className="text-xs text-[#00ff9d]" />
+              </a>
+            )}
           </div>
         </div>
       </div>

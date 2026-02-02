@@ -1,11 +1,11 @@
 {
   "about_description_hello": "Beyond the Code",
-  "about_description1": "I am a Senior Software Engineer with a unique background: I bridge the gap between mission-critical legacy systems (COBOL/Db2) and modern cloud architectures (Next.js/TypeScript).",
+  "about_description1": "I am a Senior Full-Stack Software Engineer specialized in modern web architectures. I build digital experiences with Next.js, React, TypeScript and custom WordPress solutions using PHP 8 and MySQL.",
   "about_description2": "I don't just build websites; I engineer scalable, type-safe solutions that solve complex business problems.",
   "experience1": "Work Experience",
   "experience2": "Senior Software Engineer at Soul Solutions",
   "experience3": "E-commerce Platform Architect (NexusShop)",
   "projects1": "Recent Projects",
-  "projects2": "Bitrova - Cloud Sync & Supabase Authentication",
-  "projects3": "Bass Academy - Interactive Music Training App"
+  "projects2": "Forma Real - Fitness Forum with Custom WordPress Plugin",
+  "projects3": "Bitrova - Task App with Supabase Cloud Sync"
 }

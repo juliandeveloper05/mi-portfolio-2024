@@ -88,9 +88,9 @@ const FloatingNavbar = () => {
         initial={{ opacity: 1, y: -100 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.2 }}
-        className="fixed top-4 inset-x-0 mx-auto z-50"
+        className="fixed top-4 inset-x-0 mx-auto z-50 px-4 md:px-0"
       >
-        <div className="unselectable flex justify-between items-center max-w-4xl mx-auto px-4 py-2 rounded-full bg-black/80 backdrop-blur-sm border border-white/[0.25] shadow-lg">
+        <div className="unselectable flex justify-between items-center max-w-5xl mx-auto px-4 md:px-6 py-2 rounded-full bg-black/80 backdrop-blur-sm border border-white/[0.25] shadow-lg">
           <Link
             to="profile"
             spy={true}
@@ -170,7 +170,7 @@ const FloatingNavbar = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 mt-2 p-4 bg-black/90 backdrop-blur-sm md:hidden rounded-lg mx-4"
+              className="absolute top-full left-0 right-0 mt-2 p-6 bg-black/95 backdrop-blur-md md:hidden rounded-2xl border border-white/10 shadow-2xl mx-4"
             >
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (

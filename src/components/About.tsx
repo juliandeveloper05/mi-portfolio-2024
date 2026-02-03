@@ -61,33 +61,34 @@ const About = () => {
       id="about"
       className="min-h-screen flex flex-col justify-center bg-transparent text-white unselectable"
     >
-      <div className="container min-h-[40em] mx-auto flex flex-col items-center px-4 md:flex-row">
-        <div className="md:mb-0 md:w-1/3 flex justify-center md:justify-start">
+      <div className="container mx-auto flex flex-col items-center px-4 md:flex-row py-12 md:py-20 lg:py-32">
+        <div className="mb-8 md:mb-0 md:w-1/3 flex justify-center md:justify-start">
           <Image
-            className="rounded-full extra border-4 w-[250px] h-[250px] md:w-[400px] md:h-[400px]"
+            className="rounded-full extra border-4 w-[200px] h-[200px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
             src="/about-me.jpg"
             alt="Profile"
             width={400}
             height={400}
             quality={100}
+            priority
           />
         </div>
 
         <div className="md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col">
           <div className="flex flex-col">
-            <SectionTitle className="text-gray-300 text-center md:text-left font-thin">
+            <SectionTitle className="text-gray-300 text-center md:text-left font-thin text-3xl md:text-5xl">
               {t("about_description_hello")}
             </SectionTitle>
-
-            <div className="text-gray-300 text-center mt-4 md:text-left text-xl font-light">
+            
+            <div className="text-gray-300 text-center mt-4 md:text-left text-lg md:text-xl font-light">
               {t("about_description1")}
             </div>
 
-            <div className="text-gray-300 text-center md:text-left text-xl font-light">
+            <div className="text-gray-300 text-center md:text-left text-lg md:text-xl font-light">
               {t("about_description2")}
             </div>
 
-            <TechStack>
+            <TechStack className="justify-center md:justify-start">
               {techStack.map((tech, index) => (
                 <TechBadge key={index}>{tech}</TechBadge>
               ))}

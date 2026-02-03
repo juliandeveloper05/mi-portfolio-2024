@@ -75,10 +75,8 @@ const Profile = () => {
     >
       {/* Left Column - Profile Image */}
       <motion.div
-        initial={{ opacity: 0, x: -50 }}
-        animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-        className="flex w-max sm:w-2/4 justify-center sm:justify-center md:justify-end"
+        className="flex w-full md:w-1/2 justify-center md:justify-end"
       >
         <div
           className="
@@ -113,20 +111,21 @@ const Profile = () => {
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="flex sm:w-2/4 justify-center sm:justify-center md:justify-start sm:ml-6"
+        className="flex w-full md:w-1/2 justify-center md:justify-start md:ml-6"
       >
         <div
           className="
           text-center
           mt-4
           md:mt-8
-          w-max
-          sm:w-full
-          md:w-full
-          lg:w-2/3
+          w-full
+          lg:w-11/12
+          xl:w-2/3
           flex
           flex-col
           gap-3
+          px-4
+          md:px-0
         "
         >
           <HelloText className="mb-2">{t("hello_text")}</HelloText>

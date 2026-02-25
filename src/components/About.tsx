@@ -54,6 +54,12 @@ const About = () => {
     "Web Audio API",
     "Architecture",
     "Systems Design",
+    "Python",
+    "FastAPI",
+    "PyTorch",
+    "TensorFlow",
+    "Machine Learning",
+    "Hugging Face",
   ];
 
   return (

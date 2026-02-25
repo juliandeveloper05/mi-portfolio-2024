@@ -12,9 +12,9 @@
     "description": "Solución E-commerce Headless con integración segura de Stripe/MercadoPago, gestión dinámica de inventario vía MongoDB, y optimizaciones de rendimiento SSR.",
     "date": "8 de Febrero de 2025"
   },
-  "portfolio_2024": {
-    "description": "Portfolio personal construido con tecnologías web modernas, diseño responsivo y animaciones fluidas.",
-    "date": "6 de Junio de 2024"
+  "dumu": {
+    "description": "Aplicación full-stack de IA que extrae líneas de bajo de cualquier archivo de audio usando la red neuronal Demucs de Meta AI para separación de fuentes y Basic Pitch de Spotify para conversión audio-a-MIDI. Incluye detección de BPM, pipeline de progreso en tiempo real, carga drag & drop y descarga MIDI con un clic.",
+    "date": "21 de Febrero de 2026"
   },
   "soul_solutions": {
     "description": "Landing page profesional para consultoría en modernización de mainframes. Demuestra experiencia en migración legacy y capacidades de diseño de sistemas.",

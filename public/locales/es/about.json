@@ -1,11 +1,12 @@
 {
   "about_description_hello": "Más Allá del Código",
-  "about_description1": "Soy Ingeniero de Software Senior Full-Stack especializado en arquitecturas web modernas. Construyo experiencias digitales con Next.js, React, TypeScript y soluciones WordPress personalizadas con PHP 8 y MySQL.",
-  "about_description2": "No solo construyo sitios web; diseño soluciones escalables y tipadas que resuelven problemas de negocio complejos.",
+  "about_description1": "Soy Ingeniero de Software Senior Full-Stack especializado en arquitecturas web modernas y aplicaciones potenciadas con IA. Construyo experiencias digitales con Next.js, React, TypeScript, soluciones WordPress personalizadas con PHP 8 & MySQL, y herramientas de IA con Python, FastAPI, PyTorch & TensorFlow.",
+  "about_description2": "No solo construyo sitios web; diseño soluciones escalables y tipadas que resuelven problemas de negocio complejos — desde plataformas CMS hasta herramientas de audio con redes neuronales.",
   "experience1": "Experiencia Laboral",
   "experience2": "Senior Software Engineer en Soul Solutions",
   "experience3": "Arquitecto de Plataforma E-commerce (NexusShop)",
   "projects1": "Proyectos Recientes",
-  "projects2": "Forma Real - Foro Fitness con WordPress Custom Plugin",
+  "projects2": "Dumu — Extracción de Bajo con Meta AI Demucs & Spotify Basic Pitch",
   "projects3": "Bitrova - App de Tareas con Supabase Cloud Sync"
 }
+

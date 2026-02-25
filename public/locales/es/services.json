@@ -9,5 +9,8 @@
   "fullstack_dev.title": "Ingeniería de Productos End-to-End",
   "fullstack_dev.description": "Entrega de aplicaciones web completas desde el concepto hasta el despliegue. Integración perfecta de frontend, backend y sistemas legacy para una experiencia de usuario y rendimiento óptimos.",
   "cms_dev.title": "CMS & WordPress Development",
-  "cms_dev.description": "Desarrollo de plugins personalizados con arquitectura OOP, themes a medida y soluciones WordPress empresariales. Implementación de tablas MySQL personalizadas, sistemas de moderación y notificaciones en tiempo real."
+  "cms_dev.description": "Desarrollo de plugins personalizados con arquitectura OOP, themes a medida y soluciones WordPress empresariales. Implementación de tablas MySQL personalizadas, sistemas de moderación y notificaciones en tiempo real.",
+  "ai_audio.title": "AI & Audio Processing",
+  "ai_audio.description": "Construcción de aplicaciones full-stack potenciadas con IA para análisis y transformación de audio. Especializado en Python, FastAPI, PyTorch & TensorFlow — incluyendo separación de fuentes neurales (Meta AI Demucs) y conversión de audio a MIDI (Spotify Basic Pitch). Despliegues containerizados en Hugging Face Spaces & plataformas cloud."
 }
+

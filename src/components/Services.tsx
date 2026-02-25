@@ -14,6 +14,10 @@ import {
   SiWordpress,
   SiPhp,
   SiMysql,
+  SiPython,
+  SiPytorch,
+  SiTensorflow,
+  SiFastapi,
 } from "react-icons/si";
 import { cn } from "@/utils/cn";
 
@@ -139,6 +143,16 @@ const Services = () => {
         { icon: SiTypescript, name: "TypeScript" },
       ],
     },
+    {
+      title: t("ai_audio.title"),
+      description: t("ai_audio.description"),
+      technologies: [
+        { icon: SiPython, name: "Python" },
+        { icon: SiFastapi, name: "FastAPI" },
+        { icon: SiPytorch, name: "PyTorch" },
+        { icon: SiTensorflow, name: "TensorFlow" },
+      ],
+    },
   ];
 
   return (
@@ -153,7 +167,7 @@ const Services = () => {
           {t("services1")}
         </motion.h2>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

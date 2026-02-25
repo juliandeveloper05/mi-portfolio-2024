@@ -15,6 +15,9 @@ import {
   SiWordpress,
   SiPhp,
   SiMysql,
+  SiPython,
+  SiFastapi,
+  SiPytorch,
 } from "react-icons/si";
 import { TbApi, TbBrandCodesandbox, TbWaveSine } from "react-icons/tb";
 import { Project } from "./projects/types";
@@ -89,19 +92,19 @@ const Projects = () => {
     },
     {
       id: 4,
-      title: "portfolio | Julian Soto",
-      description: t("portfolio_2024.description"),
-      date: t("portfolio_2024.date"),
+      title: "Dumu — AI Bass Extraction",
+      description: t("dumu.description"),
+      date: t("dumu.date"),
       technologies: [
-        { icon: SiNextdotjs, label: "Next.js" },
-        { icon: SiTailwindcss, label: "Tailwind" },
-        { icon: SiFramer, label: "Framer Motion" },
-        { icon: SiTypescript, label: "TypeScript" },
+        { icon: SiPython, label: "Python" },
+        { icon: SiFastapi, label: "FastAPI" },
+        { icon: SiPytorch, label: "PyTorch" },
+        { icon: SiReact, label: "React" },
       ],
-      image: "/assets/portfolio-preview.jpg",
-      githubUrl: "https://github.com/juliandeveloper05/mi-portfolio-2024",
-      liveUrl: "/",
-      gradient: "from-cyan-600/20 via-cyan-800/20 to-cyan-900/20",
+      image: "/assets/dumu-preview.png",
+      githubUrl: "https://github.com/juliandeveloper05/Dumu-AI-Bass-Extraction",
+      liveUrl: "https://dumu.vercel.app/",
+      gradient: "from-green-600/20 via-green-800/20 to-green-900/20",
     },
     {
       id: 5,

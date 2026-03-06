@@ -1,129 +1,140 @@
 import React from "react";
 import Image from "next/image";
-import { FaBriefcase, FaGraduationCap, FaCode } from "react-icons/fa";
-import styled from "styled-components";
+import { FaBriefcase, FaCode } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
-import ScrollDown from "./scroll-down";
-import MagneticWrapper from "./magnetic-wrapper";
-import { Link } from "react-scroll";
-
-const SectionTitle = styled.div`
-  font-size: 3rem;
-`;
-
-const TechStack = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-top: 1rem;
-`;
-
-const TechBadge = styled.span`
-  background: rgba(255, 255, 255, 0.1);
-  padding: 0.25rem 0.75rem;
-  border-radius: 1rem;
-  font-size: 0.875rem;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateY(-2px);
-  }
-`;
 
 const About = () => {
   const { t } = useTranslation("about");
 
-  const techStack = [
-    "Next.js",
-    "React 19",
-    "React Native",
-    "TypeScript",
-    "Node.js",
-    "PHP 8",
-    "WordPress",
-    "MySQL",
-    "PostgreSQL",
-    "MongoDB",
-    "Supabase",
-    "HTML5",
-    "CSS3",
-    "Tailwind CSS",
-    "OOP Patterns",
-    "Cloud Sync",
-    "Web Audio API",
-    "Architecture",
-    "Systems Design",
-    "Python",
-    "FastAPI",
-    "PyTorch",
-    "TensorFlow",
-    "Machine Learning",
-    "Hugging Face",
+  const frontendStack = [
+    "Next.js", "React 19", "React Native", "TypeScript", "HTML5", "CSS3", "Tailwind CSS",
+  ];
+
+  const backendStack = [
+    "Node.js", "PHP 8", "WordPress", "MySQL", "PostgreSQL", "MongoDB", "Supabase",
+  ];
+
+  const aiStack = [
+    "Python", "FastAPI", "PyTorch", "TensorFlow", "Machine Learning", "Hugging Face",
+  ];
+
+  const otherStack = [
+    "OOP Patterns", "Cloud Sync", "Web Audio API", "Architecture", "Systems Design",
   ];
 
   return (
     <section
       id="about"
-      className="min-h-screen flex flex-col justify-center bg-transparent text-white unselectable"
+      className="bg-transparent text-white unselectable"
     >
-      <div className="container mx-auto flex flex-col items-center px-4 md:flex-row py-12 md:py-20 lg:py-32">
-        <div className="mb-8 md:mb-0 md:w-1/3 flex justify-center md:justify-start">
-          <Image
-            className="rounded-full extra border-4 w-[200px] h-[200px] md:w-[350px] md:h-[350px] lg:w-[400px] lg:h-[400px]"
-            src="/about-me.jpg"
-            alt="Profile"
-            width={400}
-            height={400}
-            quality={100}
-            priority
-          />
-        </div>
-
-        <div className="md:w-2/3 mt-8 md:mt-0 md:ml-10 flex flex-col">
-          <div className="flex flex-col">
-            <SectionTitle className="text-gray-300 text-center md:text-left font-thin text-3xl md:text-5xl">
-              {t("about_description_hello")}
-            </SectionTitle>
-            
-            <div className="text-gray-300 text-center mt-4 md:text-left text-lg md:text-xl font-light">
-              {t("about_description1")}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
+          {/* Image Card */}
+          <div className="md:col-span-2 glass rounded-2xl overflow-hidden p-1">
+            <div className="rounded-xl overflow-hidden relative aspect-square md:aspect-auto md:h-full">
+              <Image
+                className="object-cover rounded-xl"
+                src="/about-me.jpg"
+                alt="About Julian Soto"
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                quality={100}
+                priority
+              />
             </div>
-
-            <div className="text-gray-300 text-center md:text-left text-lg md:text-xl font-light">
-              {t("about_description2")}
-            </div>
-
-            <TechStack className="justify-center md:justify-start">
-              {techStack.map((tech, index) => (
-                <TechBadge key={index}>{tech}</TechBadge>
-              ))}
-            </TechStack>
           </div>
 
-          <div className="flex flex-col md:flex-row justify-center md:justify-start mt-8 space-y-4 md:space-y-0 md:space-x-4">
-            <div className="flex-1 card-inner">
-              <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg">
-                <div className="rounded-lg p-4 bg-white text-black flex flex-col items-center">
-                  <FaBriefcase className="text-2xl mb-2" />
-                  <h3 className="text-xl font-semibold">{t("experience1")}</h3>
-                  <ul className="list-disc pl-5">
-                    <div>{t("experience2")}</div>
-                    <div>{t("experience3")}</div>
-                  </ul>
+          {/* Text Content Card */}
+          <div className="md:col-span-2 glass rounded-2xl p-6 md:p-8 flex flex-col justify-center">
+            <h2 className="text-heading font-semibold text-white mb-4">
+              {t("about_description_hello")}
+            </h2>
+            <p className="text-body-lg text-white/70 leading-relaxed mb-3">
+              {t("about_description1")}
+            </p>
+            <p className="text-body-lg text-white/70 leading-relaxed">
+              {t("about_description2")}
+            </p>
+          </div>
+
+          {/* Experience Card */}
+          <div className="md:col-span-1 glass rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+            <FaBriefcase className="text-2xl text-[#12b886] mb-3" />
+            <h3 className="text-lg font-semibold text-white mb-2">{t("experience1")}</h3>
+            <div className="text-sm text-white/60 space-y-1">
+              <p>{t("experience2")}</p>
+              <p>{t("experience3")}</p>
+            </div>
+          </div>
+
+          {/* Projects Card */}
+          <div className="md:col-span-1 glass rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+            <FaCode className="text-2xl text-[#12b886] mb-3" />
+            <h3 className="text-lg font-semibold text-white mb-2">{t("projects1")}</h3>
+            <div className="text-sm text-white/60 space-y-1">
+              <p>{t("projects2")}</p>
+              <p>{t("projects3")}</p>
+            </div>
+          </div>
+
+          {/* Tech Stack Card */}
+          <div className="md:col-span-2 glass rounded-2xl p-6 md:p-8">
+            <h3 className="text-sm font-medium uppercase tracking-wider text-[#12b886] mb-4">Tech Stack</h3>
+
+            <div className="space-y-3">
+              <div>
+                <span className="text-xs text-white/40 uppercase tracking-wider">Frontend</span>
+                <div className="flex flex-wrap gap-2 mt-1.5">
+                  {frontendStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-white/[0.06] hover:bg-white/[0.12] px-3 py-1.5 rounded-full text-xs text-white/80 transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
-            </div>
 
-            <div className="flex-1 card-inner">
-              <div className="flex-auto border-2 border-dashed p-4 border-solid-gray-400 rounded-lg">
-                <div className="rounded-lg p-4 bg-white text-black flex flex-col items-center">
-                  <FaCode className="text-2xl mb-2" />
-                  <h3 className="text-xl font-semibold">{t("projects1")}</h3>
-                  <ul className="list-disc pl-5">
-                    <div>{t("projects2")}</div>
-                    <div>{t("projects3")}</div>
-                  </ul>
+              <div>
+                <span className="text-xs text-white/40 uppercase tracking-wider">Backend & Data</span>
+                <div className="flex flex-wrap gap-2 mt-1.5">
+                  {backendStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-white/[0.06] hover:bg-white/[0.12] px-3 py-1.5 rounded-full text-xs text-white/80 transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-xs text-white/40 uppercase tracking-wider">AI & ML</span>
+                <div className="flex flex-wrap gap-2 mt-1.5">
+                  {aiStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-white/[0.06] hover:bg-white/[0.12] px-3 py-1.5 rounded-full text-xs text-white/80 transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div>
+                <span className="text-xs text-white/40 uppercase tracking-wider">Architecture</span>
+                <div className="flex flex-wrap gap-2 mt-1.5">
+                  {otherStack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="bg-white/[0.06] hover:bg-white/[0.12] px-3 py-1.5 rounded-full text-xs text-white/80 transition-all duration-300 hover:-translate-y-0.5"
+                    >
+                      {tech}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>

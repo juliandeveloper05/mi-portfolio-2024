@@ -87,10 +87,10 @@ const FloatingNavbar = () => {
       <motion.nav
         initial={{ opacity: 1, y: -100 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.2 }}
+        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-4 inset-x-0 mx-auto z-50 px-4 md:px-0"
       >
-        <div className="unselectable flex justify-between items-center max-w-5xl mx-auto px-4 md:px-6 py-2 rounded-full bg-black/80 backdrop-blur-sm border border-white/[0.25] shadow-lg">
+        <div className="unselectable flex justify-between items-center max-w-3xl mx-auto px-4 md:px-6 py-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/[0.08] shadow-lg shadow-black/20">
           <Link
             to="profile"
             spy={true}
@@ -101,13 +101,13 @@ const FloatingNavbar = () => {
             <Image
               src="/newlogo.png"
               alt="Logo"
-              width={40}
-              height={40}
+              width={36}
+              height={36}
               className="website-logo"
             />
           </Link>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <Link
                 key={item}
@@ -117,39 +117,44 @@ const FloatingNavbar = () => {
                 duration={800}
                 offset={-100}
                 onClick={() => handleNavLinkClick(item)}
-                className={`text-white font-light tracking-wide cursor-pointer transition-colors 
+                className={`relative text-sm font-light tracking-wide cursor-pointer transition-colors px-3 py-1.5 rounded-full capitalize
                   ${
                     activeSection === item
-                      ? "border-b border-white/50"
-                      : "hover:text-white/70"
-                  }
-                  text-base capitalize`}
+                      ? "text-white"
+                      : "text-white/60 hover:text-white/90"
+                  }`}
               >
                 {t(item)}
+                {activeSection === item && (
+                  <motion.div
+                    layoutId="activeIndicator"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#12b886]"
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                  />
+                )}
               </Link>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center space-x-2">
+          <div className="hidden md:flex items-center gap-1">
             <button
               onClick={() => changeLanguage("en")}
-              className={`text-white font-light tracking-wide transition-colors px-2
+              className={`text-xs font-medium tracking-wide transition-all px-2.5 py-1 rounded-full
                 ${
                   router.locale === "en"
-                    ? "border-b border-white/50"
-                    : "hover:text-white/70"
+                    ? "text-[#12b886] bg-[#12b886]/10"
+                    : "text-white/50 hover:text-white/80"
                 }`}
             >
               EN
             </button>
-            <span className="text-white/50">/</span>
             <button
               onClick={() => changeLanguage("es")}
-              className={`text-white font-light tracking-wide transition-colors px-2
+              className={`text-xs font-medium tracking-wide transition-all px-2.5 py-1 rounded-full
                 ${
                   router.locale === "es"
-                    ? "border-b border-white/50"
-                    : "hover:text-white/70"
+                    ? "text-[#12b886] bg-[#12b886]/10"
+                    : "text-white/50 hover:text-white/80"
                 }`}
             >
               ES
@@ -157,22 +162,24 @@ const FloatingNavbar = () => {
           </div>
 
           <button
-            className="md:hidden text-white p-2"
+            className="md:hidden text-white/80 p-2 hover:text-white transition-colors"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle menu"
           >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
           </button>
         </div>
 
         <AnimatePresence>
           {isOpen && (
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              className="absolute top-full left-0 right-0 mt-2 p-6 bg-black/95 backdrop-blur-md md:hidden rounded-2xl border border-white/10 shadow-2xl mx-4"
+              initial={{ opacity: 0, y: -10, scale: 0.98 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -10, scale: 0.98 }}
+              transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
+              className="absolute top-full left-0 right-0 mt-2 p-6 md:hidden rounded-2xl shadow-2xl mx-4 bg-black/90 backdrop-blur-xl border border-white/[0.08]"
             >
-              <div className="flex flex-col space-y-4">
+              <div className="flex flex-col gap-1">
                 {navItems.map((item) => (
                   <Link
                     key={item}
@@ -182,25 +189,36 @@ const FloatingNavbar = () => {
                     duration={800}
                     offset={-100}
                     onClick={() => handleNavLinkClick(item)}
-                    className={`text-white hover:text-white/70 text-center font-light tracking-wide capitalize
+                    className={`py-2.5 px-4 rounded-lg text-center font-light tracking-wide capitalize transition-all
                       ${
-                        activeSection === item ? "border-b border-white/50" : ""
+                        activeSection === item
+                          ? "text-[#12b886] bg-[#12b886]/5"
+                          : "text-white/70 hover:text-white hover:bg-white/5"
                       }`}
                   >
                     {t(item)}
                   </Link>
                 ))}
-                <div className="flex justify-center space-x-4 pt-4 border-t border-white/20">
+                <div className="flex justify-center gap-2 pt-4 mt-2 border-t border-white/[0.06]">
                   <button
                     onClick={() => changeLanguage("en")}
-                    className="text-white hover:text-white/70 font-light tracking-wide"
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all
+                      ${
+                        router.locale === "en"
+                          ? "text-[#12b886] bg-[#12b886]/10"
+                          : "text-white/50 hover:text-white/80"
+                      }`}
                   >
                     English
                   </button>
-                  <span className="text-white/50">/</span>
                   <button
                     onClick={() => changeLanguage("es")}
-                    className="text-white hover:text-white/70 font-light tracking-wide"
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-all
+                      ${
+                        router.locale === "es"
+                          ? "text-[#12b886] bg-[#12b886]/10"
+                          : "text-white/50 hover:text-white/80"
+                      }`}
                   >
                     Español
                   </button>

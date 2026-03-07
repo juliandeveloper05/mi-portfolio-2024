@@ -76,17 +76,17 @@ const Timeline = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-white">
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-[var(--theme-text)]">
             {t("title")}
           </h2>
-          <p className="mt-3 text-body-lg text-white/50">{t("subtitle")}</p>
+          <p className="mt-3 text-body-lg text-[var(--theme-text-muted)]">{t("subtitle")}</p>
         </motion.div>
 
         <div className="relative">
           {/* Timeline line - visible on both mobile and desktop */}
           <motion.div
-            className={`absolute ${isMobile ? 'left-4' : 'left-1/2 -translate-x-1/2'} w-px h-full bg-[#12b886]/20`}
+            className={`absolute ${isMobile ? 'left-4' : 'left-1/2 -translate-x-1/2'} w-px h-full bg-[var(--theme-accent)]/20`}
             style={{ scaleY: scaleX }}
           />
 
@@ -138,8 +138,8 @@ const TimelineEvent = ({
       <div ref={ref} className="relative pl-10">
         {/* Dot */}
         <div className="absolute left-4 top-6 -translate-x-1/2">
-          <div className="w-2.5 h-2.5 bg-[#12b886] rounded-full relative">
-            <div className="absolute inset-0 rounded-full bg-[#12b886] animate-pulse-ring" />
+          <div className="w-2.5 h-2.5 bg-[var(--theme-accent)] rounded-full relative">
+            <div className="absolute inset-0 rounded-full bg-[var(--theme-accent)] animate-pulse-ring" />
           </div>
         </div>
         <motion.div
@@ -168,8 +168,8 @@ const TimelineEvent = ({
         <div className="w-5/12" />
         <div className="z-20 mx-4">
           <div className="relative">
-            <div className="w-3 h-3 bg-[#12b886] rounded-full" />
-            <div className="absolute inset-0 rounded-full bg-[#12b886] animate-pulse-ring" />
+            <div className="w-3 h-3 bg-[var(--theme-accent)] rounded-full" />
+            <div className="absolute inset-0 rounded-full bg-[var(--theme-accent)] animate-pulse-ring" />
           </div>
         </div>
         <motion.div
@@ -192,21 +192,21 @@ const EventCard = ({
   event: TimelineEventProps["event"];
   isExpanded: boolean;
 }) => (
-  <div className="p-5 backdrop-blur-sm bg-white/[0.02] rounded-2xl border border-white/[0.06] border-l-2 border-l-[#12b886]/40 hover:border-white/[0.12] transition-all duration-300">
-    <span className="inline-block bg-[#12b886]/10 text-[#12b886] px-3 py-1 rounded-full text-xs font-mono mb-2">
+  <div className="p-5 backdrop-blur-sm bg-[var(--theme-surface-1)] rounded-2xl border border-[var(--theme-border)] border-l-2 border-l-[var(--theme-accent)]/40 hover:border-[var(--theme-surface-3)] transition-all duration-300">
+    <span className="inline-block bg-[var(--theme-accent)]/10 text-[var(--theme-accent)] px-3 py-1 rounded-full text-xs font-mono mb-2">
       {event.year}
     </span>
-    <h3 className="text-lg font-semibold text-white mb-1">{event.title}</h3>
-    <p className="text-white/50 text-sm">{event.description}</p>
+    <h3 className="text-lg font-semibold text-[var(--theme-text)] mb-1">{event.title}</h3>
+    <p className="text-[var(--theme-text-muted)] text-sm">{event.description}</p>
     <motion.div
       initial={{ height: 0, opacity: 0 }}
       animate={{ height: isExpanded ? "auto" : 0, opacity: isExpanded ? 1 : 0 }}
       transition={{ duration: 0.3 }}
       className="overflow-hidden"
     >
-      <p className="mt-3 text-sm text-white/40 leading-relaxed">{event.details}</p>
+      <p className="mt-3 text-sm text-[var(--theme-text-muted)] leading-relaxed">{event.details}</p>
     </motion.div>
-    <div className="mt-2 flex items-center gap-1 text-white/30 text-xs">
+    <div className="mt-2 flex items-center gap-1 text-[var(--theme-text-muted)] text-xs">
       <FiChevronDown className={`transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
       <span>{isExpanded ? 'Less' : 'More'}</span>
     </div>

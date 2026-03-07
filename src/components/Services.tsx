@@ -49,7 +49,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-[#12b886]/10 to-[#20c997]/10 rounded-2xl"
+            className="absolute inset-0 bg-gradient-to-r from-[var(--theme-accent)]/10 to-[#20c997]/10 rounded-2xl"
             layoutId="hoverBackground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -61,20 +61,20 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       <div
         className={cn(
-          "relative z-10 h-full rounded-2xl border bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-300",
-          isHovered ? "border-white/[0.12] bg-white/[0.04]" : "border-white/[0.06]"
+          "relative z-10 h-full rounded-2xl border bg-[var(--theme-surface-1)] p-8 backdrop-blur-sm transition-all duration-300",
+          isHovered ? "border-[var(--theme-surface-3)] bg-[var(--theme-surface-2)]" : "border-[var(--theme-border)]"
         )}
       >
-        <h3 className="mb-4 text-xl font-semibold text-[#12b886]">{title}</h3>
-        <p className="mb-6 text-white/60 text-sm leading-relaxed">{description}</p>
+        <h3 className="mb-4 text-xl font-semibold text-[var(--theme-accent)]">{title}</h3>
+        <p className="mb-6 text-[var(--theme-text-secondary)] text-sm leading-relaxed">{description}</p>
 
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 rounded-full bg-white/[0.04] px-3 py-1.5 text-xs text-white/50 transition-all duration-300 hover:bg-white/[0.08] hover:text-white/80"
+              className="flex items-center gap-2 rounded-full bg-[var(--theme-surface-1)] px-3 py-1.5 text-xs text-[var(--theme-text-muted)] transition-all duration-300 hover:bg-[var(--theme-surface-3)] hover:text-[var(--theme-text-secondary)]"
             >
-              <tech.icon className="h-3.5 w-3.5 text-[#12b886]/60 group-hover:text-[#12b886] transition-colors duration-300" />
+              <tech.icon className="h-3.5 w-3.5 text-[var(--theme-accent)]/60 group-hover:text-[var(--theme-accent)] transition-colors duration-300" />
               <span>{tech.name}</span>
             </div>
           ))}
@@ -161,8 +161,8 @@ const Services = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-white">
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
             {t("services1")}
           </h2>
         </motion.div>

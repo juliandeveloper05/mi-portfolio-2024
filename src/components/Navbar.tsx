@@ -5,6 +5,7 @@ import Image from "next/image";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import ThemeToggle from "./ThemeToggle";
 
 const FloatingNavbar = () => {
   const router = useRouter();
@@ -90,7 +91,7 @@ const FloatingNavbar = () => {
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-4 inset-x-0 mx-auto z-50 px-4 md:px-0"
       >
-        <div className="unselectable flex justify-between items-center max-w-4xl mx-auto px-4 md:px-6 py-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/[0.08] shadow-lg shadow-black/20">
+        <div className="unselectable flex justify-between items-center max-w-4xl mx-auto px-4 md:px-6 py-2.5 rounded-full bg-[var(--theme-nav-bg)] backdrop-blur-md border border-[var(--theme-border)] shadow-lg shadow-[var(--theme-shadow)]">
           <Link
             to="profile"
             spy={true}
@@ -120,15 +121,15 @@ const FloatingNavbar = () => {
                 className={`relative text-sm font-light tracking-wide cursor-pointer transition-colors px-2 py-1.5 rounded-full capitalize whitespace-nowrap
                   ${
                     activeSection === item
-                      ? "text-white"
-                      : "text-white/60 hover:text-white/90"
+                      ? "text-[var(--theme-text)]"
+                      : "text-[var(--theme-text-secondary)] hover:text-[var(--theme-text)]"
                   }`}
               >
                 {t(item)}
                 {activeSection === item && (
                   <motion.div
                     layoutId="activeIndicator"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[#12b886]"
+                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-[var(--theme-accent)]"
                     transition={{ type: "spring", stiffness: 300, damping: 30 }}
                   />
                 )}
@@ -137,13 +138,15 @@ const FloatingNavbar = () => {
           </div>
 
           <div className="hidden md:flex items-center gap-1">
+            <ThemeToggle />
+            <div className="w-px h-4 bg-[var(--theme-border)] mx-1" />
             <button
               onClick={() => changeLanguage("en")}
               className={`text-xs font-medium tracking-wide transition-all px-2.5 py-1 rounded-full
                 ${
                   router.locale === "en"
-                    ? "text-[#12b886] bg-[#12b886]/10"
-                    : "text-white/50 hover:text-white/80"
+                    ? "text-[var(--theme-accent)] bg-[var(--theme-accent)]/10"
+                    : "text-[var(--theme-text-muted)] hover:text-[var(--theme-text-secondary)]"
                 }`}
             >
               EN
@@ -153,8 +156,8 @@ const FloatingNavbar = () => {
               className={`text-xs font-medium tracking-wide transition-all px-2.5 py-1 rounded-full
                 ${
                   router.locale === "es"
-                    ? "text-[#12b886] bg-[#12b886]/10"
-                    : "text-white/50 hover:text-white/80"
+                    ? "text-[var(--theme-accent)] bg-[var(--theme-accent)]/10"
+                    : "text-[var(--theme-text-muted)] hover:text-[var(--theme-text-secondary)]"
                 }`}
             >
               ES
@@ -162,7 +165,7 @@ const FloatingNavbar = () => {
           </div>
 
           <button
-            className="md:hidden text-white/80 p-2 hover:text-white transition-colors"
+            className="md:hidden text-[var(--theme-text-secondary)] p-2 hover:text-[var(--theme-text)] transition-colors"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
           >
@@ -177,7 +180,7 @@ const FloatingNavbar = () => {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -10, scale: 0.98 }}
               transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="absolute top-full left-0 right-0 mt-2 p-6 md:hidden rounded-2xl shadow-2xl mx-4 bg-black/90 backdrop-blur-xl border border-white/[0.08]"
+              className="absolute top-full left-0 right-0 mt-2 p-6 md:hidden rounded-2xl shadow-2xl mx-4 bg-[var(--theme-glass-bg)] backdrop-blur-xl border border-[var(--theme-border)]"
             >
               <div className="flex flex-col gap-1">
                 {navItems.map((item) => (
@@ -192,21 +195,24 @@ const FloatingNavbar = () => {
                     className={`py-2.5 px-4 rounded-lg text-center font-light tracking-wide capitalize transition-all
                       ${
                         activeSection === item
-                          ? "text-[#12b886] bg-[#12b886]/5"
-                          : "text-white/70 hover:text-white hover:bg-white/5"
+                          ? "text-[var(--theme-accent)] bg-[var(--theme-accent)]/5"
+                          : "text-[var(--theme-text-secondary)] hover:text-[var(--theme-text)] hover:bg-[var(--theme-surface-2)]"
                       }`}
                   >
                     {t(item)}
                   </Link>
                 ))}
-                <div className="flex justify-center gap-2 pt-4 mt-2 border-t border-white/[0.06]">
+
+                <div className="flex justify-center items-center gap-3 pt-4 mt-2 border-t border-[var(--theme-border)]">
+                  <ThemeToggle />
+                  <div className="w-px h-4 bg-[var(--theme-border)]" />
                   <button
                     onClick={() => changeLanguage("en")}
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all
                       ${
                         router.locale === "en"
-                          ? "text-[#12b886] bg-[#12b886]/10"
-                          : "text-white/50 hover:text-white/80"
+                          ? "text-[var(--theme-accent)] bg-[var(--theme-accent)]/10"
+                          : "text-[var(--theme-text-muted)] hover:text-[var(--theme-text-secondary)]"
                       }`}
                   >
                     English
@@ -216,8 +222,8 @@ const FloatingNavbar = () => {
                     className={`px-4 py-2 rounded-lg text-sm font-medium transition-all
                       ${
                         router.locale === "es"
-                          ? "text-[#12b886] bg-[#12b886]/10"
-                          : "text-white/50 hover:text-white/80"
+                          ? "text-[var(--theme-accent)] bg-[var(--theme-accent)]/10"
+                          : "text-[var(--theme-text-muted)] hover:text-[var(--theme-text-secondary)]"
                       }`}
                   >
                     Español

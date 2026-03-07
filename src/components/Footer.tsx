@@ -33,12 +33,12 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="border-t border-white/[0.05] bg-black/50 backdrop-blur-sm">
+    <footer className="border-t border-[var(--theme-border)] bg-[var(--theme-glass-bg)] backdrop-blur-sm">
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center gap-6">
           <Link
             href="/"
-            className="text-xl font-semibold text-white hover:text-[#12b886] transition-colors unselectable"
+            className="text-xl font-semibold text-[var(--theme-text)] hover:text-[var(--theme-accent)] transition-colors unselectable"
           >
             Julian Soto
           </Link>
@@ -51,14 +51,14 @@ const Footer = () => {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={link.label}
-                className="text-white/50 hover:text-[#12b886] text-lg transition-all duration-300 hover:scale-110"
+                className="text-[var(--theme-text-muted)] hover:text-[var(--theme-accent)] text-lg transition-all duration-300 hover:scale-110"
               >
                 {link.icon}
               </a>
             ))}
           </div>
 
-          <p className="text-white/40 text-sm unselectable">
+          <p className="text-[var(--theme-text-muted)] text-sm unselectable">
             {t("footer1")} &copy; {t("footer2")} {new Date().getFullYear()}
           </p>
         </div>

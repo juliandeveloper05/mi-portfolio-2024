@@ -8,15 +8,9 @@ import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import GrainEffect from "@/components/grain-effect";
-import { Poppins } from "next/font/google";
 import Approach from "@/components/Approach";
 import Projects from "@/components/Projects";
 import ScrollReveal from "@/components/scroll-reveal";
-
-const poppins = Poppins({
-  weight: ["400", "500", "600", "700"],
-  subsets: ["latin"],
-});
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -62,8 +56,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="fixed inset-0 bg-black -z-30" />
-      <div className="fixed inset-0 -z-20 w-full h-full opacity-[0.08]">
+      <div className="fixed inset-0 bg-[var(--theme-bg)] -z-30" />
+      <div className="fixed inset-0 -z-20 w-full h-full" style={{ opacity: 'var(--theme-grain-opacity)' }}>
         <GrainEffect />
       </div>
 
@@ -72,7 +66,7 @@ const Home = () => {
           <Navbar />
         </div>
 
-        <main className={`${poppins.className} flex-grow relative z-10`}>
+        <main className={`flex-grow relative z-10`}>
           <div className="relative">
             <section id="profile" className="bg-transparent">
               <Profile />

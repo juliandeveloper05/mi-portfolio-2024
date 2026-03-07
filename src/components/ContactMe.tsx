@@ -72,10 +72,10 @@ export default function ContactMe() {
       <div className="max-w-lg mx-auto px-4 sm:px-6">
         <SectionHeading>{t("contact1")}</SectionHeading>
 
-        <p className="text-white/60 text-center text-body-lg leading-relaxed mb-10">
+        <p className="text-[var(--theme-text-secondary)] text-center text-body-lg leading-relaxed mb-10">
           {t("contact2")}
           <a
-            className="text-[#12b886] hover:text-[#20c997] transition-colors mx-1"
+            className="text-[var(--theme-accent)] hover:text-[#20c997] transition-colors mx-1"
             href="mailto:juliansoto.dev@gmail.com"
           >
             juliansoto.dev@gmail.com
@@ -92,20 +92,20 @@ export default function ContactMe() {
             <input
               type="email"
               placeholder={t("contact4")}
-              className="h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 focus:border-[#12b886]/50 focus:ring-2 focus:ring-[#12b886]/10 transition-all px-4 text-sm outline-none"
+              className="h-12 rounded-xl bg-[var(--theme-input-bg)] border border-[var(--theme-border)] text-[var(--theme-text)] placeholder:text-[var(--theme-input-placeholder)] focus:border-[var(--theme-accent)]/50 focus:ring-2 focus:ring-[var(--theme-accent)]/10 transition-all px-4 text-sm outline-none"
               ref={emailRef}
             />
 
             <textarea
               placeholder={t("contact5")}
-              className="h-40 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 focus:border-[#12b886]/50 focus:ring-2 focus:ring-[#12b886]/10 transition-all p-4 text-sm outline-none resize-none"
+              className="h-40 rounded-xl bg-[var(--theme-input-bg)] border border-[var(--theme-border)] text-[var(--theme-text)] placeholder:text-[var(--theme-input-placeholder)] focus:border-[var(--theme-accent)]/50 focus:ring-2 focus:ring-[var(--theme-accent)]/10 transition-all p-4 text-sm outline-none resize-none"
               ref={messageRef}
             />
 
             <button
               type="submit"
               disabled={isLoading}
-              className={`flex items-center justify-center gap-2 h-12 bg-[#12b886] hover:bg-[#20c997] transition-all text-black font-semibold rounded-xl outline-none px-6 text-sm ${
+              className={`flex items-center justify-center gap-2 h-12 bg-[var(--theme-accent)] hover:bg-[#20c997] transition-all text-white font-semibold rounded-xl outline-none px-6 text-sm ${
                 isLoading ? "opacity-75 cursor-not-allowed" : "hover:scale-[1.02]"
               }`}
             >

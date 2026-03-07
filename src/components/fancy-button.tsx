@@ -13,7 +13,7 @@ const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
       <div
         className="
           group
-          bg-black
+          bg-[var(--theme-bg)]
           hover:bg-transparent
           rounded-[108em]
           py-2.5
@@ -29,7 +29,7 @@ const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
           cursor-pointer
           transition-all
           duration-300
-          text-white
+          text-[var(--theme-text)]
         "
         onClick={onClick}
       >

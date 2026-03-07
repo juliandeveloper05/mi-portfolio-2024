@@ -23,8 +23,9 @@ export default function ContactMe() {
       className: "unselectable",
       style: {
         background: isSuccess
-          ? "linear-gradient(to right, #00b09b, #96c93d)"
+          ? "linear-gradient(to right, #12b886, #20c997)"
           : "linear-gradient(to right, #ff5f6d, #ffc371)",
+        borderRadius: "12px",
       },
     }).showToast();
   };
@@ -67,59 +68,57 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="contact" className="mb-20 mx-auto sm:mb-28 py-14">
-      {/* Encabezado de la sección */}
-      <SectionHeading>{t("contact1")}</SectionHeading>
+    <section id="contact" className="py-20 md:py-28 unselectable">
+      <div className="max-w-lg mx-auto px-4 sm:px-6">
+        <SectionHeading>{t("contact1")}</SectionHeading>
 
-      {/* Texto de introducción */}
-      <p className="text-white text-center text-lg leading-relaxed mb-8">
-        {t("contact2")}
-        <a
-          className="text-indigo-600 hover:text-indigo-800 transition-colors mx-2"
-          href="mailto:juliansoto.dev@gmail.com"
-        >
-          juliansoto.dev@gmail.com
-        </a>
-        {t("contact3")}
-      </p>
+        <p className="text-white/60 text-center text-body-lg leading-relaxed mb-10">
+          {t("contact2")}
+          <a
+            className="text-[#12b886] hover:text-[#20c997] transition-colors mx-1"
+            href="mailto:juliansoto.dev@gmail.com"
+          >
+            juliansoto.dev@gmail.com
+          </a>
+          {t("contact3")}
+        </p>
 
-      {/* Formulario */}
-      <form
-        ref={formRef}
-        onSubmit={sendEmail}
-        className="mt-10 flex flex-col max-w-md mx-auto"
-      >
-        {/* Campo Email */}
-        <input
-          type="email"
-          placeholder={t("contact4")}
-          className="h-14 rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all px-4 text-black"
-          ref={emailRef}
-        />
+        <div className="glass rounded-2xl p-6 md:p-8">
+          <form
+            ref={formRef}
+            onSubmit={sendEmail}
+            className="flex flex-col gap-4"
+          >
+            <input
+              type="email"
+              placeholder={t("contact4")}
+              className="h-12 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 focus:border-[#12b886]/50 focus:ring-2 focus:ring-[#12b886]/10 transition-all px-4 text-sm outline-none"
+              ref={emailRef}
+            />
 
-        {/* Campo Mensaje */}
-        <textarea
-          placeholder={t("contact5")}
-          className="h-52 my-3 rounded-lg border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 transition-all p-4 text-black"
-          ref={messageRef}
-        />
+            <textarea
+              placeholder={t("contact5")}
+              className="h-40 rounded-xl bg-white/[0.04] border border-white/[0.08] text-white placeholder:text-white/30 focus:border-[#12b886]/50 focus:ring-2 focus:ring-[#12b886]/10 transition-all p-4 text-sm outline-none resize-none"
+              ref={messageRef}
+            />
 
-        {/* Botón de Enviar */}
-        <button
-          type="submit"
-          disabled={isLoading}
-          className={`flex items-center justify-center gap-2 h-12 bg-indigo-600 hover:bg-indigo-700 transition-colors text-white rounded-full outline-none px-6 mx-auto sm:mb-4 mb-4 ${
-            isLoading ? "opacity-75 cursor-not-allowed" : ""
-          }`}
-        >
-          {isLoading ? (
-            <FiLoader className="animate-spin" />
-          ) : (
-            <FiSend className="text-lg" />
-          )}
-          {t("contact6")}
-        </button>
-      </form>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className={`flex items-center justify-center gap-2 h-12 bg-[#12b886] hover:bg-[#20c997] transition-all text-black font-semibold rounded-xl outline-none px-6 text-sm ${
+                isLoading ? "opacity-75 cursor-not-allowed" : "hover:scale-[1.02]"
+              }`}
+            >
+              {isLoading ? (
+                <FiLoader className="animate-spin" />
+              ) : (
+                <FiSend className="text-lg" />
+              )}
+              {t("contact6")}
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
   );
 }

@@ -44,6 +44,9 @@ const config: Config = {
         },
         "white-transparent-70": "rgba(255, 255, 255, 0.7)",
         "white-transparent-475": "rgba(255, 255, 255, 0.475)",
+        "surface-1": "rgba(255, 255, 255, 0.03)",
+        "surface-2": "rgba(255, 255, 255, 0.06)",
+        "surface-3": "rgba(255, 255, 255, 0.10)",
       },
       backgroundImage: {
         grain: "url('/assets/images/background/noisy-background.png')",
@@ -52,6 +55,10 @@ const config: Config = {
         "noisy-bg": "noise 1s steps(2) infinite",
         shimmer: "shimmer 2s linear infinite",
         "gradient-xy": "gradient-xy 5s ease infinite",
+        "fade-up": "fade-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "fade-in": "fade-in 0.5s ease forwards",
+        "scale-in": "scale-in 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards",
+        "pulse-ring": "pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
         noise: {
@@ -81,15 +88,38 @@ const config: Config = {
             "background-position": "right center",
           },
         },
+        "fade-up": {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "scale-in": {
+          "0%": { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
+        },
+        "pulse-ring": {
+          "0%": { transform: "scale(1)", opacity: "0.5" },
+          "50%": { transform: "scale(1.5)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "0" },
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
         "1rem": "1rem",
+        "2xl": "1rem",
+        "3xl": "1.5rem",
       },
       spacing: {
+        "18": "4.5rem",
         "20": "5rem",
+        "24": "6rem",
+        "28": "7rem",
+        "32": "8rem",
       },
       width: {
         "18": "4.5rem",
@@ -99,6 +129,10 @@ const config: Config = {
       },
       fontSize: {
         "2xl": "2rem",
+        "display": ["clamp(2.5rem, 5vw, 4.5rem)", { lineHeight: "1.1", letterSpacing: "-0.02em" }],
+        "heading": ["clamp(1.75rem, 3vw, 2.5rem)", { lineHeight: "1.2", letterSpacing: "-0.01em" }],
+        "subheading": ["clamp(1.125rem, 2vw, 1.5rem)", { lineHeight: "1.4" }],
+        "body-lg": ["clamp(1rem, 1.5vw, 1.125rem)", { lineHeight: "1.7" }],
       },
       zIndex: {
         "5": "5",
@@ -112,6 +146,7 @@ const config: Config = {
       },
       transitionTimingFunction: {
         "premium": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+        "out-expo": "cubic-bezier(0.16, 1, 0.3, 1)",
       },
       backdropFilter: {
         none: "none",

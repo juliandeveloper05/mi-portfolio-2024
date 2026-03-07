@@ -23,18 +23,6 @@ import { TbApi, TbBrandCodesandbox, TbWaveSine } from "react-icons/tb";
 import { Project } from "./projects/types";
 import { ProjectCard } from "./projects/ProjectCard";
 
-/**
- * Main Projects Section Orchestrator.
- * 
- * Responsibility:
- * - Manages the domain data (Projects array).
- * - Handles layout and responsive grid structure.
- * - Coordinates shared state (though currently minimal, it sets up the structure for it).
- * 
- * Performance:
- * - The 'projects' array is memoized to ensure referential stability. 
- *   This allows child components (ProjectCard) to effective use React.memo.
- */
 const Projects = () => {
   const { t } = useTranslation("projects");
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
@@ -142,19 +130,22 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-transparent py-12 md:py-20 unselectable"
+      className="bg-transparent py-20 md:py-28 unselectable"
     >
-      <div className="container mx-auto px-4 md:px-8">
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-center text-white mb-12"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="flex flex-col items-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {t("projects_title")}
-        </motion.h2>
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-center text-white">
+            {t("projects_title")}
+          </h2>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
           {projects.map((project) => (
             <ProjectCard
               key={project.id}

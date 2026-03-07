@@ -12,28 +12,31 @@ const FancyButton: FC<ButtonProps> = ({ text, icon, onClick }) => {
     <div className="fancy-btn">
       <div
         className="
-          group 
-          bg-black 
-          hover:bg-transparent 
+          group
+          bg-black
+          hover:bg-transparent
           rounded-[108em]
-          py-[1vw]
-          px-[1vw]
+          py-2.5
+          px-5
+          md:py-3
+          md:px-6
           flex
           items-center
           gap-2
-          font-bold
-          text-1xl
+          font-semibold
+          text-sm
+          md:text-base
           cursor-pointer
           transition-all
-          duration-75
+          duration-300
           text-white
         "
         onClick={onClick}
       >
         {icon}
         <span>{text}</span>
-        <span className="group-hover:translate-x-[.23vw] transition-transform duration-100">
-          <FaArrowRight />
+        <span className="group-hover:translate-x-1 transition-transform duration-300">
+          <FaArrowRight className="text-xs" />
         </span>
       </div>
     </div>

@@ -1,4 +1,3 @@
-// components/Services.tsx
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { motion, AnimatePresence } from "framer-motion";
@@ -45,12 +44,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       onMouseLeave={() => onHover(null)}
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, delay: index * 0.1 }}
+      transition={{ duration: 0.4, delay: index * 0.08 }}
     >
       <AnimatePresence>
         {isHovered && (
           <motion.div
-            className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-blue-500/20 rounded-xl"
+            className="absolute inset-0 bg-gradient-to-r from-[#12b886]/10 to-[#20c997]/10 rounded-2xl"
             layoutId="hoverBackground"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -62,23 +61,21 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
       <div
         className={cn(
-          "relative z-10 h-full rounded-xl border border-slate-800 bg-black/50 p-6 backdrop-blur-sm transition-colors",
-          isHovered ? "border-slate-700" : "border-slate-800"
+          "relative z-10 h-full rounded-2xl border bg-white/[0.02] p-8 backdrop-blur-sm transition-all duration-300",
+          isHovered ? "border-white/[0.12] bg-white/[0.04]" : "border-white/[0.06]"
         )}
       >
-        <h3 className="mb-4 text-2xl font-semibold text-[#00ff9d]">{title}</h3>
-        <p className="mb-6 text-gray-300">{description}</p>
+        <h3 className="mb-4 text-xl font-semibold text-[#12b886]">{title}</h3>
+        <p className="mb-6 text-white/60 text-sm leading-relaxed">{description}</p>
 
-        <div className="flex flex-wrap gap-3">
+        <div className="flex flex-wrap gap-2">
           {technologies.map((tech, idx) => (
             <div
               key={idx}
-              className="flex items-center gap-2 rounded-full bg-black/30 px-3 py-1 text-sm text-gray-400 transition-all duration-300 hover:bg-black/50"
+              className="flex items-center gap-2 rounded-full bg-white/[0.04] px-3 py-1.5 text-xs text-white/50 transition-all duration-300 hover:bg-white/[0.08] hover:text-white/80"
             >
-              <tech.icon className="h-4 w-4 transform transition-all duration-300 group-hover:scale-110 group-hover:text-[#00ff9d]" />
-              <span className="transition-colors duration-300 group-hover:text-white">
-                {tech.name}
-              </span>
+              <tech.icon className="h-3.5 w-3.5 text-[#12b886]/60 group-hover:text-[#12b886] transition-colors duration-300" />
+              <span>{tech.name}</span>
             </div>
           ))}
         </div>
@@ -157,17 +154,20 @@ const Services = () => {
 
   return (
     <section id="services" className="bg-transparent unselectable">
-      <div className="container mx-auto px-4 py-20">
-        <motion.h2
-          className="text-3xl font-bold text-center text-white mb-12"
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
+        <motion.div
+          className="flex flex-col items-center mb-12"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          {t("services1")}
-        </motion.h2>
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-center text-white">
+            {t("services1")}
+          </h2>
+        </motion.div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {services.map((service, index) => (
             <ServiceCard
               key={index}

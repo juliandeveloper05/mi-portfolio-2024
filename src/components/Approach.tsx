@@ -17,17 +17,19 @@ const Approach = () => {
   }
 
   return (
-    <>
-      <section id="approach" className="w-full py-14 unselectable">
-        <h1 className="heading">
-          <h2 className="text-3xl text-center text-white mb-12">
+    <section id="approach" className="w-full py-20 md:py-28 unselectable">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center mb-12">
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-center text-white">
             {t("approach1")}
           </h2>
-        </h1>
-        <div className="py-6 flex flex-col lg:flex-row items-center justify-center   w-full gap-4 mx-auto px-8">
+        </div>
+
+        <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-5">
           <Card
             title={t("showme_title1")}
-            icon={<AceternityIcon order="showme1" />}
+            icon={<StepNumber number="01" label={t("showme1")} />}
             description={t("showme_description1")}
           >
             <CanvasRevealEffect
@@ -37,7 +39,7 @@ const Approach = () => {
           </Card>
           <Card
             title={t("showme_title2")}
-            icon={<AceternityIcon order="showme2" />}
+            icon={<StepNumber number="02" label={t("showme2")} />}
             description={t("showme_description2")}
           >
             <CanvasRevealEffect
@@ -52,7 +54,7 @@ const Approach = () => {
           </Card>
           <Card
             title={t("showme_title3")}
-            icon={<AceternityIcon order="showme3" />}
+            icon={<StepNumber number="03" label={t("showme3")} />}
             description={t("showme_description3")}
           >
             <CanvasRevealEffect
@@ -62,8 +64,8 @@ const Approach = () => {
             />
           </Card>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
@@ -83,14 +85,14 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className=" border border-white/[0.8] group/canvas-card flex flex-col items-center justify-center dark:border-white/[0.6] max-w-sm w-full mx-auto p-6 relative h-[30rem] "
+      className="border border-white/[0.06] group/canvas-card flex flex-col items-center justify-center max-w-sm w-full mx-auto p-6 relative h-[24rem] lg:h-[28rem] rounded-2xl bg-white/[0.02] backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300"
     >
       <AnimatePresence>
         {hovered && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="h-full w-full absolute inset-0"
+            className="h-full w-full absolute inset-0 rounded-2xl overflow-hidden"
           >
             {children}
           </motion.div>
@@ -98,13 +100,13 @@ const Card = ({
       </AnimatePresence>
 
       <div className="relative z-5 unselectable">
-        <div className=" text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-200">
+        <div className="text-center group-hover/canvas-card:-translate-y-4 absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] group-hover/canvas-card:opacity-0 transition duration-300">
           {icon}
         </div>
-        <h2 className="dark:text-white opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center text-3xl">
+        <h2 className="opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-white mt-4 font-bold group-hover/canvas-card:-translate-y-2 transition duration-300 text-center text-2xl lg:text-3xl">
           {title}
         </h2>
-        <p className="text-sm dark:text-white opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-black mt-4 font-bold group-hover/canvas-card:text-white group-hover/canvas-card:-translate-y-2 transition duration-200 text-center">
+        <p className="text-sm opacity-0 group-hover/canvas-card:opacity-100 relative z-10 text-white/80 mt-4 group-hover/canvas-card:-translate-y-2 transition duration-300 text-center leading-relaxed">
           {description}
         </p>
       </div>
@@ -112,12 +114,12 @@ const Card = ({
   );
 };
 
-const AceternityIcon = ({ order }: { order: string }) => {
-  const { t } = useTranslation("approach");
+const StepNumber = ({ number, label }: { number: string; label: string }) => {
   return (
-    <button className="inline-flex h-12 animate-shimmer items-center justify-center rounded-md border border-slate-800 bg-[linear-gradient(110deg,#000103,45%,#1e2631,55%,#000103)] bg-[length:200%_100%] px-6 font-medium text-slate-400 transition-colors focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50">
-      {t(order)}
-    </button>
+    <div className="flex flex-col items-center gap-3">
+      <span className="text-6xl font-bold text-white/10">{number}</span>
+      <span className="text-sm text-white/50 font-medium">{label}</span>
+    </div>
   );
 };
 

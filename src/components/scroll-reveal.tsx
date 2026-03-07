@@ -25,10 +25,10 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once, amount: threshold });
   const controls = useAnimation();
-  const [isMobile, setIsMobile] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   const getInitialPosition = () => {
-    const distance = 75;
+    const distance = isMobile ? 30 : 60;
     switch (from) {
       case "top":
         return { y: -distance, opacity: 0 };
@@ -54,29 +54,16 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       setIsMobile(window.innerWidth < 768);
     };
 
-    // Initial check
     checkDevice();
-
-    // Add resize listener
     window.addEventListener("resize", checkDevice);
-
-    // Cleanup
     return () => window.removeEventListener("resize", checkDevice);
   }, []);
 
   useEffect(() => {
-    if (isInView && !isMobile) {
+    if (isInView) {
       controls.start(getFinalPosition());
     }
-  }, [isInView, isMobile, controls]);
-
-  if (isMobile) {
-    return (
-      <div ref={ref} style={{ width }} className={className}>
-        {children}
-      </div>
-    );
-  }
+  }, [isInView, controls]);
 
   return (
     <div ref={ref} style={{ width }} className={className}>
@@ -84,9 +71,9 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
         initial={getInitialPosition()}
         animate={controls}
         transition={{
-          duration,
-          delay,
-          ease: [0.25, 0.1, 0.25, 1],
+          duration: isMobile ? 0.4 : duration,
+          delay: isMobile ? delay * 0.5 : delay,
+          ease: [0.16, 1, 0.3, 1],
         }}
       >
         {children}

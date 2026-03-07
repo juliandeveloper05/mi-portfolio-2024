@@ -1,76 +1,69 @@
 import React from "react";
 import { BsInstagram, BsLinkedin, BsYoutube } from "react-icons/bs";
 import { FaWhatsapp } from "react-icons/fa";
-import {
-  Container,
-  Logo,
-  SocialIconLink,
-  SocialIcons,
-  WebsiteRights,
-  Wrapper,
-} from "./FooterElements";
 import { useTranslation } from "next-i18next";
+import Link from "next/link";
 
 const Footer = () => {
   const { t } = useTranslation("footer");
   const numeroDeTelefono = "+5491130666369";
-
   const enlaceDeWhatsapp = `https://wa.me/${numeroDeTelefono}`;
 
+  const socialLinks = [
+    {
+      href: "https://www.linkedin.com/in/full-stack-julian-soto/",
+      icon: <BsLinkedin />,
+      label: "LinkedIn",
+    },
+    {
+      href: "https://www.instagram.com/pale_codepunk0101/",
+      icon: <BsInstagram />,
+      label: "Instagram",
+    },
+    {
+      href: enlaceDeWhatsapp,
+      icon: <FaWhatsapp />,
+      label: "WhatsApp",
+    },
+    {
+      href: "https://www.youtube.com/channel/UCsn-cQZBBRDcIael-klPkJA",
+      icon: <BsYoutube />,
+      label: "YouTube",
+    },
+  ];
+
   return (
-    <Container
-      style={{
-        backgroundColor: "black",
-        height: "5px",
-        boxShadow: "0px 0px 10px 5px rgba(255, 255, 255, 0.3)",
-      }}
-    >
-      <Wrapper>
-        <Logo className="text-pop unselectable" href="/">
-          Julian Soto
-        </Logo>
+    <footer className="border-t border-white/[0.05] bg-black/50 backdrop-blur-sm">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div className="flex flex-col items-center gap-6">
+          <Link
+            href="/"
+            className="text-xl font-semibold text-white hover:text-[#12b886] transition-colors unselectable"
+          >
+            Julian Soto
+          </Link>
 
-        <WebsiteRights className="unselectable">
-          {t("footer1")} &copy; {t("footer2")} {""}
-          {new Date().getFullYear()}
-        </WebsiteRights>
+          <div className="flex items-center gap-5">
+            {socialLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={link.label}
+                className="text-white/50 hover:text-[#12b886] text-lg transition-all duration-300 hover:scale-110"
+              >
+                {link.icon}
+              </a>
+            ))}
+          </div>
 
-        <SocialIcons>
-          <SocialIconLink
-            href="https://www.linkedin.com/in/full-stack-julian-soto/"
-            target="_blank"
-            aria-label="Linkedin"
-            className="text-pop"
-          >
-            <BsLinkedin />
-          </SocialIconLink>
-          <SocialIconLink
-            href="https://www.instagram.com/pale_codepunk0101/"
-            target="_blank"
-            aria-label="Instagram"
-            className="text-pop"
-          >
-            <BsInstagram />
-          </SocialIconLink>
-          <SocialIconLink
-            href={enlaceDeWhatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-pop"
-          >
-            <FaWhatsapp />
-          </SocialIconLink>
-          <SocialIconLink
-            href="https://www.youtube.com/channel/UCsn-cQZBBRDcIael-klPkJA"
-            target="_blank"
-            aria-label="Youtube"
-            className="text-pop"
-          >
-            <BsYoutube />
-          </SocialIconLink>
-        </SocialIcons>
-      </Wrapper>
-    </Container>
+          <p className="text-white/40 text-sm unselectable">
+            {t("footer1")} &copy; {t("footer2")} {new Date().getFullYear()}
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 };
 

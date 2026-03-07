@@ -90,7 +90,7 @@ const FloatingNavbar = () => {
         transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
         className="fixed top-4 inset-x-0 mx-auto z-50 px-4 md:px-0"
       >
-        <div className="unselectable flex justify-between items-center max-w-3xl mx-auto px-4 md:px-6 py-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/[0.08] shadow-lg shadow-black/20">
+        <div className="unselectable flex justify-between items-center max-w-4xl mx-auto px-4 md:px-6 py-2.5 rounded-full bg-black/70 backdrop-blur-md border border-white/[0.08] shadow-lg shadow-black/20">
           <Link
             to="profile"
             spy={true}
@@ -117,7 +117,7 @@ const FloatingNavbar = () => {
                 duration={800}
                 offset={-100}
                 onClick={() => handleNavLinkClick(item)}
-                className={`relative text-sm font-light tracking-wide cursor-pointer transition-colors px-3 py-1.5 rounded-full capitalize
+                className={`relative text-sm font-light tracking-wide cursor-pointer transition-colors px-2 py-1.5 rounded-full capitalize whitespace-nowrap
                   ${
                     activeSection === item
                       ? "text-white"

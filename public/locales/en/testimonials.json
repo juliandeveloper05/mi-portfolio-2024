@@ -1,0 +1,40 @@
+{
+  "sectionTitle": "What Clients Say",
+  "testimonials": [
+    {
+      "name": "Maria Gonzalez",
+      "role": "Product Manager",
+      "company": "TechFlow Solutions",
+      "text": "Julian delivered a complex Next.js application ahead of schedule. His attention to performance optimization and clean code architecture exceeded our expectations. The application handles thousands of daily users without any issues.",
+      "rating": 5
+    },
+    {
+      "name": "Carlos Mendez",
+      "role": "CTO",
+      "company": "DataBridge Analytics",
+      "text": "Working with Julian on our full-stack platform was a great experience. He brought deep expertise in both frontend and backend, and his communication throughout the project was excellent.",
+      "rating": 5
+    },
+    {
+      "name": "Laura Chen",
+      "role": "Founder",
+      "company": "AudioLab AI",
+      "text": "Julian built our AI-powered audio processing pipeline from scratch. His knowledge of Python, FastAPI, and machine learning frameworks was instrumental in bringing our product to market.",
+      "rating": 5
+    },
+    {
+      "name": "David Ruiz",
+      "role": "Marketing Director",
+      "company": "CreativeHub Agency",
+      "text": "The WordPress solution Julian developed transformed our content workflow. Custom plugins, optimized database queries, and a beautiful admin interface — all delivered with professionalism.",
+      "rating": 4
+    },
+    {
+      "name": "Ana Torres",
+      "role": "Engineering Lead",
+      "company": "FinCore Systems",
+      "text": "Julian's database modeling and API design skills are top-notch. He redesigned our data layer with PostgreSQL and Supabase, significantly improving query performance and reliability.",
+      "rating": 5
+    }
+  ]
+}

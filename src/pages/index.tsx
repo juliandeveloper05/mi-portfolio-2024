@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import GrainEffect from "@/components/grain-effect";
 import Approach from "@/components/Approach";
+import Testimonials from "@/components/Testimonials";
 import Projects from "@/components/Projects";
 import ScrollReveal from "@/components/scroll-reveal";
 
@@ -22,6 +23,7 @@ export async function getStaticProps({ locale }: { locale: string }) {
         "services",
         "projects",
         "timeline",
+        "testimonials",
         "approach",
         "contact",
         "footer",
@@ -93,6 +95,12 @@ const Home = () => {
             <ScrollReveal from="bottom" delay={0.2}>
               <section id="timeline" className="bg-transparent">
                 <Timeline />
+              </section>
+            </ScrollReveal>
+
+            <ScrollReveal from="bottom" delay={0.2}>
+              <section id="testimonials" className="bg-transparent">
+                <Testimonials />
               </section>
             </ScrollReveal>
 

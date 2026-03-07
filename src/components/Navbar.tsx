@@ -19,6 +19,7 @@ const FloatingNavbar = () => {
     "services",
     "projects",
     "timeline",
+    "testimonials",
     "approach",
     "contact",
   ];

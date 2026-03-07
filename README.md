@@ -222,10 +222,10 @@ Production variables (EmailJS keys) are managed securely in the Vercel Dashboard
 - ~~**Phase E (Q1 2025)**: Services & Career Timeline Sections.~~ — 6 service cards and interactive expandable timeline.
 - ~~**Phase F (Q1 2025)**: Premium Design System.~~ — Glassmorphism, grain texture, CSS custom properties theming, responsive typography with `clamp()`.
 - ~~**Phase G (Q1 2026)**: End-to-End Testing Suite.~~ — Playwright with TypeScript, 9 test suites covering all sections (Navbar, Profile, About, Services, Projects, Timeline, Contact, Footer, Full Page), i18n testing (EN/ES), responsive layout tests (desktop/mobile), theme toggle, form validation, and CI-ready configuration.
+- ~~**Phase I (Q1 2026)**: Client Testimonials Section.~~ — Swiper carousel with client reviews, star ratings, glassmorphism cards, Framer Motion animations, full EN/ES i18n, and E2E test coverage.
 
 ### Next Steps
 - **Phase H**: Automated Accessibility Regression Testing in CI (axe-core + Lighthouse CI).
-- **Phase I**: Client Testimonials Section — Carousel with real client reviews and ratings to build trust.
 - **Phase J**: Case Studies Page — Detailed project breakdowns showing process, challenges, solutions, and results (replaces the need for a blog).
 - **Phase K**: Analytics Dashboard Integration — Track visitor engagement, popular projects, and contact form conversion rates.
 - **Phase L**: PDF Resume Generator — Auto-generate a downloadable PDF resume from portfolio data.

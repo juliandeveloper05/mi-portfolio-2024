@@ -256,3 +256,19 @@ html {
     font-size: 0.875rem;
   }
 }
+
+/* ═══════════════════════════════════════════════
+   SWIPER OVERRIDES — Testimonials Carousel
+   ═══════════════════════════════════════════════ */
+
+.swiper-pagination-bullet {
+  background: var(--theme-text-muted);
+  opacity: 0.5;
+  transition: all 0.3s ease;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--theme-accent);
+  opacity: 1;
+  transform: scale(1.2);
+}

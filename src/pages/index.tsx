@@ -62,8 +62,8 @@ const Home = () => {
 
   return (
     <>
-      <div className="fixed inset-0 bg-black -z-30" />
-      <div className="fixed inset-0 -z-20 w-full h-full opacity-[0.08]">
+      <div className="fixed inset-0 bg-[var(--theme-bg)] -z-30" />
+      <div className="fixed inset-0 -z-20 w-full h-full" style={{ opacity: 'var(--theme-grain-opacity)' }}>
         <GrainEffect />
       </div>
 

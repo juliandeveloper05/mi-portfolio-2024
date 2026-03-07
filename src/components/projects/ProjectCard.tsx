@@ -40,7 +40,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
   return (
     <motion.article
       ref={cardRef}
-      className="relative h-[420px] md:h-[480px] w-full rounded-2xl bg-white/[0.02] backdrop-blur-sm border border-white/[0.06] overflow-hidden group"
+      className="relative h-[420px] md:h-[480px] w-full rounded-2xl bg-[var(--theme-surface-1)] backdrop-blur-sm border border-[var(--theme-border)] overflow-hidden group"
       onMouseEnter={() => onHover && onHover(project.id)}
       onMouseLeave={() => onHover && onHover(null)}
       initial={{ opacity: 0, y: 20 }}
@@ -70,13 +70,13 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
       <div className="relative z-10 h-full flex flex-col p-6 md:p-8">
         <div className="flex justify-between items-start mb-auto">
            <div className="bg-black/50 backdrop-blur-md px-3 py-1 rounded-full border border-white/[0.08]">
-             <span className="text-xs font-mono text-[#12b886]">{project.date}</span>
+             <span className="text-xs font-mono text-[var(--theme-accent)]">{project.date}</span>
            </div>
         </div>
 
         <div className="mt-auto space-y-3">
           <div className="space-y-2 translate-y-2 group-hover:translate-y-0 transition-transform duration-500 ease-out-expo motion-reduce:transition-none motion-reduce:translate-y-0">
-            <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[#12b886] transition-colors duration-300 drop-shadow-lg">
+            <h3 className="text-xl md:text-2xl font-bold text-white group-hover:text-[var(--theme-accent)] transition-colors duration-300 drop-shadow-lg">
               {project.title}
             </h3>
             <p className="text-white/60 text-sm leading-relaxed line-clamp-2 md:line-clamp-3 group-hover:text-white/80 transition-colors">
@@ -95,7 +95,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
               href={project.githubUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors bg-white/[0.04] hover:bg-white/[0.08] px-3 py-1.5 rounded-lg backdrop-blur-sm"
+              className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors bg-white/[0.06] hover:bg-white/[0.12] px-3 py-1.5 rounded-lg backdrop-blur-sm"
               aria-label={`View source code for ${project.title} on GitHub`}
             >
               <FaGithub className="text-lg" />
@@ -106,7 +106,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
                 href={project.liveUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-2 text-sm text-[#12b886] bg-[#12b886]/10 hover:bg-[#12b886]/20 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:scale-105 transition-all ml-auto border border-[#12b886]/20"
+                className="flex items-center gap-2 text-sm text-[var(--theme-accent)] bg-[var(--theme-accent)]/10 hover:bg-[var(--theme-accent)]/20 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:scale-105 transition-all ml-auto border border-[var(--theme-accent)]/20"
                 aria-label={`Visit live demo for ${project.title}`}
               >
                 <span className="font-medium">Live Demo</span>

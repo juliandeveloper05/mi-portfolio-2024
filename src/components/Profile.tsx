@@ -57,7 +57,7 @@ const Profile = () => {
             relative
             shadow-lg
             profile-image
-            border border-white/[0.06]
+            border border-[var(--theme-border)]
           "
         >
           <Image
@@ -97,7 +97,7 @@ const Profile = () => {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="text-sm md:text-base font-light uppercase tracking-[0.5em] text-white/60"
+            className="text-sm md:text-base font-light uppercase tracking-[0.5em] text-[var(--theme-text-secondary)]"
           >
             {t("hello_text")}
           </motion.p>
@@ -105,7 +105,7 @@ const Profile = () => {
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.4, type: "spring", stiffness: 100 }}
-            className="text-display font-bold text-white"
+            className="text-display font-bold text-[var(--theme-text)]"
           >
             Julian Soto
           </motion.h1>
@@ -113,7 +113,7 @@ const Profile = () => {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="text-subheading font-semibold uppercase tracking-wider text-[#12b886]"
+            className="text-subheading font-semibold uppercase tracking-wider text-[var(--theme-accent)]"
           >
             {t("professional_text")}
           </motion.p>
@@ -121,7 +121,7 @@ const Profile = () => {
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.5, delay: 0.6 }}
-            className="text-body-lg text-white/60 leading-relaxed max-w-md mx-auto md:mx-0"
+            className="text-body-lg text-[var(--theme-text-secondary)] leading-relaxed max-w-md mx-auto md:mx-0"
           >
             {t("subtitle")}
           </motion.p>

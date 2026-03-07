@@ -20,8 +20,8 @@ const Approach = () => {
     <section id="approach" className="w-full py-20 md:py-28 unselectable">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center mb-12">
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-white">
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
             {t("approach1")}
           </h2>
         </div>
@@ -85,7 +85,7 @@ const Card = ({
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="border border-white/[0.06] group/canvas-card flex flex-col items-center justify-center max-w-sm w-full mx-auto p-6 relative h-[24rem] lg:h-[28rem] rounded-2xl bg-white/[0.02] backdrop-blur-sm hover:border-white/[0.12] transition-all duration-300"
+      className="border border-[var(--theme-border)] group/canvas-card flex flex-col items-center justify-center max-w-sm w-full mx-auto p-6 relative h-[24rem] lg:h-[28rem] rounded-2xl bg-[var(--theme-surface-1)] backdrop-blur-sm hover:border-[var(--theme-surface-3)] transition-all duration-300"
     >
       <AnimatePresence>
         {hovered && (
@@ -117,8 +117,8 @@ const Card = ({
 const StepNumber = ({ number, label }: { number: string; label: string }) => {
   return (
     <div className="flex flex-col items-center gap-3">
-      <span className="text-6xl font-bold text-white/10">{number}</span>
-      <span className="text-sm text-white/50 font-medium">{label}</span>
+      <span className="text-6xl font-bold text-[var(--theme-text-muted)]/30">{number}</span>
+      <span className="text-sm text-[var(--theme-text-muted)] font-medium">{label}</span>
     </div>
   );
 };

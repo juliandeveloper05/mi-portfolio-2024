@@ -139,8 +139,8 @@ const Projects = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
         >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[#12b886] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-white">
+          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
+          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
             {t("projects_title")}
           </h2>
         </motion.div>

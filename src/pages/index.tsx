@@ -8,6 +8,7 @@ import ContactMe from "@/components/ContactMe";
 import Footer from "@/components/Footer";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import GrainEffect from "@/components/grain-effect";
+import HeroBackground from "@/components/hero-background";
 import Approach from "@/components/Approach";
 import Testimonials from "@/components/Testimonials";
 import Projects from "@/components/Projects";
@@ -102,7 +103,10 @@ const Home = () => {
 
         <main className={`flex-grow relative z-10`}>
           <div className="relative">
-            <section id="profile" className="bg-transparent">
+            <section id="profile" className="bg-transparent relative">
+              <div className="absolute inset-0 -z-10 overflow-hidden">
+                <HeroBackground />
+              </div>
               <Profile />
             </section>
 

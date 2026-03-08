@@ -223,13 +223,13 @@ Production variables (EmailJS keys) are managed securely in the Vercel Dashboard
 - ~~**Phase F (Q1 2025)**: Premium Design System.~~ — Glassmorphism, grain texture, CSS custom properties theming, responsive typography with `clamp()`.
 - ~~**Phase G (Q1 2026)**: End-to-End Testing Suite.~~ — Playwright with TypeScript, 9 test suites covering all sections (Navbar, Profile, About, Services, Projects, Timeline, Contact, Footer, Full Page), i18n testing (EN/ES), responsive layout tests (desktop/mobile), theme toggle, form validation, and CI-ready configuration.
 - ~~**Phase I (Q1 2026)**: Client Testimonials Section.~~ — Swiper carousel with client reviews, star ratings, glassmorphism cards, Framer Motion animations, full EN/ES i18n, and E2E test coverage.
+- ~~**Phase M (Q1 2026)**: Project Filtering & Search.~~ — Category filter pills (Web, Mobile, AI/ML, Consulting), text search across titles/descriptions/technologies, AnimatePresence animated transitions, full EN/ES i18n, and E2E test coverage.
 
 ### Next Steps
 - **Phase H**: Automated Accessibility Regression Testing in CI (axe-core + Lighthouse CI).
 - **Phase J**: Case Studies Page — Detailed project breakdowns showing process, challenges, solutions, and results (replaces the need for a blog).
 - **Phase K**: Analytics Dashboard Integration — Track visitor engagement, popular projects, and contact form conversion rates.
 - **Phase L**: PDF Resume Generator — Auto-generate a downloadable PDF resume from portfolio data.
-- **Phase M**: Project Filtering & Search — Allow visitors to filter projects by technology, category, or industry.
 - **Phase N**: Performance Monitoring — Integrate Web Vitals tracking and automated Lighthouse CI scores per deploy.
 - **Phase O**: Micro-Animations Polish — Loading skeleton screens, page transition animations, and staggered content reveals.
 

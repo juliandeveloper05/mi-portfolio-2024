@@ -6,7 +6,8 @@ type EventType =
   | "project_click"
   | "form_view"
   | "form_submit"
-  | "section_view";
+  | "section_view"
+  | "filter_use";
 
 export function useAnalytics() {
   const { i18n } = useTranslation();

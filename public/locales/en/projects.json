@@ -1,5 +1,15 @@
 {
   "projects_title": "Featured Projects",
+  "filters": {
+    "all": "All",
+    "web": "Web",
+    "mobile": "Mobile",
+    "ai": "AI / ML",
+    "consulting": "Consulting",
+    "search_placeholder": "Search projects...",
+    "no_results": "No projects match your search.",
+    "clear_filters": "Clear filters"
+  },
   "bitrova": {
     "description": "Feature-rich task management app with Supabase authentication & cloud sync. Includes recurring tasks, glassmorphism design, attachments, subtasks, drag & drop, undo/redo and Lottie animations. Cross-platform iOS/Android/Web.",
     "date": "Jan 17, 2026"

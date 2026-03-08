@@ -7,9 +7,11 @@ import { TechBadge } from "./TechBadge";
 import { ProjectImage } from "./ProjectImage";
 import { useSpotlight } from "./useSpotlight";
 import { SpotlightEffect } from "./SpotlightEffect";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, onHover }) => {
   const { t } = useTranslation("projects");
+  const { trackEvent } = useAnalytics();
   const cardRef = useRef<HTMLElement>(null);
   const spotlight = useSpotlight(cardRef);
   const shouldReduceMotion = useReducedMotion();
@@ -97,6 +99,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-white/60 hover:text-white transition-colors bg-white/[0.06] hover:bg-white/[0.12] px-3 py-1.5 rounded-lg backdrop-blur-sm"
               aria-label={`View source code for ${project.title} on GitHub`}
+              onClick={() => trackEvent("project_click", { projectName: project.title, linkType: "github" })}
             >
               <FaGithub className="text-lg" />
               <span>Code</span>
@@ -108,6 +111,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = React.memo(({ project, on
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm text-[var(--theme-accent)] bg-[var(--theme-accent)]/10 hover:bg-[var(--theme-accent)]/20 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:scale-105 transition-all ml-auto border border-[var(--theme-accent)]/20"
                 aria-label={`Visit live demo for ${project.title}`}
+                onClick={() => trackEvent("project_click", { projectName: project.title, linkType: "live_demo" })}
               >
                 <span className="font-medium">Live Demo</span>
                 <FaExternalLinkAlt className="text-xs" />

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useCallback, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import About from "@/components/About";
@@ -12,6 +12,7 @@ import Approach from "@/components/Approach";
 import Testimonials from "@/components/Testimonials";
 import Projects from "@/components/Projects";
 import ScrollReveal from "@/components/scroll-reveal";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -32,8 +33,39 @@ export async function getStaticProps({ locale }: { locale: string }) {
   };
 }
 
+const TRACKED_SECTIONS = ["profile", "about", "services", "projects", "timeline", "testimonials", "approach"];
+
 const Home = () => {
   const initialLoadRef = useRef(true);
+  const { trackEvent } = useAnalytics();
+  const trackedSections = useRef(new Set<string>());
+
+  const trackSections = useCallback(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const id = entry.target.id;
+          if (entry.isIntersecting && !trackedSections.current.has(id)) {
+            trackedSections.current.add(id);
+            trackEvent("section_view", { section: id });
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    TRACKED_SECTIONS.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, [trackEvent]);
+
+  useEffect(() => {
+    const cleanup = trackSections();
+    return cleanup;
+  }, [trackSections]);
 
   useEffect(() => {
     if (initialLoadRef.current) {

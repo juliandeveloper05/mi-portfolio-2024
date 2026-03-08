@@ -1,5 +1,7 @@
 import { IconType } from "react-icons";
 
+export type ProjectCategory = "web" | "mobile" | "ai" | "consulting";
+
 export interface Technology {
   icon: IconType;
   label: string;
@@ -15,6 +17,7 @@ export interface Project {
   githubUrl: string;
   liveUrl: string;
   gradient: string;
+  category: ProjectCategory;
 }
 
 export interface ProjectCardProps {

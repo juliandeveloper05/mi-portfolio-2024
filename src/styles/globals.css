@@ -126,6 +126,89 @@ body {
 }
 
 /* ═══════════════════════════════════════════════
+   HERO BACKGROUND — Glowing Arc Effect
+   ═══════════════════════════════════════════════ */
+
+.hero-arc {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.hero-arc--primary {
+  width: 140%;
+  aspect-ratio: 2 / 1;
+  top: -30%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 58%,
+    rgba(var(--theme-accent-rgb), 0.12) 68%,
+    rgba(var(--theme-accent-rgb), 0.06) 76%,
+    transparent 84%
+  );
+  animation: arc-breathe 6s ease-in-out infinite;
+}
+
+.hero-arc--secondary {
+  width: 160%;
+  aspect-ratio: 2 / 1;
+  top: -32%;
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(var(--theme-accent-rgb), 0.05) 65%,
+    rgba(var(--theme-accent-rgb), 0.02) 75%,
+    transparent 85%
+  );
+  animation: arc-breathe 6s ease-in-out infinite;
+  animation-delay: -3s;
+}
+
+:root:not(.dark) .hero-arc--primary {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 58%,
+    rgba(var(--theme-accent-rgb), 0.07) 68%,
+    rgba(var(--theme-accent-rgb), 0.03) 76%,
+    transparent 84%
+  );
+}
+
+:root:not(.dark) .hero-arc--secondary {
+  background: radial-gradient(
+    ellipse at center,
+    transparent 55%,
+    rgba(var(--theme-accent-rgb), 0.03) 65%,
+    rgba(var(--theme-accent-rgb), 0.01) 75%,
+    transparent 85%
+  );
+}
+
+@keyframes arc-breathe {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1.03);
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-arc--primary {
+    width: 200%;
+    top: -20%;
+  }
+  .hero-arc--secondary {
+    width: 220%;
+    top: -22%;
+  }
+}
+
+/* ═══════════════════════════════════════════════
    SOCIAL ICONS
    ═══════════════════════════════════════════════ */
 

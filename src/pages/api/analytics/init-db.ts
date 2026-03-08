@@ -2,7 +2,7 @@ import type { NextApiRequest, NextApiResponse } from "next";
 import pool, { INIT_TABLE_SQL } from "@/lib/db";
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method !== "POST") {
+  if (req.method !== "POST" && req.method !== "GET") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 

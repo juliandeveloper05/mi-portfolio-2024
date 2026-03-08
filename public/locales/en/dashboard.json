@@ -1,0 +1,15 @@
+{
+  "title": "Analytics Dashboard",
+  "subtitle": "Tracking visitor engagement & conversions",
+  "totalEvents": "Total Events",
+  "projectClicks": "Project Clicks",
+  "formSubmissions": "Form Submissions",
+  "conversionRate": "Conversion Rate",
+  "projectPopularity": "Project Popularity",
+  "eventsDistribution": "Events Distribution",
+  "dailyTrends": "Daily Trends",
+  "contactFormFunnel": "Contact Form Funnel",
+  "sectionEngagement": "Section Engagement",
+  "recentEvents": "Recent Events",
+  "noData": "No data yet"
+}

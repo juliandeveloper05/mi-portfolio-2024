@@ -6,6 +6,8 @@ import { appWithTranslation } from "next-i18next";
 import { ThemeProvider } from "next-themes";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const DynamicCursor = dynamic(() => import("../components/cursor"), {
   ssr: false,
@@ -41,6 +43,8 @@ function App({ Component, pageProps }: AppProps) {
           <Component {...pageProps} />
         </>
       )}
+      <Analytics />
+      <SpeedInsights />
     </ThemeProvider>
   );
 }

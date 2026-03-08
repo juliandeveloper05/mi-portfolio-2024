@@ -1,17 +1,37 @@
-import React, { FormEvent, useRef, useState } from "react";
+import React, { FormEvent, useEffect, useRef, useState } from "react";
 import SectionHeading from "./section-heading";
 import { FiSend, FiLoader } from "react-icons/fi";
 import { useTranslation } from "next-i18next";
 import emailjs from "@emailjs/browser";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
+import { useAnalytics } from "@/hooks/useAnalytics";
 
 export default function ContactMe() {
   const { t } = useTranslation("contact");
+  const { trackEvent } = useAnalytics();
   const formRef = useRef<HTMLFormElement>(null);
   const emailRef = useRef<HTMLInputElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
   const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const el = sectionRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          trackEvent("form_view", { section: "contact" });
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [trackEvent]);
 
   const showToast = (message: string, isSuccess: boolean) => {
     Toastify({
@@ -56,19 +76,21 @@ export default function ContactMe() {
         process.env.NEXT_PUBLIC_SENDGRID_USER_KEY
       )
       .then(() => {
+        trackEvent("form_submit", { status: "success" });
         showToast(t("contact7"), true);
         setIsLoading(false);
         formRef.current?.reset();
       })
       .catch((error) => {
         console.error("EmailJS error:", error);
+        trackEvent("form_submit", { status: "error" });
         showToast(t("contact9"), false);
         setIsLoading(false);
       });
   };
 
   return (
-    <section id="contact" className="py-20 md:py-28 unselectable">
+    <section ref={sectionRef} id="contact" className="py-20 md:py-28 unselectable">
       <div className="max-w-lg mx-auto px-4 sm:px-6">
         <SectionHeading>{t("contact1")}</SectionHeading>
 

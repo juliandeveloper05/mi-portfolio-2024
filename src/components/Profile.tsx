@@ -11,8 +11,8 @@ const Profile = () => {
   const router = useRouter();
 
   const handleDownloadCV = () => {
-    const cvFile = router.locale === 'es' ? '/cv_español.pdf' : '/cv_ingles.pdf';
-    window.open(cvFile);
+    const locale = router.locale === 'es' ? 'es' : 'en';
+    window.open(`/api/resume?locale=${locale}`, '_blank');
   };
 
   const fadeUp = {

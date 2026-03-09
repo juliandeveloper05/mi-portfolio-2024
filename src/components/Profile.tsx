@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -5,10 +6,12 @@ import { useTranslation } from "next-i18next";
 import FancyButton from "./fancy-button";
 import { Link } from "react-scroll";
 import { motion } from "framer-motion";
+import Skeleton from "./skeleton";
 
 const Profile = () => {
   const { t } = useTranslation("profile");
   const router = useRouter();
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const handleDownloadCV = () => {
     const locale = router.locale === 'es' ? 'es' : 'en';
@@ -60,13 +63,15 @@ const Profile = () => {
             border border-[var(--theme-border)]
           "
         >
+          {!imageLoaded && <Skeleton className="absolute inset-0" />}
           <Image
             src="/profile-2.jpg"
             alt="Julian Soto - Profile"
-            className="object-cover"
+            className={`object-cover transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
             fill
             sizes="(max-width: 768px) 192px, (max-width: 1024px) 320px, 384px"
             priority
+            onLoad={() => setImageLoaded(true)}
           />
         </div>
       </motion.div>

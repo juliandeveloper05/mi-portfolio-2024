@@ -355,3 +355,29 @@ html {
   opacity: 1;
   transform: scale(1.2);
 }
+
+/* ═══════════════════════════════════════════════
+   SKELETON SHIMMER — Phase O
+   ═══════════════════════════════════════════════ */
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--theme-surface-2) 25%,
+    var(--theme-surface-3) 50%,
+    var(--theme-surface-2) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-shimmer {
+    animation: none;
+  }
+}

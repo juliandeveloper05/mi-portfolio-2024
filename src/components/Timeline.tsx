@@ -9,6 +9,7 @@ import {
 } from "framer-motion";
 import { useTranslation } from "next-i18next";
 import { FiChevronDown } from "react-icons/fi";
+import StaggerReveal from "./stagger-reveal";
 
 const Timeline = () => {
   const { t } = useTranslation("timeline");
@@ -90,7 +91,7 @@ const Timeline = () => {
             style={{ scaleY: scaleX }}
           />
 
-          <div className="space-y-8">
+          <StaggerReveal className="space-y-8" staggerDelay={0.12}>
             {timelineEvents.map((event, index) => (
               <TimelineEvent
                 key={event.year}
@@ -103,7 +104,7 @@ const Timeline = () => {
                 isMobile={isMobile}
               />
             ))}
-          </div>
+          </StaggerReveal>
         </div>
       </div>
     </section>

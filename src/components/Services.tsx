@@ -19,6 +19,7 @@ import {
   SiFastapi,
 } from "react-icons/si";
 import { cn } from "@/utils/cn";
+import StaggerReveal from "./stagger-reveal";
 
 interface ServiceCardProps {
   title: string;
@@ -42,9 +43,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       className="relative group block p-4 h-full w-full"
       onMouseEnter={() => onHover(index)}
       onMouseLeave={() => onHover(null)}
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, delay: index * 0.08 }}
     >
       <AnimatePresence>
         {isHovered && (
@@ -167,7 +165,7 @@ const Services = () => {
           </h2>
         </motion.div>
 
-        <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <StaggerReveal className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
           {services.map((service, index) => (
             <ServiceCard
               key={index}
@@ -177,7 +175,7 @@ const Services = () => {
               onHover={setHoveredIndex}
             />
           ))}
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

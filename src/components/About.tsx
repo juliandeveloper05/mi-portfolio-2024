@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { FaBriefcase, FaCode } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
+import Skeleton from "./skeleton";
+import StaggerReveal from "./stagger-reveal";
 
 const About = () => {
   const { t } = useTranslation("about");
+  const [imageLoaded, setImageLoaded] = useState(false);
 
   const frontendStack = [
     "Next.js", "React 19", "React Native", "TypeScript", "HTML5", "CSS3", "Tailwind CSS",
@@ -28,18 +31,20 @@ const About = () => {
       className="bg-transparent text-[var(--theme-text)] unselectable"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5">
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5" staggerDelay={0.1}>
           {/* Image Card */}
           <div className="md:col-span-2 glass rounded-2xl overflow-hidden p-1">
             <div className="rounded-xl overflow-hidden relative aspect-square md:aspect-auto md:h-full">
+              {!imageLoaded && <Skeleton className="absolute inset-0" rounded="rounded-xl" />}
               <Image
-                className="object-cover rounded-xl"
+                className={`object-cover rounded-xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
                 src="/about-me.jpg"
                 alt="About Julian Soto"
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={100}
                 priority
+                onLoad={() => setImageLoaded(true)}
               />
             </div>
           </div>
@@ -81,7 +86,7 @@ const About = () => {
           <div className="md:col-span-2 glass rounded-2xl p-6 md:p-8">
             <h3 className="text-sm font-medium uppercase tracking-wider text-[var(--theme-accent)] mb-4">Tech Stack</h3>
 
-            <div className="space-y-3">
+            <StaggerReveal className="space-y-3" staggerDelay={0.06}>
               <div>
                 <span className="text-xs text-[var(--theme-text-muted)] uppercase tracking-wider">Frontend</span>
                 <div className="flex flex-wrap gap-2 mt-1.5">
@@ -137,9 +142,9 @@ const About = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </StaggerReveal>
           </div>
-        </div>
+        </StaggerReveal>
       </div>
     </section>
   );

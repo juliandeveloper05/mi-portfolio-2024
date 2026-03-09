@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import Skeleton from "../skeleton";
 
 interface ProjectImageProps {
   src: string;
@@ -13,6 +14,7 @@ export const ProjectImage: React.FC<ProjectImageProps> = ({ src, alt, priority =
 
   return (
     <div className="relative h-full w-full overflow-hidden">
+      {!isLoaded && <Skeleton className="absolute inset-0 z-10" rounded="rounded-none" />}
       {/* Background Image */}
       <motion.div
         className="absolute inset-0"

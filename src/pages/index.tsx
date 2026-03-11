@@ -1,5 +1,4 @@
 import React, { useCallback, useEffect, useRef } from "react";
-import dynamic from "next/dynamic";
 import Navbar from "@/components/Navbar";
 import Profile from "@/components/Profile";
 import About from "@/components/About";
@@ -15,12 +14,6 @@ import Testimonials from "@/components/Testimonials";
 import Projects from "@/components/Projects";
 import ScrollReveal from "@/components/scroll-reveal";
 import { useAnalytics } from "@/hooks/useAnalytics";
-import SceneWrapper from "@/components/3d/SceneWrapper";
-import TerrainFallback2D from "@/components/3d/TerrainFallback2D";
-import SkillsGlobeFallback2D from "@/components/3d/SkillsGlobeFallback2D";
-
-const TerrainHeroCanvas = dynamic(() => import("@/components/3d/TerrainHero"), { ssr: false });
-const SkillsGlobeCanvas = dynamic(() => import("@/components/3d/SkillsGlobe"), { ssr: false });
 
 export async function getStaticProps({ locale }: { locale: string }) {
   return {
@@ -113,11 +106,6 @@ const Home = () => {
             <section id="profile" className="bg-transparent relative">
               <div className="absolute inset-0 -z-10 overflow-hidden">
                 <HeroBackground />
-                <SceneWrapper
-                  scene3D={<TerrainHeroCanvas />}
-                  fallback2D={<TerrainFallback2D />}
-                  className="absolute inset-0"
-                />
               </div>
               <Profile />
             </section>
@@ -125,11 +113,6 @@ const Home = () => {
             <ScrollReveal from="bottom" delay={0.2}>
               <section id="about" className="bg-transparent">
                 <About />
-                <SceneWrapper
-                  scene3D={<SkillsGlobeCanvas />}
-                  fallback2D={<SkillsGlobeFallback2D />}
-                  className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12"
-                />
               </section>
             </ScrollReveal>
 

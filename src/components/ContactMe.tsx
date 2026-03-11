@@ -63,6 +63,13 @@ export default function ContactMe() {
       return;
     }
 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(senderEmail)) {
+      showToast(t("contact8"), false);
+      setIsLoading(false);
+      return;
+    }
+
     const templateParams = {
       email: senderEmail,
       message: message,

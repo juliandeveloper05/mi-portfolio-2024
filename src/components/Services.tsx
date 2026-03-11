@@ -24,7 +24,7 @@ import StaggerReveal from "./stagger-reveal";
 interface ServiceCardProps {
   title: string;
   description: string;
-  technologies: { icon: React.ElementType; name: string }[];
+  technologies: { icon: React.ComponentType<{ className?: string }>; name: string }[];
   index: number;
   isHovered: boolean;
   onHover: (index: number | null) => void;

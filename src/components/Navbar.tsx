@@ -7,22 +7,22 @@ import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
 import ThemeToggle from "./ThemeToggle";
 
+const NAV_ITEMS = [
+  "profile",
+  "about",
+  "services",
+  "projects",
+  "timeline",
+  "testimonials",
+  "approach",
+  "contact",
+];
+
 const FloatingNavbar = () => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("profile");
   const { t, i18n } = useTranslation("navbar");
-
-  const navItems = [
-    "profile",
-    "about",
-    "services",
-    "projects",
-    "timeline",
-    "testimonials",
-    "approach",
-    "contact",
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +30,7 @@ const FloatingNavbar = () => {
       const windowHeight = window.innerHeight;
       const offset = windowHeight * 0.3;
 
-      const sections = navItems
+      const sections = NAV_ITEMS
         .map((item) => {
           const element = document.getElementById(item);
           if (element) {
@@ -65,7 +65,7 @@ const FloatingNavbar = () => {
     handleScroll();
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [navItems]);
+  }, []);
 
   const handleNavLinkClick = (navItem: string) => {
     setIsOpen(false);
@@ -110,7 +110,7 @@ const FloatingNavbar = () => {
           </Link>
 
           <div className="hidden md:flex items-center gap-1">
-            {navItems.map((item) => (
+            {NAV_ITEMS.map((item) => (
               <Link
                 key={item}
                 to={item}
@@ -184,7 +184,7 @@ const FloatingNavbar = () => {
               className="absolute top-full left-0 right-0 mt-2 p-6 md:hidden rounded-2xl shadow-2xl mx-4 bg-[var(--theme-glass-bg)] backdrop-blur-xl border border-[var(--theme-border)]"
             >
               <div className="flex flex-col gap-1">
-                {navItems.map((item) => (
+                {NAV_ITEMS.map((item) => (
                   <Link
                     key={item}
                     to={item}

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import pool from "@/lib/db";
 
-const VALID_EVENTS = ["project_click", "form_view", "form_submit", "section_view"];
+const VALID_EVENTS = ["project_click", "form_view", "form_submit", "section_view", "filter_use"];
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== "POST") {

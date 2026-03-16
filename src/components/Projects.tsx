@@ -1,6 +1,7 @@
 import React, { useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "next-i18next";
+import SectionHeading from "./section-heading";
 import {
   SiNextdotjs,
   SiMongodb,
@@ -171,21 +172,10 @@ const Projects = () => {
 
   return (
     <section
-      id="projects"
       className="bg-transparent py-20 md:py-28 unselectable"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="flex flex-col items-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
-            {t("projects_title")}
-          </h2>
-        </motion.div>
+        <SectionHeading>{t("projects_title")}</SectionHeading>
 
         <ProjectFilterBar
           activeCategory={activeCategory}

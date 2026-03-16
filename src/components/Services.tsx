@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { motion, AnimatePresence } from "framer-motion";
+import SectionHeading from "./section-heading";
 import {
   SiNextdotjs,
   SiTypescript,
@@ -151,19 +152,9 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="bg-transparent unselectable">
+    <section className="bg-transparent unselectable">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <motion.div
-          className="flex flex-col items-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
-            {t("services1")}
-          </h2>
-        </motion.div>
+        <SectionHeading>{t("services1")}</SectionHeading>
 
         <StaggerReveal className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3" staggerDelay={0.08}>
           {services.map((service, index) => (

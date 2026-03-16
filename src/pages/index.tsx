@@ -104,9 +104,7 @@ const Home = () => {
       </div>
 
       <div className="relative min-h-screen flex flex-col">
-        <div className="sticky top-0 z-50">
-          <Navbar />
-        </div>
+        <Navbar />
 
         <main className={`flex-grow relative z-10`}>
           <div className="relative">

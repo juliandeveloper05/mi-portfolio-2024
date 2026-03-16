@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CanvasRevealEffect } from "../components/ui/canvas-reveal-effect";
 import { useTranslation } from "next-i18next";
+import SectionHeading from "./section-heading";
 
 const Approach = () => {
   const { t } = useTranslation("approach");
@@ -13,18 +14,13 @@ const Approach = () => {
   }, []);
 
   if (!isClient) {
-    return null;
+    return <section className="w-full py-20 md:py-28 unselectable" aria-hidden="true" />;
   }
 
   return (
-    <section id="approach" className="w-full py-20 md:py-28 unselectable">
+    <section className="w-full py-20 md:py-28 unselectable">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center mb-12">
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
-            {t("approach1")}
-          </h2>
-        </div>
+        <SectionHeading>{t("approach1")}</SectionHeading>
 
         <div className="flex flex-col lg:flex-row items-center justify-center w-full gap-5">
           <Card

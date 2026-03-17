@@ -10,6 +10,7 @@ import {
 import { useTranslation } from "next-i18next";
 import { FiChevronDown } from "react-icons/fi";
 import StaggerReveal from "./stagger-reveal";
+import SectionHeading from "./section-heading";
 
 const Timeline = () => {
   const { t } = useTranslation("timeline");
@@ -66,23 +67,12 @@ const Timeline = () => {
 
   return (
     <section
-      id="timeline"
       ref={containerRef}
       className="py-20 md:py-28 bg-transparent overflow-hidden unselectable"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          className="flex flex-col items-center mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-[var(--theme-text)]">
-            {t("title")}
-          </h2>
-          <p className="mt-3 text-body-lg text-[var(--theme-text-muted)]">{t("subtitle")}</p>
-        </motion.div>
+        <SectionHeading>{t("title")}</SectionHeading>
+        <p className="text-center text-body-lg text-[var(--theme-text-muted)] -mt-8 mb-12">{t("subtitle")}</p>
 
         <div className="relative">
           {/* Timeline line - visible on both mobile and desktop */}

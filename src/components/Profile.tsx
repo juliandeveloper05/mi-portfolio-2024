@@ -25,7 +25,6 @@ const Profile = () => {
 
   return (
     <section
-      id="profile"
       className="
         min-h-screen
         flex

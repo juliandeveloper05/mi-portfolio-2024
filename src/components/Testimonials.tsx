@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "next-i18next";
 import { motion } from "framer-motion";
+import SectionHeading from "./section-heading";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaStar, FaRegStar, FaQuoteLeft } from "react-icons/fa";
@@ -83,19 +84,9 @@ const Testimonials = () => {
   }) as Testimonial[];
 
   return (
-    <div className="bg-transparent unselectable">
+    <section className="bg-transparent unselectable">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28">
-        <motion.div
-          className="flex flex-col items-center mb-12"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="w-8 h-0.5 bg-gradient-to-r from-transparent via-[var(--theme-accent)] to-transparent mb-4" />
-          <h2 className="text-heading font-semibold text-center text-[var(--theme-text)]">
-            {t("sectionTitle")}
-          </h2>
-        </motion.div>
+        <SectionHeading>{t("sectionTitle")}</SectionHeading>
 
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -121,7 +112,7 @@ const Testimonials = () => {
             ))}
         </Swiper>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -97,7 +97,7 @@ export default function ContactMe() {
   };
 
   return (
-    <section ref={sectionRef} id="contact" className="py-20 md:py-28 unselectable">
+    <section ref={sectionRef} className="py-20 md:py-28 unselectable">
       <div className="max-w-lg mx-auto px-4 sm:px-6">
         <SectionHeading>{t("contact1")}</SectionHeading>
 

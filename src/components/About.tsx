@@ -27,7 +27,6 @@ const About = () => {
 
   return (
     <section
-      id="about"
       className="bg-transparent text-[var(--theme-text)] unselectable"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">

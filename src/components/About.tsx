@@ -14,9 +14,9 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5" staggerDelay={0.1}>
           {/* Image Card */}
-          <div className="glass rounded-2xl overflow-hidden p-1">
+          <div className="glass rounded-2xl overflow-hidden p-1 h-full">
             <Image
-              className="w-full h-auto object-cover rounded-xl aspect-square"
+              className="w-full h-full object-cover rounded-xl"
               src="/about-me.jpg"
               alt="About Julian Soto"
               width={600}

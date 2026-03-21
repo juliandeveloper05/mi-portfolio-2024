@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { FaBriefcase, FaCode } from "react-icons/fa";
 import { useTranslation } from "next-i18next";
-import Skeleton from "./skeleton";
 import StaggerReveal from "./stagger-reveal";
 
 const About = () => {
   const { t } = useTranslation("about");
-  const [imageLoaded, setImageLoaded] = useState(false);
 
   return (
     <section
@@ -17,19 +15,16 @@ const About = () => {
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5" staggerDelay={0.1}>
           {/* Image Card */}
           <div className="glass rounded-2xl overflow-hidden p-1">
-            <div className="rounded-xl overflow-hidden relative aspect-square">
-              {!imageLoaded && <Skeleton className="absolute inset-0" rounded="rounded-xl" />}
-              <Image
-                className={`object-cover rounded-xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
-                src="/about-me.jpg"
-                alt="About Julian Soto"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                quality={100}
-                priority
-                onLoad={() => setImageLoaded(true)}
-              />
-            </div>
+            <Image
+              className="w-full h-auto object-cover rounded-xl aspect-square"
+              src="/about-me.jpg"
+              alt="About Julian Soto"
+              width={600}
+              height={600}
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={100}
+              priority
+            />
           </div>
 
           {/* Text Content Card */}

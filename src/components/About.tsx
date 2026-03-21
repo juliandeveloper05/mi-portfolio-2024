@@ -17,7 +17,7 @@ const About = () => {
         <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5" staggerDelay={0.1}>
           {/* Image Card */}
           <div className="glass rounded-2xl overflow-hidden p-1">
-            <div className="rounded-xl overflow-hidden relative aspect-square md:aspect-auto md:h-full">
+            <div className="rounded-xl overflow-hidden relative aspect-square">
               {!imageLoaded && <Skeleton className="absolute inset-0" rounded="rounded-xl" />}
               <Image
                 className={`object-cover rounded-xl transition-opacity duration-500 ${imageLoaded ? "opacity-100" : "opacity-0"}`}

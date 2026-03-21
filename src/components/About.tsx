@@ -14,9 +14,9 @@ const About = () => {
       className="bg-transparent text-[var(--theme-text)] unselectable"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28 lg:py-36">
-        <StaggerReveal className="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-5" staggerDelay={0.1}>
+        <StaggerReveal className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5" staggerDelay={0.1}>
           {/* Image Card */}
-          <div className="md:col-span-2 glass rounded-2xl overflow-hidden p-1">
+          <div className="glass rounded-2xl overflow-hidden p-1">
             <div className="rounded-xl overflow-hidden relative aspect-square md:aspect-auto md:h-full">
               {!imageLoaded && <Skeleton className="absolute inset-0" rounded="rounded-xl" />}
               <Image
@@ -33,7 +33,7 @@ const About = () => {
           </div>
 
           {/* Text Content Card */}
-          <div className="md:col-span-2 glass rounded-2xl p-6 md:p-8 flex flex-col justify-center">
+          <div className="glass rounded-2xl p-6 md:p-8 flex flex-col justify-center">
             <h2 className="text-heading font-semibold text-[var(--theme-text)] mb-4">
               {t("about_description_hello")}
             </h2>
@@ -46,7 +46,7 @@ const About = () => {
           </div>
 
           {/* Experience Card */}
-          <div className="md:col-span-2 glass rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+          <div className="glass rounded-2xl p-6 flex flex-col items-center justify-center text-center">
             <FaBriefcase className="text-2xl text-[var(--theme-accent)] mb-3" />
             <h3 className="text-lg font-semibold text-[var(--theme-text)] mb-2">{t("experience1")}</h3>
             <div className="text-sm text-[var(--theme-text-secondary)] space-y-1">
@@ -56,7 +56,7 @@ const About = () => {
           </div>
 
           {/* Projects Card */}
-          <div className="md:col-span-2 glass rounded-2xl p-6 flex flex-col items-center justify-center text-center">
+          <div className="glass rounded-2xl p-6 flex flex-col items-center justify-center text-center">
             <FaCode className="text-2xl text-[var(--theme-accent)] mb-3" />
             <h3 className="text-lg font-semibold text-[var(--theme-text)] mb-2">{t("projects1")}</h3>
             <div className="text-sm text-[var(--theme-text-secondary)] space-y-1">
